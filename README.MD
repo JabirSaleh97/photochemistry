@@ -314,6 +314,8 @@ srun --ntasks=1 --cpus-per-task=4 --mem=4G --time=01:00:00 --pty bash
 scancel <job_id>
 ```
 
+## 📊 WCSS has a comprehensive users' manual at [man.e-science.pl](https://man.e-science.pl/en/home)
+
 </details>
 
 
