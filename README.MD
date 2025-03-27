@@ -183,6 +183,10 @@ Example:
 > `vim -O file1 file2` (vertical)  
 > `vim -o file1 file2` (horizontal)
 
+### 📝 Vim Cheat Sheet
+
+![Vim Cheat Sheet](./assets/vim-cheat-sheet.png)
+
 </details>
 
 <details>
