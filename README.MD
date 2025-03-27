@@ -117,3 +117,191 @@ chmod ugo=rx file # Read/execute access to all
 
 </details>
 
+Perfect! Below are four GitHub Markdown collapsible sections for:
+
+1. **`vim` editor basics**  
+2. **Working with `SSH`**
+3. **Job scheduling with `PBS`**
+4. **And an added section for `SLURM`**, written to match the PBS one in style and detail.
+
+---
+
+### ✅ Markdown for all four sections:
+
+```markdown
+<details>
+<summary><strong>📝 Using the <code>vim</code> Editor</strong></summary>
+
+## 📘 Basic Commands
+
+- `Esc` – Switch to command mode
+- `i` – Insert mode (before cursor)
+- `a` – Append mode (after cursor)
+- `A` – Append at end of line
+- `o` – Open new line below
+- `O` – Open new line above
+
+## 💾 Saving and Exiting
+
+- `:w` – Save
+- `:q` – Quit
+- `:wq` or `ZZ` – Save and quit
+- `:q!` – Quit without saving
+
+## ✂️ Editing Text
+
+- `x` – Delete character
+- `dd` – Delete current line
+- `yy` – Copy (yank) current line
+- `p` – Paste
+
+## 🔍 Searching
+
+- `/text` – Search forward
+- `?text` – Search backward
+- `:s/old/new/g` – Replace in current line
+- `:10,$s/old/new/g` – Replace from line 10 to end
+
+## 📐 Navigation
+
+- `h` `j` `k` `l` – Left, down, up, right
+- `0` – Beginning of line
+- `$` – End of line
+- `G` – End of file
+- `:n` – Go to line n
+- `Ctrl+G` – Show file info
+
+</details>
+
+<details>
+<summary><strong>🔐 Remote Access with SSH</strong></summary>
+
+## 🔌 Connect to Remote Server
+
+```bash
+ssh -Y your_username@ui.wcss.pl
+```
+
+- `-Y` allows GUI applications over SSH
+
+## ⚙️ Execute Remote Commands
+
+```bash
+ssh ui.wcss.pl "qstat -u $USER"
+```
+
+## 📂 File Transfers with SCP
+
+```bash
+scp file.txt ui.wcss.pl:             # upload to home directory
+scp -r folder/ ui.wcss.pl:target/    # upload directory
+scp ui.wcss.pl:file.txt ./           # download
+```
+
+## 🔑 SSH Key Setup
+
+```bash
+ssh-keygen -t rsa
+```
+
+Then copy your public key:
+
+```bash
+cat ~/.ssh/id_rsa.pub | ssh your_username@ui.wcss.pl "cat >> ~/.ssh/authorized_keys"
+```
+
+- Next time you connect: no password needed.
+- Use `ssh-add` if your key is passphrase protected.
+
+</details>
+
+<details>
+<summary><strong>📋 Job Scheduling with PBS</strong></summary>
+
+## 🔎 Check Queue Status
+
+```bash
+qstat
+qstat -u $USER           # your jobs only
+qstat -f Job_ID          # detailed info
+pbsnodes -a              # check compute nodes
+```
+
+## 🚀 Submit Interactive Job
+
+```bash
+qsub -I -X -l select=1:ncpus=4:mem=4gb -l walltime=6:00:00
+```
+
+## 🧾 Submit Batch Job with Script
+
+```bash
+cat << EOF | qsub -r n
+#!/bin/bash
+#PBS -N my_job
+#PBS -l ncpus=4
+#PBS -l mem=2mb
+#PBS -q main
+#PBS -m n
+#PBS -l walltime=1:00:00
+
+cd ~
+ls -l >& output.txt
+EOF
+```
+
+- Use `qstat -u $USER` to check job status: `Q` = queued, `R` = running
+
+</details>
+
+<details>
+<summary><strong>📅 Job Scheduling with SLURM</strong></summary>
+
+## 📊 Check Job and Node Status
+
+```bash
+squeue                     # list current jobs
+squeue -u $USER            # your jobs
+sinfo                      # info about nodes
+```
+
+## 🚀 Submit a Job
+
+```bash
+sbatch job_script.sh
+```
+
+Example `job_script.sh`:
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=my_job
+#SBATCH --output=result.out
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=4G
+#SBATCH --time=01:00:00
+
+cd $HOME
+ls -l > result.txt
+```
+
+## 🧪 Interactive Job Session
+
+```bash
+srun --ntasks=1 --cpus-per-task=4 --mem=4G --time=01:00:00 --pty bash
+```
+
+## ❌ Cancel Job
+
+```bash
+scancel <job_id>
+```
+
+</details>
+```
+
+---
+
+Let me know if you'd like me to add a `Gaussian` section or translate any part into Polish too 😊
+
