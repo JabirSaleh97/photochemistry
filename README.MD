@@ -57,9 +57,9 @@ Legend:
 
 File permissions are displayed as:
 ```bash
--rwxr-xr--
-|---|---|--|
- U   G   O
+-rwx r-x r--
+|---|---|---|
+  U   G   O
 ```
 U = User, G = Group, O = Others
 
