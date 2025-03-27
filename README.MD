@@ -1,5 +1,5 @@
 <details>
-<summary><strong>📘 Getting Started with MobaXterm</strong></summary>
+<summary>##📘 Getting Started with MobaXterm</summary>
 
 ## 📥 Download and Install
 1. Go to the [MobaXterm official website](https://mobaxterm.mobatek.net/).
@@ -318,4 +318,9 @@ scancel <job_id>
 
 </details>
 
+
+</details>
+
+
+## 📘 [ORCA Tutorial: Geometry Optimization & Spectra of Uracil](./orca.md)
 
