@@ -118,46 +118,70 @@ chmod ugo=rx file # Read/execute access to all
 </details>
 
 <details>
-<summary><strong>📝 Using the <code>vim</code> Editor</strong></summary>
+<summary><strong>📝 Modern <code>vim</code> Basics</strong></summary>
 
-## 📘 Basic Commands
+## ✍️ Modes in `vim`
 
-- `Esc` – Switch to command mode
-- `i` – Insert mode (before cursor)
-- `a` – Append mode (after cursor)
-- `A` – Append at end of line
-- `o` – Open new line below
-- `O` – Open new line above
+- `Esc` – Command mode
+- `i` – Insert before cursor
+- `a` – Append after cursor
+- `o` / `O` – Open new line below / above
+- `v` – Visual selection mode (character-wise)
+- `V` – Visual line selection
+- `Ctrl + v` – Visual block selection (column mode)
 
-## 💾 Saving and Exiting
+## 🧭 Movement (you can also use arrow keys)
+
+- `↑ ↓ ← →` – Move cursor
+- `0` / `$` – Start / end of line
+- `gg` / `G` – Top / bottom of file
+- `:n` – Go to line `n`
+- `Ctrl + G` – Show file and line info
+
+## 🧾 Editing & Copy-Paste
+
+- `x` / `X` – Delete character under / before cursor
+- `dd` – Delete current line
+- `yy` – Copy line
+- `p` – Paste after cursor
+- `u` – Undo
+- `Ctrl + r` – Redo
+
+## 🟦 Block Editing
+
+- `Ctrl + v` – Start block selection
+- Use arrow keys to expand selection
+- `d`, `y`, `p`, etc. work with blocks
+
+Example:  
+- Select a vertical block with `Ctrl + v`, move with arrows, press `I` to insert text at the beginning of every selected line (then press `Esc` twice to apply).
+
+## 🔍 Search and Replace
+
+- `/pattern` – Search forward
+- `?pattern` – Search backward
+- `n` / `N` – Next / previous match
+- `:s/old/new/g` – Replace in current line
+- `:%s/old/new/g` – Replace in entire file
+
+## 🖫 Save and Exit
 
 - `:w` – Save
 - `:q` – Quit
 - `:wq` or `ZZ` – Save and quit
 - `:q!` – Quit without saving
 
-## ✂️ Editing Text
+## 🪟 Working with Splits
 
-- `x` – Delete character
-- `dd` – Delete current line
-- `yy` – Copy (yank) current line
-- `p` – Paste
+- `:split` or `:sp filename` – Horizontal split
+- `:vsplit` or `:vsp filename` – Vertical split
+- `Ctrl + w + w` – Switch between windows
+- `Ctrl + w + q` – Close current split
+- `Ctrl + w + =` – Make splits equal size
 
-## 🔍 Searching
-
-- `/text` – Search forward
-- `?text` – Search backward
-- `:s/old/new/g` – Replace in current line
-- `:10,$s/old/new/g` – Replace from line 10 to end
-
-## 📐 Navigation
-
-- `h` `j` `k` `l` – Left, down, up, right
-- `0` – Beginning of line
-- `$` – End of line
-- `G` – End of file
-- `:n` – Go to line n
-- `Ctrl+G` – Show file info
+> 💡 Tip: To open files in splits from the command line:  
+> `vim -O file1 file2` (vertical)  
+> `vim -o file1 file2` (horizontal)
 
 </details>
 
