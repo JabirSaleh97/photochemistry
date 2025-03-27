@@ -117,18 +117,6 @@ chmod ugo=rx file # Read/execute access to all
 
 </details>
 
-Perfect! Below are four GitHub Markdown collapsible sections for:
-
-1. **`vim` editor basics**  
-2. **Working with `SSH`**
-3. **Job scheduling with `PBS`**
-4. **And an added section for `SLURM`**, written to match the PBS one in style and detail.
-
----
-
-### ✅ Markdown for all four sections:
-
-```markdown
 <details>
 <summary><strong>📝 Using the <code>vim</code> Editor</strong></summary>
 
@@ -299,9 +287,5 @@ scancel <job_id>
 ```
 
 </details>
-```
 
----
-
-Let me know if you'd like me to add a `Gaussian` section or translate any part into Polish too 😊
 
