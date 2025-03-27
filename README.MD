@@ -322,5 +322,5 @@ scancel <job_id>
 </details>
 
 
-## 📘 [ORCA Tutorial: Geometry Optimization & Spectra of Uracil](./orca.md)
+# 📘 [ORCA Tutorial: Geometry Optimization & Spectra of Uracil](./orca.md)
 
