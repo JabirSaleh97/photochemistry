@@ -185,7 +185,7 @@ Example:
 
 ### 📝 Vim Cheat Sheet
 
-![Vim Cheat Sheet](./assets/vim-cheat-sheet.pdf)
+📄 [Download the Cheat Sheet PDF](./assets/mysheet.pdf)
 
 </details>
 
