@@ -1,12 +1,12 @@
 <details>
 <summary><strong>📘 Getting Started with MobaXterm</strong></summary>
 
-## 📥 Download and Install
+### 📥 Download and Install
 1. Go to the [MobaXterm official website](https://mobaxterm.mobatek.net/).
 2. Download the **Home Edition** (Installer or Portable version).
 3. Install or unzip the package and launch `MobaXterm`.
 
-## 🔌 Connect to a Remote Server (via SSH)
+### 🔌 Connect to a Remote Server (via SSH)
 1. Open MobaXterm.
 2. Click on **Session** (top left corner).
 3. Select **SSH**.
@@ -16,11 +16,11 @@
 5. (Optional) Check **Use private key** if you're using an SSH key.
 6. Click **OK** to connect.
 
-## 📁 Upload/Download Files
+### 📁 Upload/Download Files
 - Once connected via SSH, a file browser will appear on the left side.
 - You can drag and drop files between your local machine and the server.
 
-## 🛠 Tips
+### 🛠 Tips
 - Use the built-in terminal for Linux commands.
 - Save sessions for quick reconnects.
 - You can also use tools like `scp`, `rsync`, or Git directly in the terminal.
@@ -34,7 +34,7 @@
 <details>
 <summary><strong>🐧 Basic Linux / UNIX Commands</strong></summary>
 
-## 📄 File Permissions in UNIX
+### 📄 File Permissions in UNIX
 
 Each file in UNIX has:
 - a type (directory, file, or link),
@@ -63,7 +63,7 @@ File permissions are displayed as:
 ```
 U = User, G = Group, O = Others
 
-## 🔧 Essential Commands
+### 🔧 Essential Commands
 
 ```bash
 # Navigation
@@ -99,7 +99,7 @@ chmod a-w file    # Remove write permission for all
 chmod ugo=rx file # Read/execute access to all
 ```
 
-## 💡 Tips
+### 💡 Tips
 
 - Use `man <command>` or `<command> --help` to read about commands.
 - Use wildcards:
@@ -120,7 +120,7 @@ chmod ugo=rx file # Read/execute access to all
 <details>
 <summary><strong>📝 Modern <code>vim</code> Basics</strong></summary>
 
-## ✍️ Modes in `vim`
+### ✍️ Modes in `vim`
 
 - `Esc` – Command mode
 - `i` – Insert before cursor
@@ -130,7 +130,7 @@ chmod ugo=rx file # Read/execute access to all
 - `V` – Visual line selection
 - `Ctrl + v` – Visual block selection (column mode)
 
-## 🧭 Movement (you can also use arrow keys)
+### 🧭 Movement (you can also use arrow keys)
 
 - `↑ ↓ ← →` – Move cursor
 - `0` / `$` – Start / end of line
@@ -138,7 +138,7 @@ chmod ugo=rx file # Read/execute access to all
 - `:n` – Go to line `n`
 - `Ctrl + G` – Show file and line info
 
-## 🧾 Editing & Copy-Paste
+### 🧾 Editing & Copy-Paste
 
 - `x` / `X` – Delete character under / before cursor
 - `dd` – Delete current line
@@ -147,7 +147,7 @@ chmod ugo=rx file # Read/execute access to all
 - `u` – Undo
 - `Ctrl + r` – Redo
 
-## 🟦 Block Editing
+### 🟦 Block Editing
 
 - `Ctrl + v` – Start block selection
 - Use arrow keys to expand selection
@@ -156,7 +156,7 @@ chmod ugo=rx file # Read/execute access to all
 Example:  
 - Select a vertical block with `Ctrl + v`, move with arrows, press `I` to insert text at the beginning of every selected line (then press `Esc` twice to apply).
 
-## 🔍 Search and Replace
+### 🔍 Search and Replace
 
 - `/pattern` – Search forward
 - `?pattern` – Search backward
@@ -164,14 +164,14 @@ Example:
 - `:s/old/new/g` – Replace in current line
 - `:%s/old/new/g` – Replace in entire file
 
-## 🖫 Save and Exit
+### 🖫 Save and Exit
 
 - `:w` – Save
 - `:q` – Quit
 - `:wq` or `ZZ` – Save and quit
 - `:q!` – Quit without saving
 
-## 🪟 Working with Splits
+### 🪟 Working with Splits
 
 - `:split` or `:sp filename` – Horizontal split
 - `:vsplit` or `:vsp filename` – Vertical split
@@ -183,7 +183,7 @@ Example:
 > `vim -O file1 file2` (vertical)  
 > `vim -o file1 file2` (horizontal)
 
-### 📝 Vim Cheat Sheet
+#### 📝 Vim Cheat Sheet
 
 📄 [Download the Cheat Sheet PDF](./assets/mysheet.pdf)
 
@@ -192,7 +192,7 @@ Example:
 <details>
 <summary><strong>🔐 Remote Access with SSH</strong></summary>
 
-## 🔌 Connect to Remote Server
+### 🔌 Connect to Remote Server
 
 ```bash
 ssh -Y your_username@ui.wcss.pl
@@ -200,13 +200,13 @@ ssh -Y your_username@ui.wcss.pl
 
 - `-Y` allows GUI applications over SSH
 
-## ⚙️ Execute Remote Commands
+### ⚙️ Execute Remote Commands
 
 ```bash
 ssh ui.wcss.pl "qstat -u $USER"
 ```
 
-## 📂 File Transfers with SCP
+### 📂 File Transfers with SCP
 
 ```bash
 scp file.txt ui.wcss.pl:             # upload to home directory
@@ -214,7 +214,7 @@ scp -r folder/ ui.wcss.pl:target/    # upload directory
 scp ui.wcss.pl:file.txt ./           # download
 ```
 
-## 🔑 SSH Key Setup
+### 🔑 SSH Key Setup
 
 ```bash
 ssh-keygen -t rsa
@@ -234,7 +234,7 @@ cat ~/.ssh/id_rsa.pub | ssh your_username@ui.wcss.pl "cat >> ~/.ssh/authorized_k
 <details>
 <summary><strong>📋 Job Scheduling with PBS</strong></summary>
 
-## 🔎 Check Queue Status
+### 🔎 Check Queue Status
 
 ```bash
 qstat
@@ -243,13 +243,13 @@ qstat -f Job_ID          # detailed info
 pbsnodes -a              # check compute nodes
 ```
 
-## 🚀 Submit Interactive Job
+### 🚀 Submit Interactive Job
 
 ```bash
 qsub -I -X -l select=1:ncpus=4:mem=4gb -l walltime=6:00:00
 ```
 
-## 🧾 Submit Batch Job with Script
+### 🧾 Submit Batch Job with Script
 
 ```bash
 cat << EOF | qsub -r n
@@ -273,7 +273,7 @@ EOF
 <details>
 <summary><strong>📅 Job Scheduling with SLURM</strong></summary>
 
-## 📊 Check Job and Node Status
+### 📊 Check Job and Node Status
 
 ```bash
 squeue                     # list current jobs
@@ -281,7 +281,7 @@ squeue -u $USER            # your jobs
 sinfo                      # info about nodes
 ```
 
-## 🚀 Submit a Job
+### 🚀 Submit a Job
 
 ```bash
 sbatch job_script.sh
@@ -302,19 +302,19 @@ cd $HOME
 ls -l > result.txt
 ```
 
-## 🧪 Interactive Job Session
+### 🧪 Interactive Job Session
 
 ```bash
 srun --ntasks=1 --cpus-per-task=4 --mem=4G --time=01:00:00 --pty bash
 ```
 
-## ❌ Cancel Job
+### ❌ Cancel Job
 
 ```bash
 scancel <job_id>
 ```
 
-## 📊 WCSS has a comprehensive users' manual at [man.e-science.pl](https://man.e-science.pl/en/home)
+### 📊 WCSS has a comprehensive users' manual at [man.e-science.pl](https://man.e-science.pl/en/home)
 
 </details>
 
@@ -324,6 +324,6 @@ scancel <job_id>
 <details>
 <summary><strong>📘 ORCA Tutorials</strong></summary>
 
-## 📘 [Geometry Optimization & Spectra of Uracil](./ORCA.MD)
+### 📘 [Geometry Optimization & Spectra of Uracil](./ORCA.MD)
 
 </details>
