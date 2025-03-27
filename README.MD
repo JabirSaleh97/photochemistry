@@ -56,7 +56,7 @@ Legend:
 - `r` – read, `w` – write, `x` – execute
 
 File permissions are displayed as:
-```
+```bash
 -rwxr-xr--
 |---|---|--|
  U   G   O
