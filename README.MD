@@ -1,5 +1,5 @@
 <details>
-<summary><span style="font-size: 1.25em;"><strong>📘 Getting Started with MobaXterm</strong</span></summary>
+<summary><strong>📘 Getting Started with MobaXterm</strong></summary>
 
 ## 📥 Download and Install
 1. Go to the [MobaXterm official website](https://mobaxterm.mobatek.net/).
