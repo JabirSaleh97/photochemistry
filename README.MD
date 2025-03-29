@@ -322,8 +322,12 @@ scancel <job_id>
 </details>
 
 <details>
-<summary><strong>📘 ORCA Tutorials</strong></summary>
+<summary><strong>📘 Excited states of pyrimidine nucleobases</strong></summary>
 
-### 📘 [Geometry Optimization & Spectra of Uracil](./ORCA.MD)
+In this tutorial we try to locate geometries of ground and excited states minima of pyrimidine nucleobases as well as the relevant minimum energy crossing points (MECPs) between low-lying states. The starting geometries are available in the [article of Lan et al.](https://pubs.acs.org/doi/10.1021/jp809085h).
+
+We start with optimization of geometry at the KS-DFT and TD-DFT level in ORCA.
+
+### 📘 [Geometry Optimization & UV-vis Spectra of Uracil, Cytosine and Thymine](./ORCA.MD)
 
 </details>
