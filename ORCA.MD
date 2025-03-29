@@ -114,7 +114,7 @@ or even fancier:
 squeue --user $USER --Format jobid:10,name,state:10,timeleft:12,minmemory:10,stdout:100'
 ```
 
-After completion, the optimized geometry can be found in the output file `uracil_s0.out` (actually the sub-orca script is producing *.orc files but please change that to *.out).
+After completion, the optimized geometry can be found in the output file `uracil_s0.out` (actually the sub-orca script is producing *.orc files but please change that to *.out). Please note that if you use the same filename for XYZ file, that is uracil_s0.inp and uracil_s0.xyz, the latter will be overwritten with the final geometry.
 
 ## Step 2: Vertical Excitation Spectrum Calculation
 
