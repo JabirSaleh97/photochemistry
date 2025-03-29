@@ -316,6 +316,8 @@ scancel <job_id>
 
 ### 📊 To check the status of a running job one may use `squeue` command or `sstat` and for finished jobs `sacct`:
 
+squeue --user $USER
+squeue --user $USER --Format jobid:10,name,state:10,timeleft:12,minmemory:10,stdout:100'
 sstat <job_id>
 sstat --fields=JobID,MaxVMSize,MaxVMSizeNode,MaxVMSizeTask,AveCPU <job_id>
 sacct --jobs=<job_id> --format=jobid,jobname,qos,cputime,ncpu,avecpu,elapsed,avevmsize
