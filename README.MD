@@ -314,6 +314,12 @@ srun --ntasks=1 --cpus-per-task=4 --mem=4G --time=01:00:00 --pty bash
 scancel <job_id>
 ```
 
+### 📊 To check the status of a running job one may use `squeue` command or `sstat` and for finished jobs `sacct`:
+
+sstat <job_id>
+sstat --fields=JobID,MaxVMSize,MaxVMSizeNode,MaxVMSizeTask,AveCPU <job_id>
+sacct --jobs=<job_id> --format=jobid,jobname,qos,cputime,ncpu,avecpu,elapsed,avevmsize
+
 ### 📊 WCSS has a comprehensive users' manual at [man.e-science.pl](https://man.e-science.pl/en/home)
 
 </details>
