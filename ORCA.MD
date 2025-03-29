@@ -60,13 +60,13 @@ or submit orca job to the SLURM queuing system. We shall normally use the latter
     #Convergence tight
 end
 
-* xyzfile 0 1 uracil_s0.xyz 
+* xyzfile 0 1 uracil_s0_s.xyz 
 
 ```
 
-where `uracil_s0.xyz` is a regular XYZ file. 
+where `uracil_s0_s.xyz` is a regular XYZ file. 
 
-We may submit the job usng `sub-orca-6.0.1-avx2` command, which issued without parameters returns the syntax:
+We may submit the job using `sub-orca-6.0.1-avx2` command, which issued without parameters returns it's syntax:
 
 ```bash
 sub-orca-6.0.1-avx2
@@ -128,30 +128,40 @@ JobID           JobName        QOS    CPUTime      NCPUS     AveCPU    Elapsed  
 3469149.ext+     extern              02:18:24         16   00:00:00   00:08:39         8K
 ```
 
-which shows that this job used 2h 18min of cpu time and took 8m 39s. We definitely declared much more memory than it was necessary.
+which shows that this job used 2h 18min of cpu time and took 8m 39s.
 
 ## Step 2: Vertical Excitation Spectrum Calculation
 
-Using the optimized geometry, create a new input file named `uracil_spectrum.inp`:
+Using the optimized geometry, create a new input file named `uracil_s0_vee.inp`:
 
 ```plaintext
-! B3LYP def2-SVP TDDFT
+%pal nprocs 16 end
+%maxcore 2000
+! pbe0 d4 def2-SVP Opt RIJCOSX Def2/J defgrid3 TightSCF
 
-* xyzfile 0 1 uracil_opt.xyz
+%output
+    print[p_mos] 1
+    print[p_basis] 2
+end
+
+%tddft
+    TDA true # TDA approx
+    NRoots 8 # number of electronic states
+    IRoot 1 # state of interest for calculation of properties
+    FollowIRoot true # relevant for excited state geometries
+    DoNTO true # for Natural Transition Orbitals
+end
+
+* xyzfile 0 1 uracil_s0.xyz
 ```
-
-**Explanation**:
-
-- `! B3LYP def2-SVP TDDFT`: Specifies the use of the B3LYP functional with the def2-SVP basis set to perform a Time-Dependent Density Functional Theory (TDDFT) calculation for excited states.
-- `* xyzfile 0 1 uracil_opt.xyz`: Imports the optimized geometry from the `uracil_opt.xyz` file.
 
 Run the TDDFT calculation:
 
 ```bash
-orca uracil_spectrum.inp > uracil_spectrum.out
+sub-orca-6.0.1-avx2 uracil_s0_vee.inp -c 16 -m 32 -t 72
 ```
 
-The vertical excitation energies and oscillator strengths will be reported in the `uracil_spectrum.out` file.
+The vertical excitation energies and oscillator strengths will be reported in the `uracil_s0_vee.out` file.
 
 ## References
 
