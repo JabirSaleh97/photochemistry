@@ -116,19 +116,20 @@ squeue --user $USER --Format jobid:10,name,state:10,timeleft:12,minmemory:10,std
 
 After completion, the optimized geometry can be found in the output file `uracil_s0.out` (actually the sub-orca script is producing *.orc files but please change that to *.out). Please note that if you use the same filename for XYZ file, that is uracil_s0.inp and uracil_s0.xyz, the latter will be overwritten with the final geometry.
 
-We may use `sacct` command to see the detailed info on the resources used:
+We may use `sacct` command to see the detailed info on the resources used (3470106 is the uniqe job-id):
 
 ```bash
-sacct --format=jobid,jobname,qos,cputime,ncpu,avecpu,elapsed,avevmsize --jobs=3469149
+sacct --format=jobid,jobname,qos,cputime,ncpu,avecpu,elapsed,avevmsize --jobs=3470106
 
 JobID           JobName        QOS    CPUTime      NCPUS     AveCPU    Elapsed  AveVMSize
 ------------ ---------- ---------- ---------- ---------- ---------- ---------- ----------
-3469149       uracil_s0 hpc-rgora+   02:18:24         16              00:08:39
-3469149.bat+      batch              02:18:24         16   00:08:36   00:08:39    244120K
-3469149.ext+     extern              02:18:24         16   00:00:00   00:08:39         8K
+3470106       uracil_s0 hpc-rgora+   00:17:36         16              00:01:06
+3470106.bat+      batch              00:17:36         16   00:15:19   00:01:06    911984K
+3470106.ext+     extern              00:17:36         16   00:00:00   00:01:06        72K
+
 ```
 
-which shows that this job used 2h 18min of cpu time and took 8m 39s.
+which shows that this job used 17min of cpu time and took roughly 1m.
 
 ## Step 2: Vertical Excitation Spectrum Calculation
 
