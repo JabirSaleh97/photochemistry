@@ -171,15 +171,19 @@ TD-DFT/TDA EXCITED STATES (SINGLETS)
 
 the weight of the individual excitations are printed if larger than 1.0e-02
 
-STATE  1:  E=   0.130969 au      3.564 eV    28744.3 cm**-1 <S**2> =   0.000000 Mult 1
-    28a ->  29a  :     0.964396 (c= -0.98203646)
-    28a ->  30a  :     0.021264 (c= -0.14582068)
+STATE  1:  E=   0.178366 au      4.854 eV    39146.9 cm**-1 <S**2> =   0.000000 Mult 1
+    25a ->  29a  :     0.021596 (c=  0.14695663)
+    27a ->  29a  :     0.921544 (c=  0.95997092)
+    27a ->  30a  :     0.038202 (c=  0.19545282)
+    27a ->  34a  :     0.010999 (c=  0.10487478)
 
-STATE  2:  E=   0.188875 au      5.140 eV    41453.3 cm**-1 <S**2> =   0.000000 Mult 1
-    24a ->  29a  :     0.014292 (c=  0.11954715)
-    26a ->  30a  :     0.041405 (c= -0.20348253)
-    27a ->  29a  :     0.817965 (c=  0.90441416)
-    27a ->  30a  :     0.079538 (c= -0.28202543)
+STATE  2:  E=   0.209709 au      5.706 eV    46025.8 cm**-1 <S**2> =   0.000000 Mult 1
+    24a ->  29a  :     0.012566 (c= -0.11209819)
+    24a ->  30a  :     0.014197 (c=  0.11915057)
+    26a ->  29a  :     0.072479 (c=  0.26921873)
+    26a ->  30a  :     0.066171 (c=  0.25723737)
+    28a ->  29a  :     0.799539 (c=  0.89416965)
+    28a ->  34a  :     0.011285 (c=  0.10623135)
 
 [...]
 
@@ -189,8 +193,9 @@ STATE  2:  E=   0.188875 au      5.140 eV    41453.3 cm**-1 <S**2> =   0.000000 
      Transition      Energy     Energy  Wavelength fosc(D2)      D2        DX        DY        DZ
                       (eV)      (cm-1)    (nm)                 (au**2)    (au)      (au)      (au)
 ---------------------------------------------------------------------------------------------------
-  0-1A  ->  1-1A    3.563837   28744.3   347.9   0.000093288   0.00107   0.01165  -0.01143   0.0283
-  0-1A  ->  2-1A    5.139554   41453.3   241.2   0.199430084   1.58382  -0.23374  -1.17710  -0.3789
+  0-1A  ->  1-1A    4.853593   39146.9   255.4   0.000239959   0.00202   0.01607  -0.01595   0.0388
+  0-1A  ->  2-1A    5.706475   46025.8   217.3   0.159270387   1.13922   0.19741   0.99831   0.3219
+
 ```
 
 The results are most conveniently visualized using This can be done easily by using [ChimeraX](https://www.faccts.de/docs/orca/6.0/tutorials/first_steps/GUI.html) using the SEQCROW plugin. Open the output file in ChimeraX, then go navigate to `Tools` → `Quantum Chemistry` → `UV/Vis Spectrum`. In the UV/Vis Spectrum window, you can now chose energy for weighting: electronic from the respective drop down menu and the respective plot is visualized under plot. The relevant orbitals can be plotted using the `Orbital Viewer` panel (please note that ORCA is counting from 0 and most visualization programs from 1, thus 28th orbital in ORCA output is actually 29th in ChimeraX.
