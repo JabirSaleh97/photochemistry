@@ -208,6 +208,7 @@ for f in *.orc ; do mv $f ${f/orc/out}; done
 ```
 
 | ![Alt Text 1](assets/uracil/27.png)   | ![Alt Text 2](assets/uracil/28.png)   | ![Alt Text 3](assets/uracil/29.png)   |
+|---|---|---|
 | Orbital 27 (n)           | Orbital 28 (π)           | Orbital 29 (π*)           |
 
 
