@@ -207,6 +207,10 @@ scp rgora@ui.wcss.pl:~/photochemistry/uracil/uracil_s0*.{xyz,orc,inp} .
 for f in *.orc ; do mv $f ${f/orc/out}; done
 ```
 
+| ![Alt Text 1](assets/uracil/27.png)   | ![Alt Text 2](assets/uracil/28.png)   | ![Alt Text 3](assets/uracil/29.png)   |
+| Orbital 27 (n)           | Orbital 28 (π)           | Orbital 29 (π*)           |
+
+
 ## References
 
 For more detailed information, refer to the [ORCA 6.0 Tutorials](https://www.faccts.de/docs/orca/6.0/tutorials/).
