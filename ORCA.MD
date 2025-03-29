@@ -162,7 +162,38 @@ Run the TDDFT calculation:
 sub-orca-6.0.1-avx2 uracil_s0_vee.inp -c 16 -m 32 -t 72
 ```
 
-The vertical excitation energies and oscillator strengths will be reported in the `uracil_s0_vee.out` file.
+The vertical excitation energies and oscillator strengths will be reported in the `uracil_s0_vee.out` file. Let us focus on the first two low lying states (S1 and S2).
+
+```plaintext
+------------------------------------
+TD-DFT/TDA EXCITED STATES (SINGLETS)
+------------------------------------
+
+the weight of the individual excitations are printed if larger than 1.0e-02
+
+STATE  1:  E=   0.130969 au      3.564 eV    28744.3 cm**-1 <S**2> =   0.000000 Mult 1
+    28a ->  29a  :     0.964396 (c= -0.98203646)
+    28a ->  30a  :     0.021264 (c= -0.14582068)
+
+STATE  2:  E=   0.188875 au      5.140 eV    41453.3 cm**-1 <S**2> =   0.000000 Mult 1
+    24a ->  29a  :     0.014292 (c=  0.11954715)
+    26a ->  30a  :     0.041405 (c= -0.20348253)
+    27a ->  29a  :     0.817965 (c=  0.90441416)
+    27a ->  30a  :     0.079538 (c= -0.28202543)
+
+[...]
+
+---------------------------------------------------------------------------------------------------
+                     ABSORPTION SPECTRUM VIA TRANSITION ELECTRIC DIPOLE MOMENTS
+---------------------------------------------------------------------------------------------------
+     Transition      Energy     Energy  Wavelength fosc(D2)      D2        DX        DY        DZ
+                      (eV)      (cm-1)    (nm)                 (au**2)    (au)      (au)      (au)
+---------------------------------------------------------------------------------------------------
+  0-1A  ->  1-1A    3.563837   28744.3   347.9   0.000093288   0.00107   0.01165  -0.01143   0.0283
+  0-1A  ->  2-1A    5.139554   41453.3   241.2   0.199430084   1.58382  -0.23374  -1.17710  -0.3789
+```
+
+The results are most conveniently visualized using This can be done easily by using ChimeraX using the SEQCROW plugin. Open the output file in ChimeraX, then go navigate to Tools → Quantum Chemistry → UV/Vis Spectrum. In the UV/Vis Spectrum window, you can now chose energy for weighting: electronic from the respective drop down menu and the respective plot is visualized under plot.
 
 ## References
 
