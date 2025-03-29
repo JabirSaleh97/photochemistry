@@ -109,7 +109,7 @@ We may monitor our job using `squeue` command:
 ```bash
 squeue --user $USER
 ```
-or even fancier;
+or even fancier:
 ```bash
 squeue --user $USER --Format jobid:10,name,state:10,timeleft:12,minmemory:10,stdout:100'
 ```
