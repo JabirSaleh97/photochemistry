@@ -324,7 +324,9 @@ scancel <job_id>
 <details>
 <summary><strong>📘 Excited states of pyrimidine nucleobases</strong></summary>
 
-In this tutorial we try to locate geometries of ground and excited states minima of pyrimidine nucleobases as well as the relevant minimum energy crossing points (MECPs) between low-lying states. The starting geometries are available in the [article of Lan et al.](https://pubs.acs.org/doi/10.1021/jp809085h).
+### 📘 Excited states of pyrimidine nucleobases
+
+In this tutorial we try to locate geometries of ground and excited states minima of pyrimidine nucleobases as well as the relevant minimum energy crossing points (MECPs) between low-lying states. The starting geometries are available in the [article of Lan et al.](https://pubs.acs.org/doi/10.1021/jp809085h). In the supplementary information the relevant geometries of U, T and C are reported.
 
 We start with optimization of geometry at the KS-DFT and TD-DFT level in ORCA.
 
