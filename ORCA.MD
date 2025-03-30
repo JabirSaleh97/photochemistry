@@ -447,6 +447,38 @@ G-E(el)                           ...      0.05825248 Eh     36.55 kcal/mol
 >[!NOTE]
 > Please note that the electronic energy of -414.08127160 Eh **does include** the empirical D4 correction of -0.009750613 which is not included in vertical excitation spectra (it's simply the same for all the states as it depends only on the geometry).
 
+The working directory should contain a Hessian file `uracil_s0_freq.hess` which is a plain text file. Having only ground state Hessian we may simmulate the band structure using the [Vertical Gradient (VG)](https://www.faccts.de/docs/orca/6.0/manual/contents/typical/esd.html#the-simplest-model-vertical-gradient-vg) or Adiabatic Hessian After a Step (AHAS).
+
+```plaintext
+%pal nprocs 16 end
+%maxcore 2000
+! pbe0 d4 def2-SVP RIJCOSX Def2/J defgrid3 TightSCF ESD(ABS)
+
+%tddft
+    TDA true # TDA approx
+    NRoots 3 # number of electronic states
+end
+
+%ESD
+  GSHESSIAN  "uracil_s0_freq.hess"
+  DOHT       TRUE
+  STATES     1,2
+  UNIT       NM
+  HESSFLAG   VG
+  LINEW      50
+  INLINEW    150
+  LINES      GAUSS
+  SPECRANGE  10000,50000
+  UNIT       NM
+  PRINTLEVEL HIGH
+  USEJ       FALSE
+  COORDSYS   INT
+END
+
+* xyzfile 0 1 uracil_s0.xyz
+```
+
+
 ## References
 
 For more detailed information, refer to the [ORCA 6.0 Tutorials](https://www.faccts.de/docs/orca/6.0/tutorials/).
