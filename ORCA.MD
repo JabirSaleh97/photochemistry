@@ -242,7 +242,7 @@ scp rgora@ui.wcss.pl:~/photochemistry/uracil/uracil_s0_vee*.{nto,cube} .
 In this particular case the NTOs are virtually identical to the respective canonical MOs. Below are the NTOs for the S1 state.
 
 | ![Alt Text 1](assets/uracil/nto28.png)   | ![Alt Text 2](assets/uracil/nto29.png)   |
-|---|---|---|
+|---|---|
 | NTO 28 (n)           | NTO  29 (π*)           |
 
 ## References
