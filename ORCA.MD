@@ -445,7 +445,7 @@ G-E(el)                           ...      0.05825248 Eh     36.55 kcal/mol
 ```
 
 >[!NOTE]
-> Please note that the electronic energy of -414.08127160 Eh **does include** the D4 correction of -0.009750613.
+> Please note that the electronic energy of -414.08127160 Eh **does include** the empirical D4 correction of -0.009750613 which is not included in vertical excitation spectra (it's simply the same for all the states as it depends only on the geometry).
 
 ## References
 
