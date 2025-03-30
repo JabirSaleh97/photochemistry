@@ -9,7 +9,7 @@ This tutorial outlines the steps to optimize the geometry of U, T and C nucleoba
 
 ## Step 1: Geometry Optimization
 
-Create an input file named `uracil_s0.inp` with the following content. Again The starting geometries are available in the article of Lan et al. In the supplementary information the relevant geometries of U, T and C are reported.
+Create an input file named `uracil_s0.inp` with the following content. Again The starting geometries are available in the article of [article of Lan et al.](https://pubs.acs.org/doi/10.1021/jp809085h) In the supplementary information the relevant geometries of U, T and C are reported.
 
 ```plaintext
 ! pbe0 d4 def2-SVP Opt RIJCOSX Def2/J defgrid3 TightSCF
