@@ -268,6 +268,9 @@ vim uracil_s0_freq.inp
 * xyzfile 0 1 uracil_s0.xyz
 ```
 
+```bash
+sub-orca-6.0.1-avx2 uracil_s0_freq.inp -c 16 -m 32 -t 72
+```
 
 ## References
 
