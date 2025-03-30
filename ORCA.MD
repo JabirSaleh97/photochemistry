@@ -35,9 +35,9 @@ H  -2.0011471316  -1.1451087139   0.8039473321
 *
 ```
 
-[!NOTE]
-- `! pbe0 d4 def2-SVP Opt`: Specifies the use of the PBE0 hybrid functional with the def2-SVP basis set and D4 empirical dispersion for geometry optimization.
-- The `* xyz 0 1` block defines the molecular geometry in Cartesian coordinates with a charge of 0 and a multiplicity of 1.
+>[!NOTE]
+>- `! pbe0 d4 def2-SVP Opt`: Specifies the use of the PBE0 hybrid functional with the def2-SVP basis set and D4 empirical dispersion for >geometry optimization.
+>- The `* xyz 0 1` block defines the molecular geometry in Cartesian coordinates with a charge of 0 and a multiplicity of 1.
 
 Run the optimization. We could either start an interactive session, load appropriate module and run interactive job:
 
