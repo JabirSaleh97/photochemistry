@@ -447,14 +447,13 @@ G-E(el)                           ...      0.05825248 Eh     36.55 kcal/mol
 >[!NOTE]
 > Please note that the electronic energy of -414.08127160 Eh **does include** the empirical D4 correction of -0.009750613 which is not included in vertical excitation spectra (it's simply the same for all the states as it depends only on the geometry).
 
-<img align="left" src="assets/HT.gif" width="300px" padding="20px">&nbsp;&nbsp;
+&nbsp;<img align="right" src="assets/HT.gif" width="200px" padding="20px">&nbsp;
 
 The working directory should contain a Hessian file `uracil_s0_freq.hess` which is a plain text file. Having only ground state Hessian we may simmulate the band structure using the [Vertical Gradient (VG)](https://www.faccts.de/docs/orca/6.0/manual/contents/typical/esd.html#the-simplest-model-vertical-gradient-vg) or Adiabatic Hessian After a Step (AHAS) approaches (the latter being more accurate). Below is an example of input file. VG method requires excited state gradients at the GS geomeetry to estimate the displaced geometry. In this case we are also performing calculations for two lowest-lying states including Herzberg-Teller vibronic couplings which require calculation of derivatives of transition dipole moments. Thus such computations may be time consuming.
 
-A schematic on the left is taken form [Kundu et al.](https://pubs.acs.org/doi/10.1021/acs.jpcb.2c00846) showing the two potential energy surfaces along a vibrational coordinate q and the initially equilibrated densities for absorption and emission spectra. They assumed linear dipole moment function.
+A schematic on the right is taken form [Kundu et al.](https://pubs.acs.org/doi/10.1021/acs.jpcb.2c00846) showing the two potential energy surfaces along a vibrational coordinate q and the initially equilibrated densities for absorption and emission spectra. They assumed linear dipole moment function.
 
-<br clear="left"/>
-
+<br clear="right"/>&nbsp;
 
 ```plaintext
 %pal nprocs 16 end
