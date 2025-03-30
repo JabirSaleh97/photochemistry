@@ -247,6 +247,24 @@ In this particular case the NTOs are virtually identical to the respective canon
 |---|---|
 | NTO 28 (n)           | NTO  29 (π*)           |
 
+## Step 3: Calculations of harmonic vibrational frequencies and simmulation of band structure.
+
+Let us prepare the input file for calculations of harmonic vibrational frequencies. These only make sense at a stationary point, thus we have to use the minimum energy structure located using the same methodology. Let's prepare `uracil_s0_freq.inp` based on a copy of input for geometry optimization:
+
+```bash
+cp uracil_s0.inp uracil_s0_freq.inp
+vim uracil_s0_freq.inp
+```
+
+```plaintext
+%pal nprocs 16 end
+%maxcore 2000
+! pbe0 d4 def2-SVP freq RIJCOSX Def2/J defgrid3 TightSCF
+
+* xyzfile 0 1 uracil_s0.xyz
+```
+
+
 ## References
 
 For more detailed information, refer to the [ORCA 6.0 Tutorials](https://www.faccts.de/docs/orca/6.0/tutorials/).
