@@ -197,7 +197,7 @@ STATE  2:  E=   0.209709 au      5.706 eV    46025.8 cm**-1 <S**2> =   0.000000 
 
 ```
 
-The calculated vertical excitations are in reasonable agreement considering the methodology with the experimetal maximum of absorption band, which in vapour is at 5.1 eV. [cf. Barbatti et al.](https://pubs.rsc.org/en/content/articlelanding/2010/cp/b924956g). Please note that the vertical excitation corresponds roughly to the 0-0 transition which is not necessarily the most intense one. We shall investigate that later. 
+The calculated vertical excitations are in reasonable agreement considering the methodology with the experimetal maximum of absorption band, which in vapour is at 5.1 eV (244 nm). [cf. Barbatti et al.](https://pubs.rsc.org/en/content/articlelanding/2010/cp/b924956g). Please note that the vertical excitation corresponds roughly to the 0-0 transition which is not necessarily the most intense one. We shall investigate that later. 
 
 The results are most conveniently visualized using This can be done easily by using [ChimeraX](https://www.faccts.de/docs/orca/6.0/tutorials/first_steps/GUI.html) using the SEQCROW plugin. Open the output file in ChimeraX, then go navigate to `Tools` → `Quantum Chemistry` → `UV/Vis Spectrum`. In the UV/Vis Spectrum window, you can now chose energy for weighting: electronic from the respective drop down menu and the respective plot is visualized under plot. The relevant orbitals can be plotted using the `Orbital Viewer` panel (please note that ORCA is counting from 0 and most visualization programs from 1, thus 28th orbital in ORCA output is actually 29th in ChimeraX.
 
@@ -484,7 +484,14 @@ END
 * xyzfile 0 1 uracil_s0.xyz
 ```
 
-After successfull completion the directory should contain `uracil_s0_vg.spectrum` and `uracil_s0_vg.spectrum.root?` files for a total spectrum and particular states, respectively.
+After successfull completion the directory should contain `uracil_s0_vg.spectrum` and `uracil_s0_vg.spectrum.root?` files for a total spectrum and particular states, respectively. We may plot this using GNUPlot (or any other plotting program).
+
+```gnuplot
+gnuplot
+plot [200:250] 'uracil_s0_vg.spectrum' u 1:2 w l t 'uracil VG'
+plot [5:6.2] 'uracil_s0_vg.spectrum' u (1239.8/$1):2 w l lw 5 t 'uracil VG'
+```
+
 
 ## References
 
