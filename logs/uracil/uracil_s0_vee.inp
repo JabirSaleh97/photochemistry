@@ -1,0 +1,19 @@
+%pal nprocs 16 end
+%maxcore 2000
+! pbe0 d4 def2-SVP RIJCOSX Def2/J defgrid3 TightSCF
+
+%output
+    print[p_mos] 1
+    print[p_basis] 2
+end
+
+%tddft 
+    TDA true # TDA approx
+    NRoots 8 # number of electronic states
+    IRoot 1 # state of interest for calculation of properties 
+    FollowIRoot true # relevant for excited state geometries
+    DoNTO true # for Natural Transition Orbitals
+end
+
+* xyzfile 0 1 uracil_s0.xyz 
+

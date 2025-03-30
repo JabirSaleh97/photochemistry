@@ -1,0 +1,11 @@
+%pal nprocs 16 end
+%maxcore 2000
+! pbe0 d4 def2-SVP Opt RIJCOSX Def2/J defgrid3 TightSCF
+
+%geom
+    MaxIter 200
+    #Convergence tight
+end
+
+* xyzfile 0 1 uracil_s0_s.xyz
+
