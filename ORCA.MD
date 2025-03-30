@@ -442,9 +442,11 @@ Final Gibbs free energy         ...   -414.02301912 Eh
 
 For completeness - the Gibbs free energy minus the electronic energy
 G-E(el)                           ...      0.05825248 Eh     36.55 kcal/mol
-
-
 ```
+
+>[!NOTE]
+> Please note that the electronic energy of -414.08127160 Eh **does include** the D4 correction of -0.009750613.
+
 ## References
 
 For more detailed information, refer to the [ORCA 6.0 Tutorials](https://www.faccts.de/docs/orca/6.0/tutorials/).
