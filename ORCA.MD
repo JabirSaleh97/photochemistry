@@ -207,11 +207,37 @@ scp rgora@ui.wcss.pl:~/photochemistry/uracil/uracil_s0*.{xyz,orc,inp} .
 for f in *.orc ; do mv $f ${f/orc/out}; done
 ```
 
-The S<sub>1</sub> is clearly a <sup>1</sup>nπ<sup>\*</sup> transition (27->29) while S<sub>2</sub> has a <sup>1</sup>ππ<sup>*</sup> character.
+The S<sub>1</sub> is clearly a <sup>1</sup>nπ<sup>\*</sup> transition (27->29) while S<sub>2</sub> has a <sup>1</sup>ππ<sup>\*</sup> character.
 
 | ![Alt Text 1](assets/uracil/27.png)   | ![Alt Text 2](assets/uracil/28.png)   | ![Alt Text 3](assets/uracil/29.png)   |
 |---|---|---|
 | Orbital 27 (n)           | Orbital 28 (π)           | Orbital 29 (π*)           |
+
+In this case it is rather obvious but sometimes we may encounter a transition with two 9or more) different and equally important amplitudes. In such a case NTOs are usually much more informative. Since we enabled calculation of NTOs via `DoNTO true` keyword, ORCA produced uracil_s0_vee.s?.nto files. Let us generate the cube files for S1 and S2:
+
+```bash
+sub-interactive
+module load ORCA/6.0.1_avx2
+orca_plot uracil_s0_vee.s1.nto -i 
+```
+
+The relevant NTOs for state S1 are 28 (hole) and 29 (particle):
+
+```plaintext
+------------------------------------------
+NATURAL TRANSITION ORBITALS FOR STATE    1
+------------------------------------------
+[...]
+ E=   0.178366 au      4.854 eV    39146.9 cm**-1
+    28a ->  29a  : n=  0.99676652
+    27a ->  30a  : n=  0.00247915
+```
+
+Thus in the interactive mode we select orbital (option 2) and type the orbital no (28), then we select cube output (option 5 and then 7), save the cube file (option 11). Then we repeat the same procedure for orbital 29 and exit (option 12). 
+
+```bash
+scp rgora@ui.wcss.pl:~/photochemistry/uracil/uracil_s0_vee*.{nto,cube} .
+```
 
 
 ## References
