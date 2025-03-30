@@ -198,6 +198,8 @@ STATE  2:  E=   0.209709 au      5.706 eV    46025.8 cm**-1 <S**2> =   0.000000 
 
 ```
 
+The calculated vertical excitations are in reasonable agreement considering the methodology with the experimetal maximum of absorption band, which in vapour is at 5.1 eV. [cf. Barbatti et al.](https://pubs.rsc.org/en/content/articlelanding/2010/cp/b924956g). Please note that the vertical excitation corresponds roughly to the 0-0 transition which is not necessarily the most intense one. We shall investigate that later. 
+
 The results are most conveniently visualized using This can be done easily by using [ChimeraX](https://www.faccts.de/docs/orca/6.0/tutorials/first_steps/GUI.html) using the SEQCROW plugin. Open the output file in ChimeraX, then go navigate to `Tools` → `Quantum Chemistry` → `UV/Vis Spectrum`. In the UV/Vis Spectrum window, you can now chose energy for weighting: electronic from the respective drop down menu and the respective plot is visualized under plot. The relevant orbitals can be plotted using the `Orbital Viewer` panel (please note that ORCA is counting from 0 and most visualization programs from 1, thus 28th orbital in ORCA output is actually 29th in ChimeraX.
 
 To copy the files to our local terminal we may use `scp` command (or use MobaXterm sftp functionality). I'll copy all *xyz, *inp and *orc files starting with uracil_s0 to my current directory (.) and rename all *.orc files to *.out:
