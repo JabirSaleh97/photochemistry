@@ -449,10 +449,10 @@ G-E(el)                           ...      0.05825248 Eh     36.55 kcal/mol
 
 The working directory should contain a Hessian file `uracil_s0_freq.hess` which is a plain text file. Having only ground state Hessian we may simmulate the band structure using the [Vertical Gradient (VG)](https://www.faccts.de/docs/orca/6.0/manual/contents/typical/esd.html#the-simplest-model-vertical-gradient-vg) or Adiabatic Hessian After a Step (AHAS) approaches (the latter being more accurate). Below is an example of input file. VG method requires excited state gradients at the GS geomeetry to estimate the displaced geometry. In this case we are also performing calculations for two lowest-lying states including Herzberg-Teller vibronic couplings which require calculation of derivatives of transition dipole moments. Thus such computations may be time consuming.
 
-<img align="right" src="assets/HT.gif" width="200px"> 
+<img align="left" src="assets/HT.gif" width="300px"> 
 A schematic taken form [Kundu et al.](https://pubs.acs.org/doi/10.1021/acs.jpcb.2c00846) showing the two potential energy surfaces along a vibrational coordinate q and the initially equilibrated densities for absorption and emission spectra.
 
-<br clear="right"/>
+<br clear="left"/>
 
 
 ```plaintext
