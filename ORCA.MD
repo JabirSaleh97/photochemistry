@@ -451,7 +451,8 @@ The working directory should contain a Hessian file `uracil_s0_freq.hess` which 
 
 <img align="right" src="assets/HT.gif" width="200px"> 
 A schematic taken form [Kundu et al.](https://pubs.acs.org/doi/10.1021/acs.jpcb.2c00846) showing the two potential energy surfaces along a vibrational coordinate q and the initially equilibrated densities for absorption and emission spectra.
-<br clear="left"/>
+
+<br clear="right"/>
 
 
 ```plaintext
