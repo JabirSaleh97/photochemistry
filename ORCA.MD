@@ -486,12 +486,13 @@ END
 
 After successfull completion the directory should contain `uracil_s0_vg.spectrum` and `uracil_s0_vg.spectrum.root?` files for a total spectrum and particular states, respectively. We may plot this using GNUPlot (or any other plotting program).
 
+<img align="right" src="logs/uracil/vg.png" width="200px">
+
 ```gnuplot
-gnuplot
 plot [200:250] 'uracil_s0_vg.spectrum' u 1:2 w l t 'uracil VG'
 plot [5:6.2] 'uracil_s0_vg.spectrum' u (1239.8/$1):2 w l lw 5 t 'uracil VG'
 ```
-
+<br clear="right"/>&nbsp;
 
 ## References
 
