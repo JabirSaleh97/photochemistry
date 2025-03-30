@@ -233,7 +233,7 @@ NATURAL TRANSITION ORBITALS FOR STATE    1
     27a ->  30a  : n=  0.00247915
 ```
 
-Thus in the interactive mode we select orbital (option 2) and type the orbital no (28), then we select cube output (option 5 and then 7), save the cube file (option 11). Then we repeat the same procedure for orbital 29 and exit (option 12). 
+Thus in the interactive mode we select orbital (option 2) and type the orbital no (28), then we select cube output (option 5 and then 7), save the cube file (option 11). Then we repeat the same procedure for orbital 29 and exit (option 12). Now we generate cube files for NTOs 28 and 29 for S2 state and copy the relevant files to our local terminal.
 
 ```bash
 scp rgora@ui.wcss.pl:~/photochemistry/uracil/uracil_s0_vee*.{nto,cube} .
