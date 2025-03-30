@@ -207,6 +207,8 @@ scp rgora@ui.wcss.pl:~/photochemistry/uracil/uracil_s0*.{xyz,orc,inp} .
 for f in *.orc ; do mv $f ${f/orc/out}; done
 ```
 
+The S<sub>1</sub> is clearly a <sup>1</sup>nπ<sup>*</sup> transition (27->29) while S<sub>2</sub> has a <sup>1</sup>ππ<sup>*</sup> character.
+
 | ![Alt Text 1](assets/uracil/27.png)   | ![Alt Text 2](assets/uracil/28.png)   | ![Alt Text 3](assets/uracil/29.png)   |
 |---|---|---|
 | Orbital 27 (n)           | Orbital 28 (π)           | Orbital 29 (π*)           |
