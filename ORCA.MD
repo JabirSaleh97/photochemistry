@@ -272,6 +272,179 @@ vim uracil_s0_freq.inp
 sub-orca-6.0.1-avx2 uracil_s0_freq.inp -c 16 -m 32 -t 72
 ```
 
+The normal modes can be visualized using ChimeraX. The output should contain harmonic vibrational frequencies, normal modes vectors, IR spectrum and thermochemical analysis at ambient conditions.
+
+```plaintext
+-----------------------
+VIBRATIONAL FREQUENCIES
+-----------------------
+
+Scaling factor for frequencies =  1.000000000  (already applied!)
+
+     0:       0.00 cm**-1
+     1:       0.00 cm**-1
+     2:       0.00 cm**-1
+     3:       0.00 cm**-1
+     4:       0.00 cm**-1
+     5:       0.00 cm**-1
+     6:     156.13 cm**-1
+     7:     173.60 cm**-1
+...
+    34:    3638.48 cm**-1
+    35:    3677.34 cm**-1
+```
+
+```plaintext
+------------
+NORMAL MODES
+------------
+
+These modes are the Cartesian displacements weighted by the diagonal matrix
+M(i,i)=1/sqrt(m[i]) where m[i] is the mass of the displaced atom
+Thus, these vectors are normalized but *not* orthogonal
+```
+
+```plaintext
+-----------
+IR SPECTRUM
+-----------
+
+ Mode   freq       eps      Int      T**2         TX        TY        TZ
+       cm**-1   L/(mol*cm) km/mol    a.u.
+----------------------------------------------------------------------------
+  6:    156.13   0.000312    1.57  0.000623  (-0.008951  0.008751 -0.021587)
+  7:    173.60   0.000003    0.02  0.000006  ( 0.000896 -0.000843  0.002058)
+  8:    396.53   0.004395   22.21  0.003459  (-0.052526 -0.023362  0.012407)
+  9:    405.92   0.004174   21.09  0.003209  ( 0.020319 -0.019852  0.049011)
+ 10:    525.43   0.003520   17.79  0.002091  (-0.003204  0.041795  0.018268)
+ 11:    553.45   0.001234    6.23  0.000696  ( 0.022267 -0.007294 -0.012109)
+ 12:    571.37   0.000537    2.71  0.000293  ( 0.015928  0.003722 -0.005071)
+ 13:    597.72   0.009715   49.09  0.005072  ( 0.025499 -0.024917  0.061652)
+ 14:    706.08   0.011695   59.10  0.005169  ( 0.025765 -0.025194  0.062211)
+ 15:    738.94   0.002161   10.92  0.000913  (-0.010792  0.010585 -0.026156)
+ 16:    789.90   0.000373    1.89  0.000147  ( 0.002436  0.011369  0.003498)
+ 17:    797.33   0.009108   46.03  0.003565  (-0.021398  0.020914 -0.051669)
+ 18:    829.55   0.016506   83.41  0.006209  ( 0.028206 -0.027547  0.068227)
+ 19:    982.78   0.000040    0.20  0.000013  (-0.001218  0.001291 -0.003088)
+ 20:    986.96   0.000757    3.83  0.000239  (-0.005607  0.012421  0.007334)
+ 21:   1000.68   0.001248    6.31  0.000389  (-0.018071 -0.006132  0.004997)
+ 22:   1097.93   0.001453    7.34  0.000413  ( 0.014525  0.014215 -0.000252)
+ 23:   1211.69   0.014907   75.34  0.003839  (-0.002198  0.057089  0.023986)
+ 24:   1248.64   0.001697    8.57  0.000424  (-0.009336  0.015348  0.010066)
+ 25:   1390.97   0.000678    3.43  0.000152  ( 0.011192  0.004298 -0.002886)
+ 26:   1417.77   0.003893   19.67  0.000857  (-0.026127  0.004202  0.012515)
+ 27:   1441.29   0.019523   98.66  0.004227  ( 0.060278  0.015806 -0.018538)
+ 28:   1534.59   0.030793  155.62  0.006262  (-0.061430  0.031938  0.038318)
+ 29:   1719.41   0.016152   81.63  0.002931  ( 0.017369  0.049636  0.012885)
+ 30:   1865.38   0.131535  664.73  0.022005  (-0.026106 -0.138810 -0.045333)
+ 31:   1900.50   0.113736  574.78  0.018676  ( 0.089410 -0.077522 -0.068351)
+ 32:   3235.60   0.000358    1.81  0.000035  ( 0.004715 -0.002109 -0.002803)
+ 33:   3280.54   0.000662    3.34  0.000063  ( 0.003843 -0.005738 -0.003908)
+ 34:   3638.48   0.016757   84.68  0.001437  (-0.034601 -0.012381  0.009311)
+ 35:   3677.34   0.025847  130.62  0.002193  ( 0.015792  0.042759  0.010757)
+
+* The epsilon (eps) is given for a Dirac delta lineshape.
+** The dipole moment derivative (T) already includes vibrational overlap.
+
+The first frequency considered to be a vibration is 6
+The total number of vibrations considered is 30
+```
+
+```plaintext
+--------------------------
+THERMOCHEMISTRY AT 298.15K
+--------------------------
+
+Temperature         ...   298.15 K
+Pressure            ...     1.00 atm
+Total Mass          ...   112.09 AMU
+Quasi RRHO          ...     True
+Cut-Off Frequency   ...     1.00 cm^-1
+
+Throughout the following assumptions are being made:
+  (1) The electronic state is orbitally nondegenerate
+  (2) There are no thermally accessible electronically excited states
+  (3) Hindered rotations indicated by low frequency modes are not
+      treated as such but are treated as vibrations and this may
+      cause some error
+  (4) All equations used are the standard statistical mechanics
+      equations for an ideal gas
+  (5) All vibrations are strictly harmonic
+
+...
+
+------------
+INNER ENERGY
+------------
+
+The inner energy is: U= E(el) + E(ZPE) + E(vib) + E(rot) + E(trans)
+    E(el)   - is the total energy from the electronic structure calculation
+              = E(kin-el) + E(nuc-el) + E(el-el) + E(nuc-nuc)
+    E(ZPE)  - the the zero temperature vibrational energy from the frequency calculation
+    E(vib)  - the the finite temperature correction to E(ZPE) due to population
+              of excited vibrational states
+    E(rot)  - is the rotational thermal energy
+    E(trans)- is the translational thermal energy
+
+Summary of contributions to the inner energy U:
+Electronic energy                ...   -414.08127160 Eh
+Zero point energy                ...      0.08855807 Eh      55.57 kcal/mol
+Thermal vibrational correction   ...      0.00322154 Eh       2.02 kcal/mol
+Thermal rotational correction    ...      0.00141627 Eh       0.89 kcal/mol
+Thermal translational correction ...      0.00141627 Eh       0.89 kcal/mol
+-----------------------------------------------------------------------
+Total thermal energy                   -413.98665946 Eh
+
+--------
+ENTHALPY
+--------
+
+The enthalpy is H = U + kB*T
+                kB is Boltzmann's constant
+Total thermal energy              ...   -413.98665946 Eh
+Thermal Enthalpy correction       ...      0.00094421 Eh       0.59 kcal/mol
+-----------------------------------------------------------------------
+Total Enthalpy                    ...   -413.98571525 Eh
+
+...
+
+-------
+ENTROPY
+-------
+
+The entropy contributions are T*S = T*(S(el)+S(vib)+S(rot)+S(trans))
+     S(el)   - electronic entropy
+     S(vib)  - vibrational entropy
+     S(rot)  - rotational entropy
+     S(trans)- translational entropy
+The entropies will be listed as multiplied by the temperature to get
+units of energy
+
+Electronic entropy                ...      0.00000000 Eh      0.00 kcal/mol
+Vibrational entropy               ...      0.00505592 Eh      3.17 kcal/mol
+Rotational entropy                ...      0.01321510 Eh      8.29 kcal/mol
+Translational entropy             ...      0.01903286 Eh     11.94 kcal/mol
+-----------------------------------------------------------------------
+Final entropy term                ...      0.03730387 Eh     23.41 kcal/mol
+
+...
+
+-------------------
+GIBBS FREE ENERGY
+-------------------
+
+The Gibbs free energy is G = H - T*S
+
+Total enthalpy                    ...   -413.98571525 Eh
+Total entropy correction          ...     -0.03730387 Eh    -23.41 kcal/mol
+-----------------------------------------------------------------------
+Final Gibbs free energy         ...   -414.02301912 Eh
+
+For completeness - the Gibbs free energy minus the electronic energy
+G-E(el)                           ...      0.05825248 Eh     36.55 kcal/mol
+
+
+```
 ## References
 
 For more detailed information, refer to the [ORCA 6.0 Tutorials](https://www.faccts.de/docs/orca/6.0/tutorials/).
