@@ -239,7 +239,7 @@ Thus in the interactive mode we select orbital (option 2) and type the orbital n
 scp rgora@ui.wcss.pl:~/photochemistry/uracil/uracil_s0_vee*.{nto,cube} .
 ```
 
-In this particular case the NTOs are virtually identical to the respective canonical MOs. Below are the NTOs for the S1 state.
+In this particular case the NTOs are virtually identical to the respective canonical MOs. Below are the NTOs for the S1 state (for a better quality we would have to use denser grid as the default is 40x40x40).
 
 | ![Alt Text 1](assets/uracil/nto28.png)   | ![Alt Text 2](assets/uracil/nto29.png)   |
 |---|---|
