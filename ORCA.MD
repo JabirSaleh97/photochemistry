@@ -484,6 +484,7 @@ END
 * xyzfile 0 1 uracil_s0.xyz
 ```
 
+After successfull completion the directory should contain `uracil_s0_vg.spectrum` and `uracil_s0_vg.spectrum.root?` files for a total spectrum and particular states, respectively.
 
 ## References
 
