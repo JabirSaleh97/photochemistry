@@ -251,7 +251,9 @@ In this particular case the NTOs are virtually identical to the respective canon
 Let us prepare the input file for calculations of harmonic vibrational frequencies. 
 
 >[!WARNING]
-> These only make sense at a stationary point, thus we have to use the minimum energy structure located using the same >methodology. Let's prepare `uracil_s0_freq.inp` based on a copy of input for geometry optimization:
+> These only make sense at a stationary point, thus we have to use the minimum energy structure located using the same methodology.
+
+Let's prepare `uracil_s0_freq.inp` based on a copy of input for geometry optimization:
 
 ```bash
 cp uracil_s0.inp uracil_s0_freq.inp
