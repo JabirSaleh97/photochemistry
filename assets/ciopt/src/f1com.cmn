@@ -1,0 +1,3 @@
+      integer ncom
+      real*8 pcom(MaxDims),xicom(MaxDims)
+      common /f1com/ pcom,xicom,ncom

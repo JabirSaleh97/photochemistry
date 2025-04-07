@@ -1,0 +1,15 @@
+#! /bin/bash
+echo OOO
+export MOLCAS=/usr/localmqm/molcas52
+export PATH=$PATH:/usr/localmqm/molcas52
+export Project=$1
+export HomeDir=$PWD
+export WorkDir=/u/s/ben/molcas
+mkdir $WorkDir
+cp $HomeDir/JOBOLD $WorkDir/
+cd $WorkDir
+molcas run automolcas $HomeDir/$Project.input > $HomeDir/$Project.log 2> $HomeDir/$Project.err
+cp $Project.rasscf.molden $Home
+cd $WorkDir/$Project.JobIph $HomeDir/JOBOLD
+#rm -r $WorkDir
+exit

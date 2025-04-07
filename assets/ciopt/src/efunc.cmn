@@ -1,0 +1,37 @@
+      integer,parameter::MaxAtoms=50          ! Maximum number of atoms
+      integer,parameter::MaxStates=100        ! Maximum number of electronic states
+      integer,parameter::MaxDims=3*MaxAtoms+1 ! Maximum number of optimized variables
+      integer,parameter::MaxCons=10
+
+      integer ngeocons,igeocons(MaxCons),iacons(4,MaxCons)
+      real*8 dgeocons(MaxCons),dlambdag(MaxCons),speng(MaxCons)
+      real*8 dgcthresh(MaxCons),pref(MaxDims)
+      real*8 dlambdagap, coord(3*MaxAtoms,3*MaxAtoms),shiftlev
+      real*8 stepnd,spen,scalefac(MaxDims),scalend(MaxDims)
+      real*8 envals(MaxStates), alpha, stepi(MaxDims)
+      real*8 gradave(MaxDims)   ! Gradient of average for Hessian updating 
+      real*8 rmsdweights(MaxAtoms),rmsdgeo(MaxDims),rmsd,alpharmsd
+      real*8 ribf,Emaxibf,dlambdarmsd,stepmax
+      integer nefunc,istate,jstate,kstate,nstates,natoms,ndims,nopt
+      integer iskip(MaxDims),istcallfunc
+      character element(100)
+      character*256 crunstr,ctmpread,ctmpwrite,cinpdeck,coutfile
+      character*256 ctmpgread,ctmpg2read,ctmpg3read,ctmpwriteg
+      logical ztest,zlagrange,zrestart,zangrad,znoncart,zforward
+      logical zmultigrad,zseqpen,zcheckgrad,zdetails,zibf,ZExEnEv
+      real*8 dZsmart
+
+      common /efunc/ shiftlev,coord,dlambdagap,alpha,stepnd,stepi,
+     $     spen,scalefac,scalend,dgeocons,dlambdag,speng,dgcthresh,
+     $     gradave,
+     $     nefunc,istate,jstate,kstate,natoms,nstates,element,
+     $     ndims,nopt,ngeocons,igeocons,iacons,iskip,pref,
+     $     ztest,zlagrange,zrestart,zangrad,znoncart,zforward,
+     $     zmultigrad,zseqpen,zcheckgrad,istcallfunc,
+     $     crunstr,ctmpread,ctmpgread,ctmpwrite,cinpdeck,coutfile,
+     $     ctmpg2read,ctmpg3read,ctmpwriteg,dlambdarmsd,ZExEnEv,
+     $     stepmax,dZsmart
+      common/tjm2/envals
+      common/bgl/zdetails
+      common/eleven/ rmsdweights,rmsdgeo,alpharmsd,rmsd
+      common/ibf/ zibf,ribf,Emaxibf

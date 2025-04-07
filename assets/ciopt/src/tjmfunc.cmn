@@ -1,0 +1,2 @@
+      integer nfeval,nescall
+      common/tjmfunc/nfeval,nescall

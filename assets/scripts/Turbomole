@@ -1,0 +1,254 @@
+#!/bin/bash
+
+#set -x
+
+# Set defaults
+Queue="normal"
+Memory="32"
+Nnodes="1"
+Ncores="16"
+Arch="smp"
+Version="7.6"
+Sequential="0"
+CurrDir=${PWD}
+Help="0"
+Test="0"
+LANG="C"
+Host=`uname -n`
+time_limit=72
+
+if [ -z $1 ]
+then
+    Help="1"
+else
+    Help="0"
+fi
+
+set_turbomole_env () {
+# Setup environment
+source /usr/local/sbin/modules.sh
+module load turbomole/7.6
+export PARA_ARCH=\$PARCH
+export PARNODES=\$Ncpus
+. \$TURBODIR/Config_turbo_env
+}
+
+cat_turbomole_env () {
+cat <<EOF
+# Setup environment
+module load turbomole/7.6
+. \$TURBODIR/Config_turbo_env
+EOF
+exit 0
+}
+
+# Read options
+while getopts ":n:p:a:v:q:m:sht:xe" Option
+do
+    case $Option in
+        n ) Nnodes=$OPTARG ;;
+        p ) Ncores=$OPTARG ;;
+        a ) Arch=$OPTARG ;;
+        v ) Version=$OPTARG ;;
+        q ) Queue=$OPTARG ;;
+        m ) Memory=$OPTARG ;;
+        s ) if [ $Sequential = 0 ]
+            then
+                Sequential="1"
+            else
+                Sequential="0"
+            fi
+            ;;
+        h ) Help="1" ;;
+        x ) Test="1"; set -x ;;
+        t ) time_limit=$OPTARG ;;
+        e ) cat_turbomole_env ;;
+  esac
+done
+
+shift $(($OPTIND - 1))
+
+# Setup cpus
+((Ncpus=Nnodes*Ncores))
+if [ $Ncpus -ne "1" ]
+then
+    if [ $Arch == "smp" ]
+    then
+        PARCH=SMP
+        #export TM_PAR_FORK=1
+        export MKL_ENABLE_INSTRUCTIONS=SSE4_2
+    else
+        PARCH=MPI
+        #export TM_PAR_MPI=1
+    fi
+fi
+
+# Print help
+help() {
+
+# Header
+cat <<EOF
+To setup turbomole job use:
+
+`basename $1` [options] program
+
+To prepare turbomole job (x2t or define)
+
+`basename $1` -s x2t coordinates.xyz
+`basename $1` -s define define_script
+
+Where options are: 
+  -s toggle sequential/batch execution
+  -m memory [$Memory, total: $Memory]
+  -n # nodes [$Nnodes]
+  -p # cores [$Ncores]
+  -q queue [$Queue]
+  -t wall time [$time_limit]
+  -x test execution scripts
+  -h print this help
+  -e print turbomole environment
+  -v version: 7.6, 7.8 [$Version] 
+  -a architecture [$Arch]
+EOF
+
+exit 0
+}
+
+[ $Help -eq 1 ] && help $0
+
+if [ -z "$program_name" ]
+then
+    program_name=$1
+    shift
+fi
+
+commands=$*
+
+export Test CurrDir LANG Host Version PARCH Ncpus program_name commands
+
+prepare_job () {
+    if [ -f $JOB.log ];
+    then
+        mv -f $JOB.log $JOB.old
+    fi
+    rm -f $JOB.err
+}
+
+script_slurm () {
+cat <<EOF
+#!/bin/bash
+#SBATCH -p $Queue
+#SBATCH -N $Nnodes
+#SBATCH --ntasks-per-node=$Ncores
+#SBATCH --mem=${Memory}GB
+#SBATCH -J ${JOB:0:15}
+#SBATCH -t ${time_limit}:00:00
+#SBATCH --export=ALL
+
+[ \$Test -ne 0 ] && set -x
+
+# Redirect stderr
+exec 1>>\${CurrDir}/\$JOB.err
+exec 2>>\${CurrDir}/\$JOB.err
+
+# Setup environment
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+source /usr/local/sbin/modules.sh
+module load turbomole/7.6
+export PARA_ARCH=\$PARCH
+export PARNODES=\$Ncpus
+. \$TURBODIR/Config_turbo_env
+export MKL_ENABLE_INSTRUCTIONS=SSE4_2
+export HOSTS_FILE=\$PBS_NODEFILE
+
+# setup scratch
+export TURBOTMPDIR="/dev/shm/$USER/\$SLURM_JOBID"
+rm -rf \$TURBOTMPDIR
+mkdir -p \$TURBOTMPDIR
+
+# save important variables
+echo -e "Turbomole job particulars:
+TURBOTMPDIR=\${TURBOTMPDIR}
+SLURM_JOBID=\$SLURM_JOBID
+Queue=$Queue
+Memory=$Memory
+Cores=$Ncores
+Time=$time_limit\n"
+
+cd \${CurrDir}
+
+# redirect output
+exec 1>\$JOB.log
+
+# run turbomole
+echo -n "Running initial dscf."
+dscf | tee \${JOB}_dscf.log
+echo -n "Running program  \$program_name \$commands."
+\$program_name \$commands
+
+# save some statistics
+exec 1>>\${CurrDir}/\$JOB.err
+echo -e "Turbomole job particulars:"
+scontrol show job \$SLURM_JOBID
+
+# wrap up and exit
+\rm -f CC*
+\rm -rf \${TURBOTMPDIR}
+
+EOF
+}
+
+script_bash () {
+cat <<EOF
+#!/bin/bash
+
+[ $Test -ne 0 ] && set -x
+
+# Setup environment
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+source /usr/local/sbin/modules.sh
+module load turbomole/7.6
+export PARA_ARCH=\$PARCH
+export PARNODES=\$Ncpus
+. \$TURBODIR/Config_turbo_env
+export MKL_ENABLE_INSTRUCTIONS=SSE4_2
+
+# setup scratch
+export TURBOTMPDIR="/dev/shm/$USER/\$SLURM_JOBID"
+rm -rf \$TURBOTMPDIR
+mkdir -p \$TURBOTMPDIR
+
+# save important variables
+echo -e "Turbomole job particulars:
+TURBOTMPDIR=\${TURBOTMPDIR}\n"
+
+cd ${CurrDir}
+
+# run turbomole
+$program_name $commands
+
+# wrap up and exit
+\rm -rf \${TURBOTMPDIR}
+
+EOF
+}
+
+export JOB=`basename $PWD`
+export JOB="${JOB}_${program_name}"
+
+if [ $Sequential -eq 0 ]
+then
+    prepare_job
+    script_slurm | sbatch
+else
+    if [ $program_name == "x2t" ]; then
+        set_turbomole_env
+        $program_name $commands
+    elif [ $program_name == "define" ]; then
+        set_turbomole_env
+        $program_name 
+    else
+        script_bash | /bin/bash -
+    fi
+fi
+

@@ -1,0 +1,292 @@
+#!/bin/bash
+
+#set -x
+
+# Set defaults
+Code='adcmp2'
+Version=2012.1.25
+Version="7.6"
+Arch=smp
+Queue="normal"
+Memory="32"
+Nnodes="1"
+Ncores="4"
+Sequential="0"
+CurrDir=${PWD}
+Help="0"
+Test="0"
+LANG="C"
+Host=`uname -n`
+time_limit=72
+
+if [ -z $1 ]
+then
+    Help="1"
+else
+    Help="0"
+fi
+
+# Read options
+while getopts ":c:n:p:q:m:sv:hxt:" Option
+do
+    case $Option in
+        c ) Code=$OPTARG ;;
+        n ) Nnodes=$OPTARG ;;
+        p ) Ncores=$OPTARG ;;
+        q ) Queue=$OPTARG ;;
+        m ) Memory=$OPTARG ;;
+        s ) if [ $Sequential = 0 ]
+            then
+                Sequential="1"
+            else
+                Sequential="0"
+            fi
+            ;;
+        v ) Version=$OPTARG ;;
+        a ) Arch=$OPTARG ;;
+        h ) Help="1" ;;
+        t ) time_limit=$OPTARG ;;
+        x ) Test="1"; set -x ;;
+  esac
+done
+
+shift $(($OPTIND - 1))
+
+# Setup cpus
+((Ncpus=Nnodes*Ncores))
+
+export Test CurrDir LANG Host Ncpus Nnodes Ncores
+
+case "$Code" in
+    'molpro' ) 
+        # Set Key
+        MOLPRO_KEY="id=pwrwroclaw,date=:2113/06/28,version=:2012,mpp=32767,modules=mpp,password=9xyX98f9bp0cVHQ0&tIhhx1a7Y454JMND"
+        MOLPRO_KEY="id=dmwwroc,date=:2024/03/14,version=:9999,pw=m0Y7G0MFkAd6tiyP,password=ZTyqva7vdBWuUb1N&vmQ7wQVRozaZunfj"
+        #
+        ((Memory=Memory/8)) 
+        Munit='m'
+        Memory="${Memory}${Munit}"
+        #
+        export Memory MOLPRO_KEY Version
+        ;;
+
+    'adcmp2' ) 
+        if [ $Arch != "smp" -o $Arch != "mpi" ]
+        then
+            Arch="smp"
+        fi
+        export Memory Version Arch
+        ;;
+
+      *  )
+        printf "Unknown electronic structure code: %s" $Code
+        exit 1
+        ;;
+esac
+
+if [ "$Ncpus" -gt "64" ]; then
+    echo Wezly obliczeniowe maja maksymalnie 64 procesory.
+    exit 1
+fi
+
+Files=$*
+
+# Print help
+help() {
+
+# Header
+cat <<EOF
+usage: `basename $1` [options]
+
+Where options are: 
+  -c code: molpro, adcmp2 [$Code]
+  -v code version [$Version] molpro: 2012.1.25, turbo: 7.5
+  -a code arch [$Arch]
+  -s toggle sequential/batch execution
+  -m memory [$Memory]
+  -n # nodes [$Nnodes]
+  -p # cores [$Ncores]
+  -q queue [$Queue]
+  -x test execution scripts
+  -t wall time [$time_limit]
+  -h print this help"
+EOF
+
+exit 0
+}
+
+[ $Help -eq 1 ] && help $0
+
+prepare_job () {
+    if [ -f $JOB.out ];
+    then
+        mv -f $JOB.out $JOB.old
+    fi
+    rm -f $JOB.err
+    rm -f $JOB.pbs
+}
+
+script_pbs_molpro () {
+cat <<EOF
+#!/bin/bash
+
+[ \$Test -ne 0 ] && set -x
+
+# Redirect stderr
+exec 1>>\${CurrDir}/\$JOB.err
+exec 2>>\${CurrDir}/\$JOB.err
+
+# setup scratch
+export MOLPRO_TMPDIR="/scratch/\${USER}/molpro-\$\$"
+#export MOLPRO_TMPDIR2="/home/scratch/\${USER}/molpro-\$\$"
+rm -rf \$MOLPRO_TMPDIR
+#rm -rf \$MOLPRO_TMPDIR2
+mkdir -p \$MOLPRO_TMPDIR
+#mkdir -p \$MOLPRO_TMPDIR2
+
+# save important variables
+echo -e "Molpro job particulars:
+TMPDIR=\${MOLPRO_TMPDIR}
+#TMPDIR2=\${MOLPRO_TMPDIR2}
+PBS_JOBID=\${PBS_JOBID}
+PBS_NODEFILE=\${PBS_NODEFILE}\n"
+cat \${PBS_NODEFILE} >> \${CurrDir}/\$JOB.err
+
+cd \${CurrDir}
+
+# run molpro
+module load molpro/\$Version
+export MOLPRO_KEY=\${MOLPRO_KEY}
+#/opt/molpro/\${Version}/bin/molpro -s -n \${Ncpus} -m \${Memory} -W \${CurrDir} -d \${MOLPRO_TMPDIR}:\${MOLPRO_TMPDIR2} -o \$JOB.out \$JOB.inp 
+MOLPRO_CMD="/opt/molpro/\${Version}/bin/molpro -s -n \${Ncpus}  -m \${Memory} -W \${CurrDir} -d \${MOLPRO_TMPDIR} tmp.com"
+
+# run CIOpt
+sed -e "/crunstr/c\ crunstr='\$MOLPRO_CMD'" Control.dat > Control.tmp
+amv -f Control.tmp Control.dat
+exec 1>>${CurrDir}/CIOpt.log
+#/opt/ciopt/bin/CIOpt.test.e
+/opt/ciopt/bin/CIOpt.e
+
+# save some statistics
+exec 1>>\${CurrDir}/\$JOB.err
+qstat -f \${PBS_JOBID} | grep resources_used
+
+# wrap up and exit
+#/usr/local/bin/cleanipcs-safe
+\rm -rf \${MOLPRO_TMPDIR}
+#\rm -rf \${MOLPRO_TMPDIR2}
+
+EOF
+}
+
+script_bash_molpro () {
+cat <<EOF
+#!/bin/bash
+
+[ $Test -ne 0 ] && set -x
+
+# Redirect stderr
+exec 1>>${CurrDir}/$JOB.err
+exec 2>>${CurrDir}/$JOB.err
+
+# setup scratch
+export MOLPRO_TMPDIR="/scratch/${USER}/molpro-$$"
+#export MOLPRO_TMPDIR2="/home/scratch/${USER}/molpro-$$"
+rm -rf \$MOLPRO_TMPDIR
+#rm -rf \$MOLPRO_TMPDIR2
+mkdir -p \$MOLPRO_TMPDIR
+#mkdir -p \$MOLPRO_TMPDIR2
+
+# save important variables
+echo -e "Molpro job particulars:
+TMPDIR=\${MOLPRO_TMPDIR}
+#TMPDIR2=\${MOLPRO_TMPDIR2}\n"
+
+cd ${CurrDir}
+
+# run molpro
+export MOLPRO_KEY=${MOLPRO_KEY}
+#/opt/molpro/${Version}/bin/molpro -s -n ${Ncpus} -m ${Memory} -W ${CurrDir} -d \${MOLPRO_TMPDIR}:\${MOLPRO_TMPDIR2} -o $JOB.out $JOB.inp 
+#/opt/molpro/${Version}/bin/molpro -s -n ${Ncpus} -m ${Memory} -W ${CurrDir} -d \${MOLPRO_TMPDIR} -o $JOB.out $JOB.inp 
+
+# run CIOpt
+exec 1>>${CurrDir}/CIOpt.log
+/opt/ciopt/bin/CIOpt.e
+
+# wrap up and exit
+\rm -rf \${MOLPRO_TMPDIR}
+#\rm -rf \${MOLPRO_TMPDIR2}
+
+EOF
+}
+
+script_slurm_adcmp2 () {
+cat <<EOF
+#!/bin/bash
+#SBATCH -p $Queue
+#SBATCH -N $Nnodes
+#SBATCH --ntasks-per-node=$Ncores
+#SBATCH --mem=${Memory}GB
+#SBATCH -J ${JOB:0:15}
+#SBATCH -t ${time_limit}:00:00
+#SBATCH --export=ALL
+
+[ \$Test -ne 0 ] && set -x
+
+# redirect stderr
+exec 2>>\${CurrDir}/CIOpt.err
+cd \${CurrDir}
+
+# run CIOpt
+ADC2_CMD="./adcmp2.sh -v \${Version} -a \${Arch} -n \${Nnodes} -p \${Ncores} -m \${Memory} -r last.xyz"
+sed -e "/crunstr/c\ crunstr='\$ADC2_CMD'" Control.dat > Control.tmp
+mv -f Control.tmp Control.dat
+~/appl/ciopt/bin/CIOpt.e >>\${CurrDir}/CIOpt.log
+
+EOF
+}
+
+script_bash_adcmp2 () {
+cat <<EOF
+#!/bin/bash
+
+[ $Test -ne 0 ] && set -x
+
+# redirect stderr
+exec 2>>${CurrDir}/CIOpt.err
+cd ${CurrDir}
+
+# run CIOpt
+ADC2_CMD="./adcmp2.sh -v ${Version} -n ${Nnodes} -p ${Ncores} -m ${MemPPN} -r last.xyz"
+sed -e "/crunstr/c\ crunstr='\$ADC2_CMD'" Control.dat > Control.tmp
+mv -f Control.tmp Control.dat
+/opt/ciopt/bin/CIOpt.e >> ${CurrDir}/CIOpt.log
+
+EOF
+}
+
+
+export JOB=`basename $PWD`
+#prepare_job
+
+case "$Code" in
+    'molpro' ) 
+        if [ $Sequential -eq 0 ]
+        then
+            script_pbs_molpro | qsub -V -q $Queue -N ${JOB:0:15} -m n \
+                              -l select=${Nnodes}:ncpus=${Ncores}:mem=${Vemory} \
+                              -e ${JOB}.pbs -j eo -r n
+        else
+            script_bash_molpro | /bin/bash -
+        fi
+        ;;
+    'adcmp2' ) 
+        if [ $Sequential -eq 0 ]
+        then
+            script_slurm_adcmp2 | sbatch
+        else
+            script_bash_adcmp2 | /bin/bash -
+        fi
+        ;;
+esac
+

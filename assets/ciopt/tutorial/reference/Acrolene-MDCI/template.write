@@ -1,0 +1,28 @@
+***ethylene SA-2-CAS(2/2)
+! One step of S0/S1 conical intersection search in Cartesian coordinates 
+memory,25,m
+FILE,2,acro.wfn
+punch,all.pun
+geometry={
+nosymm,noorient;
+C,,    %%001, %%002, %%003
+C,,    %%004, %%005, %%006
+C,,    %%007, %%008, %%009
+O,,    %%010, %%011, %%012
+H,,    %%013, %%014, %%015
+H,,    %%016, %%017, %%018
+H,,    %%019, %%020, %%021
+H,,    %%022, %%023, %%024
+}
+basis=6-31g*
+
+INT
+KS
+
+MULTI
+config,csf;
+OCC,17;
+CLOSED,12;
+STATE,3;
+MAXITER,100;
+---

@@ -1,0 +1,47 @@
+  
+ &SEWARD &END
+Title
+input deck by CIOptNew-MSPT2
+basis set
+C.6-31G..10s4p.3s2p.
+ C1   %%001 %%002 %%003  angstrom
+ C2   %%004 %%005 %%006  angstrom
+End of basis
+basis set
+H.6-31G..4s.2s.
+ H3   %%007 %%008 %%009  angstrom
+ H4   %%010 %%011 %%012  angstrom
+ H5   %%013 %%014 %%015  angstrom
+ H6   %%016 %%017 %%018  angstrom
+End of basis
+End of Input
+  
+ &RASSCF &END
+TITLE
+CIOptNew-MSPT2
+SYMMETRY
+1
+SPIN
+  1
+INACTIVE
+ 7
+RAS2
+  2
+NACTEL
+  2  0  0
+CIROOT
+  2  2  1
+JOBI
+End of input
+  
+ &CASPT2 &END
+TITLE
+CIOptNew-MSPT2
+MAXITER
+20
+MULT
+2  1  2 
+FROZ
+  2
+End of input
+  

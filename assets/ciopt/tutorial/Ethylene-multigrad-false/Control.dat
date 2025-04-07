@@ -1,0 +1,15 @@
+ &control
+ nopt=3
+ natoms=6
+ nstates=2
+ istate=2
+ nefunc=7
+ zmultigrad=.false.
+ crunstr='/usr/localmqm/SVNBin/molpro2006.1/bin/molpro tmp.com'
+/
+   C        0.024      0.080    -0.450
+   C       -0.306     -0.107     0.958
+   H        1.083     -0.158    -0.583
+   H       -0.120      1.106    -0.789
+   H       -0.540     -0.577    -1.112
+   H       -0.141     -0.343     1.977

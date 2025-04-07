@@ -1,0 +1,28 @@
+
+--- Start Module: automolcas at Thu Jul 5 13:25:16 CDT 2007
+    Input File:   /usr1/ben/MCIntCoord/Utilities/CIOpt/trunk/Tutorial/Ethylene-Molcas-MSPT2/tmp.input ---
+
+--- Start Module: seward at Thu Jul 5 13:25:16 CDT 2007
+    Input File:   ben.temp_interpret ---
+Incorrectly built binary which accesses errno or h_errno directly. Needs to be fixed.
+real 0.22
+user 0.18
+sys 0.02
+--- Stop Module: seward at Thu Jul 5 13:25:16 CDT 2007 /rc= 0 ---
+
+--- Start Module: rasscf at Thu Jul 5 13:25:17 CDT 2007
+    Input File:   ben.temp_interpret ---
+Incorrectly built binary which accesses errno or h_errno directly. Needs to be fixed.
+real 0.19
+user 0.15
+sys 0.02
+--- Stop Module: rasscf at Thu Jul 5 13:25:17 CDT 2007 /rc= 0 ---
+
+--- Start Module: caspt2 at Thu Jul 5 13:25:18 CDT 2007
+    Input File:   ben.temp_interpret ---
+Incorrectly built binary which accesses errno or h_errno directly. Needs to be fixed.
+real 0.43
+user 0.34
+sys 0.04
+--- Stop Module: caspt2 at Thu Jul 5 13:25:18 CDT 2007 /rc= 0 ---
+--- Stop Module: automolcas at Thu Jul 5 13:25:19 CDT 2007 /rc=0 ---

@@ -1,0 +1,6 @@
+      real*8 hessin(MaxDims,MaxDims),hessini(MaxDims)
+      real*8 hiave(MaxDims,MaxDims)
+      integer istcalldfp
+      real*8 bfgseconv
+      common/dfphess/hessin,hessini,hiave,
+     $     bfgseconv,istcalldfp
