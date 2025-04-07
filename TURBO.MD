@@ -177,18 +177,18 @@ rm -f *.tmp *.bak
 
 </details>
 
-
-
-
-
-
-
 <details>
 <summary><strong>✨ Location of uracil MECPs using ADC(2) method</strong></summary>
 
-### 📄 1. Create a coord File
+### 🧪 1. Create a Working Directory
 
-We start by preparing a starting geometry for CI denoted u01a in Lan's paper. Once we have the `uracil_ci_u01a.xyz` file prepared:
+```bash
+mkdir u01a && cd u01a
+```
+
+### 📄 2. Create a coord File
+
+We start by preparing a starting geometry for CI denoted u01a in Lan's paper. Once we have the `uracil_ci_u01a.xyz` file prepared we may proceed further.
 
 ```
 12
@@ -206,18 +206,44 @@ H   2.493484   0.298659  -0.177008
 H  -0.419681  -2.573868  -0.293920
 H  -1.496061  -1.261484   1.570978
 ```
-we may convert it to TM format:
+
+### ⚙️ 2. Setup calculations with `xyz2ciopt.py`
+
+To locate the MECP we will use CIOpt program of Martinez et al. and Turbomole to calculate energies and gradients for the ground state at MP2 level and the S1 state at ADC(2) level. CIOpt extracts these data from specified output files using template files. The preparation of these templates is rather tedious and we shall use my `xyz2ciopt.py` script (use it at your own risk):
+
+```
+This script generates CIOpt templates from xyz file provided based on the
+available template file. If there's no template the default template shall be
+generated. If -g option is given the data_file should be the CIOpt log file.
+
+Usage: xyz2ciopt.py [options] data_file
+
+Options:
+  -h, --help       show this help
+  -r, --rs2        prepare molpro rs2  templates
+  -c, --rs2c       prepare molpro rs2c templates
+  -x, --xms        prepare molpro xms-rs2 templates
+  -e, --eomcc      prepare molpro eom-ccsd templates
+  -a, --adc2       prepare turbomole adc2 templates (requires adcmp2.sh in ~/bin dir)
+                   (in case of CC2 change last line to:&%08(f20.10)00230)
+  -l, --log        in case of adc2 read data from ricc2.log instead of gradient files
+  -g, --grep       extract trajectory in xyz format from CIOpt.log
+```
+Usually the following should do the trick:
 ```bash
-sub-interactive
-module load turbomole/7.6
-x2t uracil_ci_u01a.xyz > coord
+xyz2ciopt.py -a uracil_ci_u01a.xyz
 ```
-
-### ⚙️ 2. Setup calculations with `define`
-
-Using the `define` interactively is rather tedious, thus it is convenient to prepare a plain text file containing the required commands and redirect it to STDIN. For S1 excited state optimization we could use the following `adc2.def` file:
-
+You should see the following files in the directory:
+```bash
+ls
+adcmp2.sh*   template.read   template.readg2  template.writeg
+Control.dat  template.readg  template.write   uracil_ci_u01a.xyz
 ```
+The `adcmp2.sh` is a bash shell script that runs the ground and excited state calculations. The `xyz2ciopt.py` looks for it in `~/bin` directory; it contains `define` scripts that may need to be tweaked. The `upper_def` is for the ADC(2) energy and gradient calculations for S1 state and `lower_def` is for ground-state MP2 calculations. In this example, we should add the `scs  cos=1.20000   css=0.33333` line to both scripts to use the SCS variants. 
+
+```bash
+upper_def() {
+cat <<EOF | $Turbomole define
 
 
 a coord
@@ -243,6 +269,7 @@ memory
 4000
 ricc2
 model adc(2)
+scs  cos=1.20000   css=0.33333
 maxiter 100
 geoopt adc(2) (a 1)
 *
@@ -251,41 +278,47 @@ irrep=a nexc=1
 *
 *
 *
+EOF
+}
+
+lower_def() {
+cat <<EOF | $Turbomole define
+
+
+a coord
+sy c1
+*
+no
+b all SV(P)
+*
+eht
+
+
+
+scf
+iter
+500
+
+cc
+freeze
+*
+cbas
+*
+memory
+2000
+ricc2
+model mp2
+scs  cos=1.20000   css=0.33333
+maxiter 100
+geoopt mp2
+*
+*
+*
+*
+EOF
+}
+
 ```
-
-```bash
-define < adc2.def
-```
-
-Inside `define`, do the following:
-
-1. Load coordinates (`a coord`)
-2. Define atom types (`*`)
-3. Choose basis set (e.g., `basis -> def2-TZVP`)
-4. Enable resolution of identity (`ri`)
-5. Set method as MP2 (`mp`)
-6. Save and exit (`*`, then `yes`)
-
-Then edit `control` manually to switch from MP2 to ADC(2):
-
-```bash
-$scfmo    mos
-$closed shells
-a b
-$adc
-  adc(2)
-$soes
-  5
-$excitations
-  singlet
-```
-
-- `$soes 5` → number of excited states to compute
-- `singlet` → restricts to singlet states
-
-You can also use `esprep` to help prepare this.
-
----
 
 ## 💥 2. Excited State Spectrum Calculation
 
