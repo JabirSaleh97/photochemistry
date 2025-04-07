@@ -1,7 +1,5 @@
 <details>
-<summary><strong>🚀 Turbomole Quick Start Tutorial</strong></summary>
-
-A short guide to help you get started with **Turbomole**, a powerful quantum chemistry software package.
+<summary><strong>🚀 Turbomole Quick Start Tutorial - geometry optimization at MP2 level</strong></summary>
 
 ### 📦 Prerequisites
 
@@ -14,12 +12,97 @@ Before you begin, make sure you have:
 ### 🧪 1. Create a Working Directory
 
 ```bash
-mkdir h2o_test && cd h2o_test
+mkdir u0 && cd u0
 ```
 
 ### 📄 2. Create a Coord File
 
-Create a file named `coord` with the geometry in Turbomole format or use `x2c` program to convert xyz file"
+Create a file named `coord` with the geometry in Turbomole format or use `x2c` program to convert xyz file.
+We start by preparing a starting geometry for S0 minimum from Lan's paper. Once we have the `uracil_s0.xyz` file prepared:
+
+```
+12
+
+C   0.716126   0.993705   0.544611
+N   1.529554   0.096420  -0.154703
+C   1.148624  -1.190211  -0.516755
+N  -0.141601  -1.574302  -0.139161
+C  -1.004144  -0.755388   0.549189
+C  -0.622242   0.509548   0.903198
+O   1.897063  -1.970445  -1.140840
+H  -1.268164   1.188387   1.445399
+O   1.147369   2.123538   0.822461
+H   2.463328   0.394677  -0.420185
+H  -0.430534  -2.511576  -0.398840
+H  -2.001147  -1.145109   0.803947
+```
+we may convert it to TM format:
+```bash
+sub-interactive
+module load turbomole/7.6
+x2t uracil_s0.xyz > coord
+cat coord
+```
+```
+$coord
+    1.35328201072375      1.87783029867125      1.02916563445857       c
+    2.89043815282585      0.18220739293642     -0.29234630065798       n
+    2.17058478017215     -2.24917282051696     -0.97652542353099       c
+   -0.26758710897313     -2.97499961745060     -0.26297617722905       n
+   -1.89755714968622     -1.42747643782881      1.03781680065710       c
+   -1.17586696323939      0.96290616735081      1.70679685630975       c
+    3.58492951116094     -3.72360139363823     -2.15587515201806       o
+   -2.39648264110992      2.24572596006565      2.73140825080796       h
+    2.16821317388575      4.01290523523556      1.55422603818584       o
+    4.65501527512215      0.74583143768893     -0.79403457167588       h
+   -0.81359134733963     -4.74619078118309     -0.75369836754574       h
+   -3.78161976511649     -2.16394239284409      1.51923964871451       h
+$end
+```
+
+### ⚙️ 2. Setup calculations with `define`
+
+Using the `define` interactively is rather tedious, thus it is convenient to prepare a plain text file containing the required commands and redirect it to STDIN. For S1 excited state optimization we could use the following `scs-mp2.def` file (please note that the formatting including blank lines is crucial):
+
+```
+
+
+a coord
+sy c1
+ired
+*
+b all SV(P)
+*
+eht
+
+
+
+scf
+iter
+200
+
+cc
+freeze
+*
+cbas
+*
+memory
+4000
+ricc2
+model mp2
+scs  cos=1.20000   css=0.33333
+maxiter 200
+geoopt mp2
+*
+*
+*
+*
+```
+We are ready to run `define`
+
+```bash
+define < scs-mp2.def
+```
 
 ```bash
 x2c 
@@ -125,9 +208,7 @@ x2t uracil_ci_u01a.xyz > coord
 
 ### ⚙️ 2. Setup calculations with `define`
 
-Using the `define` interactively is rather tedious, thus it is convenient to prepare a plain text file containing the required commands and redirect it to STDIN:
-
-for S1 excited state optimization we could use the following `adc2.def` file:
+Using the `define` interactively is rather tedious, thus it is convenient to prepare a plain text file containing the required commands and redirect it to STDIN. For S1 excited state optimization we could use the following `adc2.def` file:
 
 ```
 
