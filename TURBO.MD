@@ -1,4 +1,5 @@
-##🚀 Turbomole Quick Start Tutorial
+## 🚀 Turbomole Quick Start Tutorial
+
 <details>
 <summary><strong>⚙️ Geometry optimization at MP2 level</strong></summary>
 
@@ -105,30 +106,59 @@ We are ready to run `define`
 define < scs-mp2.def
 ```
 
-### ⚛️ 3. Run a Single Point HF Calculation
+### ⚛️ 3. Run a Single Point HF Calculation (optional)
 
 We could now run preliminary HF calculations interactively:
 
 ```bash
 dscf > dscf.out
 ```
-or submit this job to a queue:
-
-
-
-### 🔁 5. Optimize the Geometry (Optional)
+or submit this job to a queue using [Turbomole](./assets/scripts/Turbomole) (I will be using my scripts available in this repo in [assets/scripts](./assets/scripts) folder).
 
 ```bash
-jobex > jobex.out
-```
+To setup turbomole job use:
 
-Use `jobex -ri` for RI-DFT geometry optimizations (faster).
+Turbomole [options] program
+
+To prepare turbomole job (x2t or define)
+
+Turbomole -s x2t coordinates.xyz
+Turbomole -s define define_script
+
+Where options are:
+  -s toggle sequential/batch execution
+  -m memory [32, total: 32]
+  -n # nodes [1]
+  -p # cores [16]
+  -q queue [normal]
+  -t wall time [72]
+  -x test execution scripts
+  -h print this help
+  -e print turbomole environment
+  -v version: 7.6, 7.8 [7.6]
+  -a architecture [smp]
+```
+Let us submit `dscf` calculations first:
+```bash
+Turbomole dscf
+```
+The output is redirected to `$cwd_program.log` file (in this case `u0_dscf.log`).
+
+### 🔁 5. Optimize the Geometry
+
+To optimize the geometry we could submit an interactive `jobex` run 
+```bash
+jobex -ri -c 200 -level cc2 | tee jobex.out
+```
+or submit it to a queue
+```bash
+Turbomole jobex -ri -c 200 -level cc2
+```
 
 ### 📊 6. Analyze Results
 
 - Check `energy` for total energy
-- Look into `control` and output files for further analysis
-- Use tools like `aoforce`, `eiger`, or `escf` for vibrational and electronic properties
+- Look into `control`, `job.last` and output files for further analysis
 
 ### 🧼 7. Clean Up
 
