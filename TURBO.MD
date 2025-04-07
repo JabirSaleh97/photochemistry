@@ -157,8 +157,11 @@ Turbomole jobex -ri -c 200 -level cc2
 
 ### 📊 6. Analyze Results
 
+- The successful run produces `GEO_OPT_CONVERGED` file.
 - Check `energy` for total energy
 - Look into `control`, `job.last` and output files for further analysis
+- Use `tm2molden` to visualize orbitals
+- Use `t2x > trj.xyz` to check the optimization trajectory
 
 ### 🧼 7. Clean Up
 
@@ -171,7 +174,6 @@ rm -f *.tmp *.bak
 ### 📚 Resources
 
 - [Turbomole Documentation](https://www.turbomole.org)
-- `man define`, `man ridft`, etc., for module-specific help
 
 </details>
 
