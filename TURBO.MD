@@ -62,7 +62,7 @@ $end
 
 ### ⚙️ 2. Setup calculations with `define`
 
-Using the `define` interactively is rather tedious, thus it is convenient to prepare a plain text file containing the required commands and redirect it to STDIN. For S1 excited state optimization we could use the following `scs-mp2.def` file (please note that the formatting including blank lines is crucial):
+Using the `define` interactively is rather tedious, thus it is convenient to prepare a plain text file containing the required commands and redirect it to STDIN. For S0 ground state optimization, we could use the following `scs-mp2.def` file (please note that the formatting including blank lines is crucial). In this example, we use the SCS variant of MP2 with a def2-SV(P) basis set and EHT guess. We will use `ricc2` program thus we need also an auxiliary basis set (cbas).
 
 ```
 
@@ -104,42 +104,13 @@ We are ready to run `define`
 define < scs-mp2.def
 ```
 
+### ⚛️ 3. Run a Single Point HF Calculation
+
+We could run HF calculations interactively:
 ```bash
-x2c 
+dscf > dscf.out
 ```
-```
-$coord
-  0.000000000  0.000000000  0.000000000  o
-  0.758602000  0.000000000  0.504284000  h
- -0.758602000  0.000000000  0.504284000  h
-$end
-```
-
-### ⚙️ 3. Run `define` to Set Up the Calculation
-
-```bash
-define
-```
-
-Follow the menu to:
-
-- Read coordinates (`a coord`)
-- Specify the atomic types (`*`)
-- Choose basis set (e.g., `basis -> def2-SVP`)
-- Select method (e.g., DFT -> `d`)
-- Save and exit (`*`, `yes` to save)
-
-### ⚛️ 4. Run a DFT Single Point Calculation
-
-```bash
-ridft > ridft.out
-```
-
-Or for other modules:
-
-```bash
-dscf > dscf.out   # For HF or post-HF methods
-```
+or submit this job to a queue:
 
 ### 🔁 5. Optimize the Geometry (Optional)
 
