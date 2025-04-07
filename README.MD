@@ -342,10 +342,13 @@ sacct --format=jobid,jobname,qos,cputime,ncpu,avecpu,elapsed,avevmsize --jobs=<j
 
 ### 📘 Excited states of pyrimidine nucleobases
 
-In this tutorial we try to locate geometries of ground and excited states minima of pyrimidine nucleobases as well as the relevant minimum energy crossing points (MECPs) between low-lying states. The starting geometries are available in the [article of Lan et al.](https://pubs.acs.org/doi/10.1021/jp809085h). In the supplementary information the relevant geometries of U, T and C are reported.
+In this tutorial, we try to locate geometries of ground and excited states minima of pyrimidine nucleobases as well as the relevant minimum energy crossing points (MECPs) between low-lying states. The starting geometries are available in the [article of Lan et al.](https://pubs.acs.org/doi/10.1021/jp809085h). In the supplementary information, the relevant geometries of U, T and C are reported.
 
-We start with optimization of geometry at the KS-DFT and TD-DFT level in ORCA.
+We start with the optimization of geometry at the KS-DFT and TD-DFT levels in ORCA.
 
 ### 📘 [Geometry Optimization & UV-vis Spectra of Uracil, Cytosine and Thymine](./ORCA.MD)
 
+Next, we locate the relevant MECPs using Turbomole and CIOpt packages
+
+### 📘 [MECPs Geometry Optimization of Uracil, Cytosine and Thymine](./TURBO.MD)
 </details>
