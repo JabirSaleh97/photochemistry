@@ -1,5 +1,6 @@
+##🚀 Turbomole Quick Start Tutorial
 <details>
-<summary><strong>🚀 Turbomole Quick Start Tutorial - geometry optimization at MP2 level</strong></summary>
+<summary><strong>⚙️ Geometry optimization at MP2 level</strong></summary>
 
 ### 📦 Prerequisites
 
@@ -106,11 +107,14 @@ define < scs-mp2.def
 
 ### ⚛️ 3. Run a Single Point HF Calculation
 
-We could run HF calculations interactively:
+We could now run preliminary HF calculations interactively:
+
 ```bash
 dscf > dscf.out
 ```
 or submit this job to a queue:
+
+
 
 ### 🔁 5. Optimize the Geometry (Optional)
 
