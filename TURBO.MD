@@ -218,7 +218,7 @@ H  -1.496061  -1.261484   1.570978
 
 ### ⚙️ 2. Setup calculations with `xyz2ciopt.py`
 
-To locate the MECP we will use CIOpt program of Martinez et al. and Turbomole to calculate energies and gradients for the ground state at MP2 level and the S1 state at ADC(2) level. CIOpt extracts these data from specified output files using template files. The preparation of these templates is rather tedious and we shall use my `xyz2ciopt.py` script (use it at your own risk):
+To locate the MECP we will use CIOpt program of Martinez et al. and Turbomole to calculate energies and gradients for the ground state at MP2 level and the S1 state at ADC(2) level. CIOpt extracts these data from specified output files using template files. The preparation of these templates is rather tedious and we shall use my [xyz2ciopt.py](./assets/scripts/xyz2ciopt.py) script (needs numpy which can be installed via `pip install numpy` use it at your own risk):
 
 ```
 This script generates CIOpt templates from xyz file provided based on the
