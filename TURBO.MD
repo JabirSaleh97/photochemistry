@@ -186,7 +186,7 @@ rm -f *.tmp *.bak
 
 $$F_{IJ}(\mathbf{R}) = \frac{1}{2}\left[ E_I(\mathbf{R}) + E_J(\mathbf{R}) \right] + \sigma \left( \frac{[E_I(\mathbf{R}) - E_J(\mathbf{R})]^2}{E_I(\mathbf{R}) - E_J(\mathbf{R}) + \alpha} \right)$$
 
-where $\alpha$ is a small fixed smoothing parameter to avoid singularities and $\sigma$ is a Lagrange multiplier for a penalty function that drives the energy gap to zero. Minimization of $F_{IJ}$ is performed iteratively for increasingly large values of $\sigma$.
+where $\alpha$ is a small fixed smoothing parameter to avoid singularities and $\sigma$ is a Lagrange multiplier for a penalty function that drives the energy gap to zero. Minimization of $F_{IJ}$ is performed iteratively for increasingly large values of $\sigma$. This approach is implemented in [CIOpt](./assets/ciopt) program by Levine and Martínez. The precompiled executable should work on most Linux workstations.
 
 
 ### 🧪 1. Create a Working Directory
