@@ -383,7 +383,7 @@ Where options are:
   -h print this help"
 ```
 
-In this case I'd recommend the following:
+In this case, I'd recommend the following (please note that this script expects `CIOpt.e` executable in particular directory, for instance the SLURM function uses `~/appl/ciopt/bin/CIOpt.e` - you may need to change that to reflect your settings):
 
 ```bash
 CIOpt -c adcmp2 -p 16
