@@ -1,8 +1,16 @@
 - [ ] Uracil geometries
+
  - [ ] ADC(2)/cc-pVTZ
+
   - [ ] S0 min
+
   - [ ] S1 min
+
   - [ ] 01pp mecp
+
   - [ ] 01np mecp
+
 - [ ] 
+
 - [ ] :tada:
+
