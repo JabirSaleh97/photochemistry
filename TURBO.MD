@@ -182,9 +182,11 @@ rm -f *.tmp *.bak
 
 ### Penalty-constrained MECP optimization of Levine & Martínez
 
-Levine and coworkers developed a penalty-constrained MECP optimization algorithm based on minimizing the objective function
-$$F_\sigma(\mathbf{R}) = \frac{1}{2}\left[ E_I(\mathbf{R}) + E_J(\mathbf{R}) \right] + \sigma \left( \frac{[E_I(\mathbf{R}) - E_J(\mathbf{R})]^2}{E_I(\mathbf{R}) - E_J(\mathbf{R}) + \alpha} \right)$$
-where $\alpha$ is a small fixed smoothing parameter to avoid singularities and $\sigma$ is a Lagrange multiplier for a penalty function that drives the energy gap to zero. Minimization of $F_\sigma$ is performed iteratively for increasingly large values of $\sigma$.
+[Levine and coworkers](https://pubs.acs.org/doi/10.1021/jp0761618) developed a penalty-constrained MECP optimization algorithm based on minimizing the objective function:
+
+$$F_{IJ}(\mathbf{R}) = \frac{1}{2}\left[ E_I(\mathbf{R}) + E_J(\mathbf{R}) \right] + \sigma \left( \frac{[E_I(\mathbf{R}) - E_J(\mathbf{R})]^2}{E_I(\mathbf{R}) - E_J(\mathbf{R}) + \alpha} \right)$$
+
+where $\alpha$ is a small fixed smoothing parameter to avoid singularities and $\sigma$ is a Lagrange multiplier for a penalty function that drives the energy gap to zero. Minimization of $F_{IJ}$ is performed iteratively for increasingly large values of $\sigma$.
 
 
 ### 🧪 1. Create a Working Directory
