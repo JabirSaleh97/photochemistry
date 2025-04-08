@@ -355,5 +355,7 @@ Next, we locate the relevant MECPs using Turbomole and CIOpt packages
 
 <details>
 <summary><strong>📊 TODO</strong></summary>
+
 ### 📊 [Project progress](./TODO.MD)
+
 </details>
