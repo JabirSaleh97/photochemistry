@@ -1,3 +1,8 @@
-[x] #739
-- [ ] https://github.com/octo-org/octo-repo/issues/740
-- [ ] Add delight to the experience when all tasks are complete :tada:
+- [ ] Uracil geometries
+-- [ ] ADC(2)/cc-pVTZ
+--- [ ] S0 min
+--- [ ] S1 min
+--- [ ] 01pp mecp
+--- [ ] 01np mecp
+- [ ] 
+- [ ] :tada:
