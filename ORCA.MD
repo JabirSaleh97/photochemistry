@@ -471,8 +471,8 @@ end
   STATES     1,2
   UNIT       NM
   HESSFLAG   VG
-  LINEW      50
-  INLINEW    150
+  LINEW      100
+  INLINEW    300
   LINES      GAUSS
   SPECRANGE  10000,50000
   UNIT       NM
@@ -484,16 +484,28 @@ END
 * xyzfile 0 1 uracil_s0.xyz
 ```
 
-After successfull completion the directory should contain `uracil_s0_vg.spectrum` and `uracil_s0_vg.spectrum.root?` files for a total spectrum and particular states, respectively. We may plot this using GNUPlot (or any other plotting program). The obtained spectrum is essentially due to S2.
-
-<img align="right" src="logs/uracil/vg.png" width="200px">
+After successfull completion the directory should contain `uracil_s0_vg.spectrum` and `uracil_s0_vg.spectrum.root?` files for a total spectrum and particular states, respectively. We may plot this using GNUPlot (or any other plotting program). The obtained spectrum is essentially due to S2. To plot this spectrum w.r.t. energies in eV use the following:
 
 ```gnuplot
 plot [200:250] 'uracil_s0_vg.spectrum' u 1:2 w l t 'uracil VG'
 plot [5:6.2] 'uracil_s0_vg.spectrum' u (1239.8/$1):2 w l lw 5 t 'uracil VG'
 plot [5:6.2] 'uracil_s0_vg.spectrum.root2' u (1239.8/$1):2 w l lw 5 t 'uracil VG S2'
 ```
+
+Now lets compare this with experimental data. BTW I extracted these from [Clark et al. 1965 paper](https://pubs.acs.org/doi/abs/10.1021/j100894a063) by taking a snapshot and using the [WebPlotDigitizer 4.8](https://apps.automeris.io/wpd4/) - it's fairly intuitive.
+
+<img align="right" src="assets/uracil/vg.png" width="200px">
+
+```gnuplot
+# statistical analysis of the data to get max values (A_max_y)
+stats 'uracil_s0_vg.spectrum.root2' using (1239.8/$1):2 name "A"
+# here we plot the notmalized VG and experimental data
+plot [200:300] 'uracil_s0_vg.spectrum.root2' u 1:($2/A_max_y) w l lw 5 t 'uracil VG',\
+               'uracil_exp.spectrum' u 1:2 smooth csplines w l lw 5 t 'exp'
+```
+
 <br clear="right"/>&nbsp;
+
 
 ## References
 
