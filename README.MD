@@ -1,3 +1,7 @@
+## Computational Photochemistry Tutorials
+
+In this repository I publish materials for my Computational Photochemistry course. Please note that the scripts and some of the programs that we use are often written ad hoc and were not thoroughly tested.
+
 <details>
 <summary><strong>📘 Getting Started with MobaXterm</strong></summary>
 
