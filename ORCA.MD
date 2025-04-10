@@ -484,7 +484,7 @@ END
 * xyzfile 0 1 uracil_s0.xyz
 ```
 
-After successfull completion the directory should contain `uracil_s0_vg.spectrum` and `uracil_s0_vg.spectrum.root?` files for a total spectrum and particular states, respectively. We may plot this using GNUPlot (or any other plotting program). The obtained spectrum is essentially due to S2. To plot this spectrum w.r.t. energies in eV use the following:
+After successfull completion the directory should contain `uracil_s0_vg.spectrum` and `uracil_s0_vg.spectrum.root?` files for a total spectrum and particular states, respectively. We may plot this using [GNUPlot](https://gnuplot.sourceforge.net) (or any other plotting program). The obtained spectrum is essentially due to S2. To plot this spectrum w.r.t. energies in eV use the following:
 
 ```gnuplot
 plot [200:250] 'uracil_s0_vg.spectrum' u 1:2 w l t 'uracil VG'
