@@ -1,0 +1,27 @@
+%pal nprocs 16 end
+%maxcore 2000
+! pbe0 d4 def2-SVP RIJCOSX Def2/J defgrid3 TightSCF ESD(ABS)
+
+%tddft 
+    TDA true # TDA approx
+    NRoots 3 # number of electronic states
+end
+
+%ESD
+  GSHESSIAN  "uracil_s0_freq.hess"
+  DOHT       TRUE
+  STATES     1,2
+  UNIT       NM
+  HESSFLAG   VG
+  LINEW      100
+  INLINEW    300
+  LINES      GAUSS
+  SPECRANGE  10000,50000
+  UNIT       NM
+  PRINTLEVEL HIGH
+  USEJ       FALSE
+  COORDSYS   INT
+END
+
+* xyzfile 0 1 uracil_s0.xyz 
+
