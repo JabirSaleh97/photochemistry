@@ -492,7 +492,7 @@ plot [5:6.2] 'uracil_s0_vg.spectrum' u (1239.8/$1):2 w l lw 5 t 'uracil VG'
 plot [5:6.2] 'uracil_s0_vg.spectrum.root2' u (1239.8/$1):2 w l lw 5 t 'uracil VG S2'
 ```
 
-Now lets compare this with experimental data. BTW I extracted these from [Clark et al. 1965 paper](https://pubs.acs.org/doi/abs/10.1021/j100894a063) by taking a snapshot and using the [WebPlotDigitizer 4.8](https://apps.automeris.io/wpd4/) - it's fairly intuitive. The agreement is far from perfect but so is the approach that we've used. Adiabatic Hessian (AH), Adiabatic Hessian After Step (AHAS), and/or different functional/basis set would likely produce better results. 
+Now lets compare this with experimental data. BTW I extracted these from [Clark et al. 1965 paper](https://pubs.acs.org/doi/abs/10.1021/j100894a063) by taking a snapshot and using the [WebPlotDigitizer 4.8](https://apps.automeris.io/wpd4/) - it's fairly intuitive. The agreement is far from perfect but so is the approach that we've used. Roughly 15 nm or 0.3 eV is slightly above a typical RMSD for this functionsl. Adiabatic Hessian (AH), Adiabatic Hessian After Step (AHAS), and/or different functional/basis set would likely produce better results.
 
 <img align="right" src="assets/uracil/vg.png" width="200px">
 
