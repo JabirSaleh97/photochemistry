@@ -148,11 +148,11 @@ The output is redirected to `$cwd_program.log` file (in this case `u0_dscf.log`)
 
 To optimize the geometry we could submit an interactive `jobex` run 
 ```bash
-jobex -ri -c 200 -level cc2 | tee jobex.out
+jobex -c 200 -level cc2 | tee jobex.out
 ```
 or submit it to a queue
 ```bash
-Turbomole jobex -ri -c 200 -level cc2
+Turbomole jobex -c 200 -level cc2
 ```
 
 ### 📊 6. Analyze Results
