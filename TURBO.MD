@@ -166,7 +166,7 @@ Turbomole jobex -ri -c 200 -level cc2
 ### 🧼 7. Clean Up
 
 ```bash
-rm -f *.tmp *.bak
+rm -f *.tmp *.bak CC* *cao
 ```
 
 ---
@@ -401,7 +401,8 @@ CIOpt -c adcmp2 -p 16
 ## 🧽 Cleanup
 
 ```bash
-rm -f *.tmp *.bak
+# these were scratch directories for adcmp2.sh script
+rm -rf lower upper 
 ```
 
 ---
