@@ -498,7 +498,7 @@ Now lets compare this with experimental data. BTW I extracted these from [Clark 
 
 ```gnuplot
 # statistical analysis of the data to get max values (A_max_y)
-stats 'uracil_s0_vg.spectrum.root2' using (1239.8/$1):2 name "A"
+stats 'uracil_s0_vg.spectrum.root2' using 1:2 name "A"
 # here we plot the notmalized VG and experimental data
 plot [200:300] 'uracil_s0_vg.spectrum.root2' u 1:($2/A_max_y) w l lw 5 t 'uracil VG',\
                'uracil_exp.spectrum' u 1:2 smooth csplines w l lw 5 t 'exp'
