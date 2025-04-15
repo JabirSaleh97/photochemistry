@@ -216,12 +216,25 @@ exprop states=all
 *
 *
 ```
-We are ready to run `define`
+We are ready to run `define` and the calculations. First `dscf` and then `ricc2`
 
 ```bash
+sub-interactive 
+module load turbomole/7.6
 define < scs-adc2.def
+dscf | tee dscf.log
+ricc2 |tee ricc2.log
 ```
 
+Alternatively we can exit the interactive job once the calculations are set up and submit the job to the queue.
+
+```bash
+sub-interactive 
+module load turbomole/7.6
+define < scs-adc2.def
+exit # to quit the interactive job and return to access node
+Turbomole -v 7.6 ricc2 # The Turbomole script will issue the `dscf` calculations automatically.
+```
 
 ---
 
