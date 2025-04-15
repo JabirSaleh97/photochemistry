@@ -1,7 +1,7 @@
 ## 🚀 Turbomole Quick Start Tutorial
 
 <details>
-<summary><strong>⚙️ Geometry optimization at MP2 level</strong></summary>
+<summary><strong>⚙️ Geometry optimization at MP2 level and vertical excitation spectra at ADC(2) level</strong></summary>
 
 ### 📦 Prerequisites
 
@@ -168,6 +168,60 @@ Turbomole jobex -c 200 -level cc2
 ```bash
 rm -f *.tmp *.bak CC* *cao
 ```
+
+### ⚙️ 8. Calculate the vertical excitation energies at ADC(2) level
+
+Let us now prepare calculations of vertical excitation energies at the ADC(2) level. We can simply copy the coordinates file with optimized geometry: 
+```bash
+mkdir vee && cd vee
+cp ../coord .
+```
+Now we need to run define using the following script which we put in `scs-adc2.def` file:
+
+```
+
+
+a coord
+sy c1
+ired
+*
+b all SV(P)
+*
+eht
+
+
+
+scf
+iter
+200
+
+cc
+freeze
+*
+cbas
+*
+memory
+4000
+ricc2
+model adc(2)
+scs  cos=1.20000   css=0.33333
+maxiter 200
+*
+exci
+irrep=a nexc=3 multiplicity=1
+irrep=a nexc=3 multiplicity=3
+spectrum states=all
+exprop states=all
+*
+*
+*
+```
+We are ready to run `define`
+
+```bash
+define < scs-adc2.def
+```
+
 
 ---
 
