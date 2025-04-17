@@ -137,7 +137,7 @@ Using the optimized geometry, create a new input file named `uracil_s0_vee.inp`:
 ```plaintext
 %pal nprocs 16 end
 %maxcore 2000
-! pbe0 d4 def2-SVP Opt RIJCOSX Def2/J defgrid3 TightSCF
+! pbe0 d4 def2-SVP RIJCOSX Def2/J defgrid3 TightSCF
 
 %output
     print[p_mos] 1
