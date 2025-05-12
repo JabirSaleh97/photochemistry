@@ -34,4 +34,13 @@ module load openbabel
 molget ethylene
 exit
 ```
+BAGEL uses JSON syntax for input files whic is rather tedious. You may use the [xyz2bagel.py](./assets/scripts/xyz2bagel.py) script to prepare a template of an input file:
+```
+xyz2bagel.py ethylene.xyz et_hf.json
+cat et_hf.json
+```
+For the time being it prepares the structure along with a typical input for XMS-CASPT2 geometry optimization. 
+```
+```
+Naturally we have to start with HF calculations to setup the active space.
 
