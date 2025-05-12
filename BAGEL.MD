@@ -142,4 +142,4 @@ Naturally we have to start with HF calculations to setup the active space. Thus 
   ]
 }
 ```
-
+You may use the [Bagel](./assets/scripts/Bagel) script to submit the job to a queue. 
