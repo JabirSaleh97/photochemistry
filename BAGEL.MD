@@ -1,7 +1,7 @@
 ## 🚀 BAGEL Quick Start Tutorial
 
 <details>
-<summary><strong>⚙️ Geometry optimization at XMS-CAPT2 level</strong></summary>
+<summary><strong>⚙️ Geometry optimization at XMS-CAPT2 level of ethylene in the ground (N) and excited (V) state and location of conical intersetion geometries</strong></summary>
 
 ### 📦 Prerequisites
 
@@ -22,6 +22,16 @@ cp ~rgora/bin/xyz2bagel.py ~/bin
 ### 🧪 1. Create a Working Directory
 
 ```bash
-mkdir u0 && cd u0
+mkdir -p ethylene/s0 && cd ethylene/s0
+```
+
+### 📄 2. Create an Input File
+
+We need a starting geometry for ground state optimization. In such a case I often use [molget](https://github.com/jensengroup/molget) package from Jan Jensen's group (requires access to Open Babel package).
+```bash
+sub-interactive
+module load openbabel
+molget ethylene
+exit
 ```
 
