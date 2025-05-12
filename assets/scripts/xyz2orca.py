@@ -553,6 +553,7 @@ class DFT_LOGS(LOGS):
         line = '%'+str(eLen)+'s'+self.Sep
         for l in LOGS.eLabels:
             log += line % l.rjust(eLen)
+            log += line % 'f_osc'.rjust(eLen)
         log += '\n'
         # print energies
         for f, p in sorted(LOGS.Energies.items()):
@@ -566,16 +567,20 @@ class DFT_LOGS(LOGS):
                     log += line % p[l]
                 except KeyError:
                     log += lint % '-'.rjust(eLen)
-            log += '\n'
-            line = '%'+str(lLen)+'s'+self.Sep
-            log += line % 'f_osc'.rjust(lLen)
-            line = '%'+str(eLen)+'.6'+'f'+self.Sep
-            for l in LOGS.eLabels:
                 try:
                     log += line % LOGS.Properties[f][l]
                 except KeyError:
                     log += lint % '-'.rjust(eLen)
             log += '\n'
+            #line = '%'+str(lLen)+'s'+self.Sep
+            #log += line % 'f_osc'.rjust(lLen)
+            #line = '%'+str(eLen)+'.6'+'f'+self.Sep
+            #for l in LOGS.eLabels:
+            #    try:
+            #        log += line % LOGS.Properties[f][l]
+            #    except KeyError:
+            #        log += lint % '-'.rjust(eLen)
+            #log += '\n'
 
         print(log)
 

@@ -5,9 +5,9 @@
 # Set defaults
 Code='adcmp2'
 Version=2012.1.25
-Version="7.6"
+Version="7.9"
 Arch=smp
-Queue="normal"
+Queue="bem2-cpu-normal"
 Memory="32"
 Nnodes="1"
 Ncores="4"

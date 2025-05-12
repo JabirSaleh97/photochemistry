@@ -22,7 +22,7 @@ Help="0"
 # Turbomole script defaults
 Nnodes="1"
 Ncores="4"
-Version="7.6"
+Version="7.9"
 Arch="smp"
 Memory="32"
 

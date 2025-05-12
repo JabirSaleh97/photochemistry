@@ -1,0 +1,172 @@
+#!/bin/bash
+#
+# Changelog:
+# v0.2 (2023-07-18 pbelzak)
+# - use optargs instead of loop
+# - change command syntax - input file can be last when calling $0
+# - use functions
+# - clean up code
+# - add automatic partition selection based on walltime if user didn't specified it
+# - modified greeting at startup
+# v0.3 (2023-12-20 pbelzak)
+# - change default mem from 20 to 30gb to enlarge ram cap for tmpdir
+# - added creation and export of TMPDIR to /dev/shm
+
+partition=bem2-cpu
+nodes=1
+cores=8
+threads=1
+mem=30
+time_limit=72
+reservation=""
+account=""
+
+unset input_file
+
+# --------------------------------------------   COLORS   --------------------------------------------
+red=$'\e[1;31m'
+blu=$'\e[1;34m'
+grn=$'\e[1;32m'
+end=$'\e[0m'
+
+# --------------------------------------------   REUSABLE FUNCTIONS   --------------------------------------------
+
+print_error () {
+    printf "%s\n" "${red}$1${end}"
+}
+
+print_help () {
+        echo ""
+	echo "Usage: $0 PARAMETERS FILE"
+	echo "Parameters:"
+	echo -e "\t-p PARTITION \t\t Set partition (queue). Default = $partition"
+	echo -e "\t-n NODES \t\t Set number of nodes. Default = $nodes"
+	echo -e "\t-c CORES \t\t Up to 48. Default = $cores"
+	echo -e "\t-w THREADS \t\t Up to 48. Default = $threads"
+	echo -e "\t-m MEMORY \t\t In GB, up to 180 (must be integer value). Default = ${mem}"
+	echo -e "\t-t TIME_LIMIT \t\t In hours. Default = $time_limit"
+        echo -e "\t-r RESERVATION \t\t Set reservation. Default = $reservation"
+	echo -e "\t-A SERVICE \t\t charge job to specified SERVICE (default = default Service)"
+
+	exit 1
+}
+
+
+# -----------------------------------------   GREETING   -----------------------------------------
+printf "%s\n" "${blu}bagel-1.2.0${end}"
+
+# -----------------------------------------   OPTARGS   -----------------------------------------
+
+# check for arguments
+[[ $# -lt 1 ]] && { print_help ; }
+
+test_optarg () {
+    [[ ! $OPTARG =~ ^[[:digit:]]+$ ]] && print_error "ERROR: -$option value must be a number!" && exit 1
+}
+
+# Set the input file
+if [[ -f $1 ]]
+then
+  input_file=$1
+  shift
+fi
+
+
+# Parse command-line options
+while getopts "m:c:w:n:p:t:r:A:" option; do
+    case $option in
+        m) test_optarg
+           mem=$OPTARG
+           ;;
+        c) test_optarg
+           cores=$OPTARG
+           ;;
+        w) test_optarg
+           threads=$OPTARG
+           ;;
+        n) test_optarg
+           nodes=$OPTARG
+           ;;
+        p) partition=$OPTARG
+           userpart=1
+           ;;
+	r) reservation=$OPTARG
+	   ;;
+        t) test_optarg
+           time_limit=$OPTARG
+           ;;
+	A) account=$OPTARG 
+	   ;;
+        *) print_help; exit 1;;
+    esac
+done
+
+shift $((OPTIND - 1))
+if [[ -z $input_file ]]
+then
+  input_file=$1
+fi
+
+# Check if file is specified and exists
+[[ -z "input_file" ]] && { print_error "You have to specify input file" ; exit 1 ;}
+[[ ! -f "$input_file" ]] && { print_error "Input file $input_file doesn't exist" ; exit 1 ;}
+
+
+if [[ -z ${account} ]]
+then
+	DEF_SERVICE="$(sacctmgr show user $USER format=defaultaccount -P -n)"
+	account="${DEF_SERVICE}"
+fi
+# -----------------------------------------   ACTUAL SUB   -----------------------------------------
+input_f=$(basename "$input_file")
+input_fname="${input_f%.*}"
+
+CURDIR=`pwd`
+((tasks=cores*threads))
+
+cat << EOF | sbatch
+#!/bin/bash
+#SBATCH -p $partition
+#SBATCH -N $nodes
+#SBATCH --ntasks-per-node=$tasks
+#SBATCH --mem=${mem}GB
+#SBATCH -J ${input_fname}
+#SBATCH -t ${time_limit}:00:00
+#SBATCH -A ${account}
+#SBATCH --reservation=${reservation}
+
+source /usr/local/sbin/modules.sh
+
+module load Boost/1.72.0-iimpi-2020a
+module load OpenMPI/4.0.3-GCC-9.3.0 
+module load intel/2020a 
+module load ScaLAPACK/2.1.0-gompi-2020a 
+
+export BAGEL_NUM_THREADS=\${cores}
+export OMP_NUM_THREADS=\${cores}
+export MKL_NUM_THREADS=\${threads}
+
+export RSH_COMMAND="ssh"
+mkdir /dev/shm/\$SLURM_JOBID
+export TMPDIR=/dev/shm/\$SLURM_JOBID
+
+cd $CURDIR
+
+mpirun -np $tasks /home/rgora/appl/bagel/1.2.0-patch/bin/BAGEL $input_f >& $CURDIR/$input_fname.log
+
+EOF
+
+
+# --------------------------------------------   INFO   --------------------------------------------
+echo "The job is being submitted with the following parameters:" 1>&2
+echo 1>&2
+printf "\t%-15s %s\n" "file" $input_file 1>&2
+printf "\t%-15s %s\n" "service" ${account} 1>&2
+printf "\t%-15s %s\n" "partition" $partition 1>&2
+printf "\t%-15s %s\n" "reservation" $reservation 1>&2
+printf "\t%-15s %s\n" "nodes" $nodes 1>&2
+printf "\t%-15s %s (per node)\n" "cores" $cores 1>&2
+printf "\t%-15s %s (per process)\n" "threads" $threads 1>&2
+printf "\t%-15s %s GB (per node)\n" "memory" $mem 1>&2
+printf "\t%-15s %s hours\n" "time limit" ${time_limit} 1>&2
+echo 1>&2

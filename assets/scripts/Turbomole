@@ -3,19 +3,23 @@
 #set -x
 
 # Set defaults
-Queue="normal"
+Queue="lem-cpu"
+Queue="bem2-cpu"
 Memory="32"
 Nnodes="1"
 Ncores="16"
 Arch="smp"
-Version="7.6"
+Version="7.9"
 Sequential="0"
 CurrDir=${PWD}
 Help="0"
+InitSCF="0"
+LocalTMP="0"
 Test="0"
 LANG="C"
 Host=`uname -n`
 time_limit=72
+
 
 if [ -z $1 ]
 then
@@ -27,7 +31,7 @@ fi
 set_turbomole_env () {
 # Setup environment
 source /usr/local/sbin/modules.sh
-module load turbomole/7.6
+module load turbomole/$Version
 export PARA_ARCH=\$PARCH
 export PARNODES=\$Ncpus
 . \$TURBODIR/Config_turbo_env
@@ -36,14 +40,14 @@ export PARNODES=\$Ncpus
 cat_turbomole_env () {
 cat <<EOF
 # Setup environment
-module load turbomole/7.6
+module load turbomole/$Version
 . \$TURBODIR/Config_turbo_env
 EOF
 exit 0
 }
 
 # Read options
-while getopts ":n:p:a:v:q:m:sht:xe" Option
+while getopts ":n:p:a:v:q:m:sht:xeli" Option
 do
     case $Option in
         n ) Nnodes=$OPTARG ;;
@@ -60,13 +64,17 @@ do
             fi
             ;;
         h ) Help="1" ;;
+        i ) InitSCF="1" ;;
         x ) Test="1"; set -x ;;
         t ) time_limit=$OPTARG ;;
+        l ) LocalTMP="1";;
         e ) cat_turbomole_env ;;
   esac
 done
 
 shift $(($OPTIND - 1))
+
+[ "$Queue" = "lem-cpu" ] && LocalTMP="1"
 
 # Setup cpus
 ((Ncpus=Nnodes*Ncores))
@@ -107,7 +115,7 @@ Where options are:
   -x test execution scripts
   -h print this help
   -e print turbomole environment
-  -v version: 7.6, 7.8 [$Version] 
+  -v version: 7.6, 7.9 [$Version] 
   -a architecture [$Arch]
 EOF
 
@@ -124,7 +132,7 @@ fi
 
 commands=$*
 
-export Test CurrDir LANG Host Version PARCH Ncpus program_name commands
+export Test CurrDir LANG Host Version PARCH Ncpus program_name commands InitSCF LocalTMP
 
 prepare_job () {
     if [ -f $JOB.log ];
@@ -154,7 +162,7 @@ exec 2>>\${CurrDir}/\$JOB.err
 # Setup environment
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 source /usr/local/sbin/modules.sh
-module load turbomole/7.6
+module load turbomole/$Version
 export PARA_ARCH=\$PARCH
 export PARNODES=\$Ncpus
 . \$TURBODIR/Config_turbo_env
@@ -162,7 +170,12 @@ export MKL_ENABLE_INSTRUCTIONS=SSE4_2
 export HOSTS_FILE=\$PBS_NODEFILE
 
 # setup scratch
-export TURBOTMPDIR="/dev/shm/$USER/\$SLURM_JOBID"
+if [ $LocalTMP -eq 1 ]
+then
+    export TURBOTMPDIR="\$TMPDIR"
+else
+    export TURBOTMPDIR="/dev/shm/$USER/\$SLURM_JOBID"
+fi
 rm -rf \$TURBOTMPDIR
 mkdir -p \$TURBOTMPDIR
 
@@ -181,8 +194,12 @@ cd \${CurrDir}
 exec 1>\$JOB.log
 
 # run turbomole
+if [ $InitSCF -eq 1 ]
+then
 echo -n "Running initial dscf."
 dscf | tee \${JOB}_dscf.log
+fi 
+
 echo -n "Running program  \$program_name \$commands."
 \$program_name \$commands
 
@@ -207,7 +224,7 @@ cat <<EOF
 # Setup environment
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 source /usr/local/sbin/modules.sh
-module load turbomole/7.6
+module load turbomole/$Version
 export PARA_ARCH=\$PARCH
 export PARNODES=\$Ncpus
 . \$TURBODIR/Config_turbo_env
