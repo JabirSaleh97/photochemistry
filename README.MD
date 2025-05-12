@@ -355,6 +355,10 @@ We start with the optimization of geometry at the KS-DFT and TD-DFT levels in OR
 Next, we locate the relevant MECPs using Turbomole and CIOpt packages
 
 ### 📘 [MECPs Geometry Optimization of Uracil, Cytosine and Thymine](./TURBO.MD)
+
+To obtain reference geometries of MECPs we will use BAGEL package.
+
+### 📘 [XMS-CAPT2 calculations using BAGEL](./BAGEL.MD)
 </details>
 
 <details>
