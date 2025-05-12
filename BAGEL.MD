@@ -3,6 +3,7 @@
 <details>
 <summary><strong>⚙️ XMS-CAPT2 calculations with BAGEL</strong></summary>
 
+
 Since XMS-CAPT2 calculations are rather time consuming we shall demonstrate the workflow based on ethylene example. We will perform geometry optimization at XMS-CAPT2 level of ethylene in the ground (N) and excited (V) state and locate selected conical intersetion geometries.
 
 ### 📦 Prerequisites
