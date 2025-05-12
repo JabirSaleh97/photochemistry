@@ -113,5 +113,33 @@ For the time being it prepares the structure along with a typical input for XMS-
   ]
 }
 ```
-Naturally we have to start with HF calculations to setup the active space.
+Naturally we have to start with HF calculations to setup the active space. Thus we shall keep only that part of the file.
+```json
+{
+  "bagel": [
+    {
+      "title" : "molecule",
+      "basis" : "svp",
+      "df_basis" : "svp-jkfit",
+      "angstrom" : true,
+      "geometry" : [
+        { "atom": "C", "xyz": [0.655, -0.0, -0.001] },
+        { "atom": "C", "xyz": [-0.655, 0.0, -0.0005] },
+        { "atom": "H", "xyz": [1.195, 0.9353, 0.0] },
+        { "atom": "H", "xyz": [1.195, -0.9353, 0.0022] },
+        { "atom": "H", "xyz": [-1.195, -0.9353, -0.0015] },
+        { "atom": "H", "xyz": [-1.195, 0.9353, 0.0008] }
+      ]
+    },
+    {
+      "title" : "hf"
+    },
+    {
+      "title" : "print",
+      "file" : "hf.molden",
+      "orbitals" : true
+    }
+  ]
+}
+```
 
