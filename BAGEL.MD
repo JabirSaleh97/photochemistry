@@ -156,7 +156,7 @@ gmolden hf.molden
 ```
 Now switch to `Dens. Mode`, choose a contour using `Space` button (e.g. 0.006) and then select an orbital from a window that appears after pressing `Orbital` button. BAGEL is labeling these starting from 1 so the labels will be the same in MOLDEN.
 
-In this case the choice is rather obvious. The V state of ethylene has a <sup>1</sup>ππ<sup>\*</sup> character, thus the minimal active space should consist of 2 electrons in 2 orbitals (HOMO and LUMO).
+In this case the choice is rather obvious. The V state of ethylene has a <sup>1</sup>ππ<sup>\*</sup> character, thus the minimal active space should consist of 2 electrons in 2 orbitals (HOMO and LUMO). We have 8 doubly occupied orbitals in the RHF determinant thus we will make the HOMO and LUMO active and keep the remaining 7 inactive. 
 
 | ![Alt Text 1](assets/ethylene/et_mo8.png)   | ![Alt Text 2](assets/ethylene/et_mo9.png)   |
 |---|---|
