@@ -162,3 +162,12 @@ In this case the choice is rather obvious. The V state of ethylene has a <sup>1<
 |---|---|
 | Orbital 8 (π)           | Orbital 9 (π*)           | 
 
+### 📄 4. Ground state geometry optimization.
+
+Once we have selected the active space we may proceed to ground and excited state geometry optimizations. We can use the original input file as a template and change it accordingly. Please note that the SVP basis set we use is rather minimal and mainly for demonstration purposes (cc-pVDZ or if we can aford that cc-pVTZ would be a better choice).
+```
+xyz2bagel.py ethylene.xyz et_s0_2in2.json
+vi et_s0_2in2.json
+cat et_s0_2in2.json
+```
+```
