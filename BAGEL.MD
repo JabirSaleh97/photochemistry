@@ -147,7 +147,7 @@ Naturally we have to start with HF calculations to setup the active space. Thus 
 ```
 You may now use the [Bagel](./assets/scripts/Bagel) script to submit the job to a queue. Once calculations are complete we may use `hf.molden` file to visualize the orbitals. In this case the choice is rather obvious. The V state of ethylene has a <sup>1</sup>ππ<sup>\*</sup> character, thus the minimal active space should consist of 2 electrons in 2 orbitals (HOMO and LUMO).
 
-| ![Alt Text 1](assets/ethylene/et_mo8.gif|width=100)   | ![Alt Text 2](assets/ethylene/et_mo9.gif|width=100)   |
+| ![Alt Text 1](assets/ethylene/et_mo8.gif){width=100}   | ![Alt Text 2](assets/ethylene/et_mo9.gif|width=100){width=100}   |
 |---|---|
 | Orbital 8 (π)           | Orbital 9 (π*)           | 
 
