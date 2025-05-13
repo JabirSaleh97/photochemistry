@@ -116,6 +116,9 @@ For the time being it prepares the structure along with a typical input for XMS-
   ]
 }
 ```
+
+### 📄 3. Perform HF calculations and analyze the orbitals.
+
 Naturally we have to start with HF calculations to setup the active space. Thus we shall keep only that part of the file.
 ```json
 {
@@ -145,7 +148,14 @@ Naturally we have to start with HF calculations to setup the active space. Thus 
   ]
 }
 ```
-You may now use the [Bagel](./assets/scripts/Bagel) script to submit the job to a queue. Once calculations are complete we may use `hf.molden` file to visualize the orbitals. In this case the choice is rather obvious. The V state of ethylene has a <sup>1</sup>ππ<sup>\*</sup> character, thus the minimal active space should consist of 2 electrons in 2 orbitals (HOMO and LUMO).
+You may now use the [Bagel](./assets/scripts/Bagel) script to submit the job to a queue. Once calculations are complete we may use `hf.molden` file to visualize the orbitals. 
+
+MOLDEN is an obvious choice for visualization of this file though in principle [avogadro](https://avogadro.cc), [jmol](https://jmol.sourceforge.net) or [gOpenMol](https://github.com/gopenmoldev/gOpenMol) could be used as well. After opening `hf.molden` using for instance (I assume that the MOLDEN package is installed locally and the `hf.molden` file was copied to a current directory):
+```
+gmolden hf.molden
+```
+Now switch to 
+In this case the choice is rather obvious. The V state of ethylene has a <sup>1</sup>ππ<sup>\*</sup> character, thus the minimal active space should consist of 2 electrons in 2 orbitals (HOMO and LUMO).
 
 | ![Alt Text 1](assets/ethylene/et_mo8.png)   | ![Alt Text 2](assets/ethylene/et_mo9.png)   |
 |---|---|
