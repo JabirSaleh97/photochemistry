@@ -4,7 +4,7 @@
 <summary><strong>⚙️ XMS-CAPT2 calculations with BAGEL</strong></summary>
 
 
-Since XMS-CAPT2 calculations are rather time consuming we shall demonstrate the workflow based on ethylene example. We will perform geometry optimization at XMS-CAPT2 level of ethylene in the ground (N) and excited (V) state and locate selected conical intersetion geometries.
+Since XMS-CAPT2 calculations are rather time consuming we will demonstrate the workflow based on ethylene example. We will perform geometry optimization at XMS-CAPT2 level of ethylene in the ground (N) and excited (V) state and locate selected conical intersetion geometries.
 
 ### 📦 Prerequisites
 
@@ -37,7 +37,7 @@ module load openbabel
 molget ethylene
 exit
 ```
-BAGEL uses JSON syntax for input files whic is rather tedious. You may use the [xyz2bagel.py](./assets/scripts/xyz2bagel.py) script to prepare a template of an input file:
+BAGEL uses JSON syntax for input files which is rather tedious. You may use the [xyz2bagel.py](./assets/scripts/xyz2bagel.py) script to prepare a template of an input file:
 ```
 xyz2bagel.py ethylene.xyz et_hf.json
 cat et_hf.json
@@ -147,7 +147,7 @@ Naturally we have to start with HF calculations to setup the active space. Thus 
 ```
 You may now use the [Bagel](./assets/scripts/Bagel) script to submit the job to a queue. Once calculations are complete we may use `hf.molden` file to visualize the orbitals. In this case the choice is rather obvious. The V state of ethylene has a <sup>1</sup>ππ<sup>\*</sup> character, thus the minimal active space should consist of 2 electrons in 2 orbitals (HOMO and LUMO).
 
-| ![Alt Text 1](assets/ethylene/et_mo8.gif){width=50}   | ![Alt Text 2](assets/ethylene/et_mo9.gif){width=50}   |
+| ![Alt Text 1](assets/ethylene/et_mo8.gif)   | ![Alt Text 2](assets/ethylene/et_mo9.gif)   |
 |---|---|
 | Orbital 8 (π)           | Orbital 9 (π*)           | 
 
