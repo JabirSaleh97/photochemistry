@@ -241,3 +241,9 @@ cat et_s0_2in2.json
 }
 ```
 
+### 📄 4. Excited state geometry optimization.
+
+Perhaps the most comprehensive description of ethylene PE landscape was given by Barbatti et al.[^1] can be found in Once we have selected the active space we may proceed to ground and excited state geometry optimizations.
+
+[^1]: [Barbatti, M.; Paier, J.; Lischka, JCP 2004, 121 (23), 11614–11624](https://doi.org/10.1063/1.1807378).
+
