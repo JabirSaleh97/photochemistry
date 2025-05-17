@@ -263,7 +263,7 @@ vi et_s1_2in2.json
 cat et_s1_2in2.json
 ```
 
-The input file will be rather similar. We have 2 active electrons (`"nact" : 2,`), 7 inactive doubly occupied orbitals (`"nclosed" : 7,`) and the active space composed of 8th and 9th orbitals (`"active" : [ 8, 9 ]`). To get a more balanced description of the states of interest we will perform state-averaged calculations in which we are averaging the densities of S0 and S1 states (`"nstate" : 2,`). To select the S1 state we change the target from 0 to 1 (`"target" : 1`). Bagel is labeling states starting from 0 while the orbitals starting from 1.
+The input file will be rather similar. We have 2 active electrons (`"nact" : 2,`), 7 inactive doubly occupied orbitals (`"nclosed" : 7,`) and the active space composed of 8th and 9th orbitals (`"active" : [ 8, 9 ]`). To get a more balanced description of the states of interest we will perform state-averaged calculations in which we are averaging the densities of S0 and S1 states (`"nstate" : 2,`). To select the S1 state we change the target from 0 to 1 (`"target" : 1,`). Bagel is labeling states starting from `0` while the orbitals starting from `1`. Also note that I have switched to optimization in cartesian coordinates (`"internal" : false,`) - in my experience the optimization in internal coordinates is often unsuccessful.
 
 ```json
 {
