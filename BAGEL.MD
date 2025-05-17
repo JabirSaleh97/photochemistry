@@ -243,7 +243,96 @@ cat et_s0_2in2.json
 
 ### 📄 4. Excited state geometry optimization.
 
-Perhaps the most comprehensive description of ethylene PE landscape was given by Barbatti et al.[^1] can be found in Once we have selected the active space we may proceed to ground and excited state geometry optimizations.
+Perhaps the most comprehensive description of ethylene PE landscape was given by Barbatti et al.[^1] We will attempt to locate the $D_{2d}$ geometry of the V state assuming the corresponding wavefunction i.e. `XMS-CASPT2(2,2)/def2-SVP`. We neet to prepare the appropriate starting geometry (please note thet if you start with the ground state geometry the calculations probably won't converge or even dissociate the molecule into two methylene radicals). Below is the starting geometry prepared using MOLDEN. 
 
+```
+6
+
+C     0.655000     0.000000    -0.001000
+C    -0.655000     0.000000    -0.000500
+H     1.195000     0.935300     0.000000
+H     1.195000    -0.935300     0.002200
+H    -1.194643    -0.001206     0.935006
+H    -1.195357     0.001206    -0.935594
+```
+
+
+```bash
+xyz2bagel.py ethylene_d2d.xyz et_s1_2in2.json
+vi et_s1_2in2.json
+cat et_s1_2in2.json
+```
+
+The input file will be rather similar. We have 2 active electrons (`"nact" : 2,`), 7 inactive doubly occupied orbitals (`"nclosed" : 7,`) and the active space composed of 8th and 9th orbitals (`"active" : [ 8, 9 ]`). To get a more balanced description of the states of interest we will perform state-averaged calculations in which we are averaging the densities of S0 and S1 states (`"nstate" : 2,`). To select the S1 state we change the target from 0 to 1 (`"target" : 1`). Bagel is labeling states starting from 0 while the orbitals starting from 1.
+
+```json
+{
+  "bagel": [
+    {
+      "title" : "molecule",
+      "basis" : "svp",
+      "df_basis" : "svp-jkfit",
+      "angstrom" : true,
+      "geometry" : [
+        { "atom": "C", "xyz": [0.655, 0.0, -0.001] },
+        { "atom": "C", "xyz": [-0.655, 0.0, -0.0005] },
+        { "atom": "H", "xyz": [1.195, 0.9353, 0.0] },
+        { "atom": "H", "xyz": [1.195, -0.9353, 0.0022] },
+        { "atom": "H", "xyz": [-1.194643, -0.001206, 0.935006] },
+        { "atom": "H", "xyz": [-1.195357, 0.001206, -0.935594] }
+      ]
+    },
+    {
+      "title" : "hf"
+    },
+    {
+      "title" : "casscf",
+      "nstate" : 2,
+      "nact" : 2,
+      "nclosed" : 7,
+      "natocc" : true,
+      "maxiter": 200,
+      "maxiter_micro": 200,
+      "active" : [ 8, 9 ]
+    },
+    {
+      "title" : "print",
+      "file" : "casscf.molden",
+      "orbitals" : true
+    },
+    {
+      "title" : "optimize",
+      "target" : 1,
+      "internal" : false,
+      "method" : [
+        {
+          "title" : "caspt2",
+          "smith" : {
+            "method" : "caspt2",
+            "ms" : "true",
+            "xms" : "true",
+            "sssr" : "true",
+            "shift" : 0.0,
+            "frozen" : true,
+            "maxiter" : 200
+          },
+          "nstate" : 2,
+          "nact" : 2,
+          "nclosed" : 7,
+          "natocc" : true,
+          "maxiter" : 400,
+          "maxiter_micro" : 200,
+          "active" : [ 8, 9 ]
+        }
+      ]
+    },
+    {
+      "title" : "print",
+      "file" : "final.molden",
+      "orbitals" : true
+    }
+  ]
+}
+```
 [^1]: [Barbatti, M.; Paier, J.; Lischka, JCP 2004, 121 (23), 11614–11624](https://doi.org/10.1063/1.1807378).
 
