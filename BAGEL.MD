@@ -164,7 +164,7 @@ In this case the choice is rather obvious. The V state of ethylene has a <sup>1<
 
 ### 📄 4. Ground state geometry optimization.
 
-Once we have selected the active space we may proceed to ground and excited state geometry optimizations. We can use the original input file as a template and change it accordingly. Please note that the SVP basis set we use is rather minimal and mainly for demonstration purposes (cc-pVDZ or if we can aford that cc-pVTZ would be a better choice). We have 2 active electrons (`"nact" : 2,`), 7 inactive doubly occupied orbitals (`"nclosed" : 7,`) and the active space composed of 8th and 9th orbitals (`"active" : [ 8, 9 ]`). To get a more balanced description of the states of interest we will perform state-averaged calculations in which we are averaging the densities of S0 and S1 states (`"nstate" : 2,`).
+Once we have selected the active space we may proceed to ground and excited state geometry optimizations. We can use the original input file as a template and change it accordingly. Please note that the SVP basis set that we use is rather minimal and mainly for demonstration purposes (cc-pVDZ or if we can aford that cc-pVTZ would be a better choice). We have 2 active electrons (`"nact" : 2,`), 7 inactive doubly occupied orbitals (`"nclosed" : 7,`) and the active space composed of 8th and 9th orbitals (`"active" : [ 8, 9 ]`). To get a more balanced description of the states of interest we will perform state-averaged calculations in which we are averaging the densities of S0 and S1 states (`"nstate" : 2,`).
 
 ```bash
 xyz2bagel.py ethylene.xyz et_s0_2in2.json
