@@ -275,7 +275,7 @@ Some interesting data can also be found in the `casscf.log` - in particular the 
 
 ### 📄 5. Excited state geometry optimization.
 
-Perhaps the most comprehensive description of ethylene PE landscape was given by Barbatti et al.[^1] We will attempt to locate the $D_{2d}$ geometry of the V state assuming the corresponding wavefunction i.e. `XMS-CASPT2(2,2)/def2-SVP`. We neet to prepare the appropriate starting geometry (please note thet if you start with the ground state geometry the calculations probably won't converge or even dissociate the molecule into two methylene radicals). Below is the starting geometry prepared using MOLDEN. Again our description of the V state is lacking as it has a significant 3d contribution. In $\pi$-orbital picture $`\psi_V=|\pi^{\alpha}\pi^{*\beta}\rangle - |\pi^{\beta}\pi^{*\alpha}\rangle`$
+Perhaps the most comprehensive description of ethylene PE landscape was given by Barbatti et al.[^1] We will attempt to locate the $D_{2d}$ geometry of the V state assuming the corresponding wavefunction i.e. `XMS-CASPT2(2,2)/def2-SVP`. We neet to prepare the appropriate starting geometry (please note thet if you start with the ground state geometry the calculations probably won't converge or even dissociate the molecule into two methylene radicals). Below is the starting geometry prepared using MOLDEN.
 
 ```
 6
@@ -366,29 +366,10 @@ The input file will be rather similar. We have 2 active electrons (`"nact" : 2,`
   ]
 }
 ```
-Bagel produces `opt_history.molden` showing a trajectory. More details can be found in opt.log (these file names are predefined thus it is advisable to perform calculations in dedicated directories). Look for `ci vector` to check the character of both states. In this case the interpretation is rather obvious. The S0 state has a $^1\pi^2$ character, while the excited state is a $^1\pi\pi^*$ transition. Please not that the main output file contains the details of the first optimization cycle. 
 
-```
-     * ci vector, state   0, <S^2> = 0.0000
-       2.    -0.9998143132
+Again our description of the V state is lacking as it has a significant 3d contribution. In this simplified $\pi$-orbital picture $`\psi_V=|\pi^{\alpha}\pi^{*\beta}\rangle - |\pi^{\beta}\pi^{*\alpha}\rangle`$, however, after rotation to $D_{2d}$ symmetry the frontier $\pi$ orbitals become degenerated. Below there is a plot for the interpolated geometries between $D_{2h}$ and $D_{2d}$ geometries.
 
-     * ci vector, state   1, <S^2> = 0.0000
-       ab    -0.7071067413
-       ba    -0.7071067413
-```
-The relevant energies are printed below:
-```
-    * MS-CASPT2 energy : state  0      -78.1553523865
-    * MS-CASPT2 energy : state  1      -78.0452356661
-``` 
-Some interesting data can also be found in the `casscf.log` - in particular the natural occupation numbers:
-```
-  ========       state-averaged       ========
-  ======== natural occupation numbers ========
-   Orbital 0 : 1.4996
-   Orbital 1 : 0.5004
-  ============================================
-```
+![Alt Text 1](assets/ethylene/et_liic.png)
 
 [^1]: [Barbatti, M.; Paier, J.; Lischka, JCP 2004, 121 (23), 11614–11624](https://doi.org/10.1063/1.1807378).
 
