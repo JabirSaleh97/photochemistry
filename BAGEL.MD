@@ -374,6 +374,16 @@ bash run.sh
 ```
 The CASSCF natural orbitals are shown for 0, 40 and 90 deegrees. The table below indicates a significant change in the orbital character roughly between 70 and 80 degrees.
 
+| Angle  | State | Energy | CI vector | State | Energy | CI vector |
+|---|---|---|---|---|---|---|
+| 0 |S0 |-77.99449359 |`2.` 0.98, `.2` -0.18 |                       S1 |-77.62624295 |`ab` -0.707, `ba` -0.707 |
+|40 |S0 |-77.95020452 |`2.` 0.98, `.2` -0.17 |                       S1 |-77.70261305 |`ab` -0.707, `ba` -0.707 |
+|70 |S0 |-77.89295023 |`2.` -0.62, `ab` 0.55 `ba` 0.55, `.2` 0.06 |  S1 |-77.74384077 |`2.` -0.777, `ab` -0.44, `ba` -0.44, `.2` 0.075 |
+|80 |S0 |-77.87595738 |`ab` 0.66, `ba` 0.66, `2.` 0.35 |             S1 |-77.75707346 |`2.` 0.93, `ab` -0.25, `ba` -0.25 |
+|90 |S0 |-77.86833139 |`ab` 0.707, `ba` 0.707 |                      S1 |-77.76302595 |`2.` -0.99 |
+
+
+
 | Angle  | State | Energy | CI vector |
 |---|---|---|---|
 | 0 |S0 |-77.99449359 |`2.` 0.98, `.2` -0.18 |
