@@ -367,7 +367,11 @@ The input file will be rather similar. We have 2 active electrons (`"nact" : 2,`
 }
 ```
 
-Again our description of the V state is lacking as it has a significant 3d contribution. In this simplified $\pi$-orbital picture $`\psi_V=|\pi^{\alpha}\pi^{*\beta}\rangle - |\pi^{\beta}\pi^{*\alpha}\rangle`$, however, after rotation to $D_{2d}$ symmetry the frontier $\pi$ orbitals become degenerated. Below there is a plot for the interpolated geometries between $D_{2h}$ and $D_{2d}$ geometries.
+Again our description of the V state is lacking as it has a significant 3d contribution. In this simplified $\pi$-orbital picture $`\psi_V=|\pi^{\alpha}\pi^{*\beta}\rangle - |\pi^{\beta}\pi^{*\alpha}\rangle`$, however, after rotation to $D_{2d}$ symmetry the frontier $\pi$ orbitals become degenerated. Below there is a plot for the interpolated geometries between $D_{2h}$ and $D_{2d}$ geometries. Only the SA-CASSCF(2,2)/def2-SVP energies are shown. The orbital plots were prepared using [mopicgen](https://github.com/eljost/mopicgen) package (the [templates](assets/scripts/mopicgen) I've used should be put into the local mopicgen templates directory):
+```bash
+mopicgen casscf.molden --orient "reset;center {0,0,0} ; rotate z 0; rotate y 0; rotate x -45;" --fracmos
+bash run.sh
+```
 
 ![Alt Text 1](assets/ethylene/et_liic.png)
 
