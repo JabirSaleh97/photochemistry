@@ -276,6 +276,7 @@ Some interesting data can also be found in the `casscf.log` - in particular the 
 ### 📄 5. Excited state geometry optimization.
 
 Perhaps the most comprehensive description of ethylene PE landscape was given by Barbatti et al.[^1] We will attempt to locate the $D_{2d}$ geometry of the V state assuming the corresponding wavefunction i.e. `XMS-CASPT2(2,2)/def2-SVP`. We neet to prepare the appropriate starting geometry (please note thet if you start with the ground state geometry the calculations probably won't converge or even dissociate the molecule into two methylene radicals). Below is the starting geometry prepared using MOLDEN. Again our description of the V state is lacking as it has a significant 3d contribution. In $\pi$-orbital picture $\psi_V=|\pi^{\alpha}\pi^{*\beta}\rangle - |\pi^{\beta}\pi^{*\alpha}\rangle$
+
 ```
 6
 
