@@ -372,7 +372,7 @@ Again our description of the V state is lacking as it has a significant 3d contr
 mopicgen casscf.molden --orient "reset;center {0,0,0} ; rotate z 0; rotate y 0; rotate x -45;" --fracmos
 bash run.sh
 ```
-The CASSCF natural orbitals are shown for 0, 40 and 90 deegrees.
+The CASSCF natural orbitals are shown for 0, 40 and 90 deegrees. The table below indicates a significant change in the orbital character roughly between 70 and 80 degrees.
 
 | Angle  | State | Energy | CI vector |
 |---|---|---|---|
