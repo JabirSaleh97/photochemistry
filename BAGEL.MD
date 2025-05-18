@@ -385,5 +385,118 @@ The CASSCF natural orbitals are shown for 0, 40 and 90 deegrees. The table below
 
 ![Alt Text 1](assets/ethylene/et_liic.png)
 
+### 📄 6. Minimum energy conical intersection geometry optimization.
+
+In fact there are several[^1] but we shall locate only one - ethylidene. We may start from the geometry located using ADC(2) method:
+
+```
+6
+
+C      0.01079222      0.08027695     -0.43180471
+C     -0.40307060     -0.08212021      0.95179399
+H      1.09058540     -0.17053498     -0.52947412
+H     -0.11219892      1.11924180     -0.80265530
+H     -0.53731942     -0.58657682     -1.12948604
+H     -0.04878867     -0.35928674      1.94262617
+```
+
+We need to edit the template. To select the states of interest we specify `"target" : 0,` and `"target2" : 1,`. We also have to change the `"opttype" : "meci",`.
+
+```bash
+xyz2bagel.py etdn.xyz etdn_s1-s0_2in2.json
+vi etdn_s1-s0_2in2.json
+cat etdn_s1-s0_2in2.json
+```
+
+```json
+{
+  "bagel": [
+    {
+      "title" : "molecule",
+      "basis" : "svp",
+      "df_basis" : "svp-jkfit",
+      "angstrom" : true,
+      "geometry" : [
+        { "atom": "C", "xyz": [0.01079222, 0.08027695, -0.43180471] },
+        { "atom": "C", "xyz": [-0.4030706, -0.08212021, 0.95179399] },
+        { "atom": "H", "xyz": [1.0905854, -0.17053498, -0.52947412] },
+        { "atom": "H", "xyz": [-0.11219892, 1.1192418, -0.8026553] },
+        { "atom": "H", "xyz": [-0.53731942, -0.58657682, -1.12948604] },
+        { "atom": "H", "xyz": [-0.04878867, -0.35928674, 1.94262617] }
+      ]
+    },
+    {
+      "title" : "hf"
+    },
+    {
+      "title" : "print",
+      "file" : "hf.molden",
+      "orbitals" : true
+    },
+    {
+      "title" : "casscf",
+      "nstate" : 2,
+      "nact" : 2,
+      "nclosed" : 7,
+      "natocc" : true,
+      "maxiter": 200,
+      "maxiter_micro": 200,
+      "active" : [ 8, 9 ]
+    },
+    {
+      "title" : "print",
+      "file" : "casscf.molden",
+      "orbitals" : true
+    },
+    {
+      "title" : "optimize",
+      "target" : 0,
+      "target2" : 1,
+      "opttype" : "meci",
+      "internal" : "false",
+      "method" : [
+        {
+          "title" : "caspt2",
+          "smith" : {
+            "method" : "caspt2",
+            "ms" : "true",
+            "xms" : "true",
+            "sssr" : "true",
+            "shift" : 0.2,
+            "frozen" : true,
+            "maxiter" : 200
+          },
+          "nstate" : 2,
+          "nact" : 2,
+          "nclosed" : 7,
+          "natocc" : true,
+          "maxiter" : 400,
+          "maxiter_micro" : 200,
+          "active" : [ 8, 9 ]
+        }
+      ]
+    },
+    {
+      "title" : "print",
+      "file" : "final.molden",
+      "orbitals" : true
+    }
+  ]
+}
+```
+
+The final geometry (E=-78.0858604633) was located after only 14 steps. 
+
+```
+    6
+
+ C     0.010534     0.080121    -0.430655
+ C    -0.386064    -0.084432     0.941822
+ H     1.091719    -0.178578    -0.482105
+ H    -0.081402     1.112052    -0.818571
+ H    -0.504379    -0.589801    -1.144698
+ H    -0.214152    -0.326018     1.979319
+```
+
 [^1]: [Barbatti, M.; Paier, J.; Lischka, JCP 2004, 121 (23), 11614–11624](https://doi.org/10.1063/1.1807378).
 
