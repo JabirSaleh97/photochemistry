@@ -1,0 +1,32 @@
+
+
+a coord
+sy c1
+ired
+*
+b all SV(P)
+*
+eht
+
+
+
+scf
+iter
+200
+
+cc
+freeze
+*
+cbas
+*
+memory
+4000
+ricc2
+model mp2
+scs  cos=1.20000   css=0.33333
+maxiter 200
+geoopt mp2
+*
+*
+*
+*

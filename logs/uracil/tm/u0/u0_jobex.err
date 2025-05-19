@@ -1,0 +1,73 @@
+ 'turbomole/7.6' load complete.
+Turbomole job particulars:
+TURBOTMPDIR=/dev/shm/rgora/3503722
+SLURM_JOBID=3503722
+Queue=normal
+Memory=32
+Cores=16
+Time=72
+
+ dscf ended normally
+ dscf ended normally
+ ricc2 ended normally
+  statpt ended normally
+ dscf ended normally
+ ricc2 ended normally
+  statpt ended normally
+ dscf ended normally
+ ricc2 ended normally
+  statpt ended normally
+ dscf ended normally
+ ricc2 ended normally
+  statpt ended normally
+ dscf ended normally
+ ricc2 ended normally
+  statpt ended normally
+ dscf ended normally
+ ricc2 ended normally
+  statpt ended normally
+ dscf ended normally
+ ricc2 ended normally
+  statpt ended normally
+ dscf ended normally
+ ricc2 ended normally
+  statpt ended normally
+ dscf ended normally
+ ricc2 ended normally
+  statpt ended normally
+ dscf ended normally
+ ricc2 ended normally
+  statpt ended normally
+ dscf ended normally
+ ricc2 ended normally
+Turbomole job particulars:
+JobId=3503722 JobName=u0_jobex
+   UserId=rgora(1237) GroupId=kdm-hpc(21001) MCS_label=N/A
+   Priority=335 Nice=0 Account=hpc-rgora-1721393588 QOS=hpc-rgora-1721393588
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:35 TimeLimit=3-00:00:00 TimeMin=N/A
+   SubmitTime=2025-04-07T22:16:41 EligibleTime=2025-04-07T22:16:41
+   AccrueTime=2025-04-07T22:16:41
+   StartTime=2025-04-07T22:21:17 EndTime=2025-04-10T22:21:17 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2025-04-07T22:21:17 Scheduler=Backfill
+   Partition=bem2-cpu-normal AllocNode:Sid=ui.plgrid.wcss.wroc.pl:3820592
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=r21c03b02
+   BatchHost=r21c03b02
+   NumNodes=1 NumCPUs=16 NumTasks=16 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=16,mem=32G,node=1,billing=16,gres/storage=1,gres/storage:lustre=1
+   AllocTRES=cpu=16,mem=32G,node=1,billing=16,gres/storage=1,gres/storage:lustre=1
+   Socks/Node=* NtasksPerN:B:S:C=16:0:*:* CoreSpec=*
+   MinCPUsNode=16 MinMemoryNode=32G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=(null)
+   WorkDir=/home/rgora/photochemistry/ref/uracil/tm/u0
+   Extra=gres/storage:lustre 
+   StdErr=/home/rgora/photochemistry/ref/uracil/tm/u0/slurm-3503722.out
+   StdIn=/dev/null
+   StdOut=/home/rgora/photochemistry/ref/uracil/tm/u0/slurm-3503722.out
+   TresPerNode=gres/storage:lustre
+   
+

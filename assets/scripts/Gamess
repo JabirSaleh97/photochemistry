@@ -1,0 +1,265 @@
+#!/bin/bash 
+
+#set -x
+
+# Set global defaults
+Version='2024-07-15_r2'
+Destination=""
+Keep="0"
+Sequential="1"
+Test="0"
+OS=`uname`
+Host=`uname -n`
+EXTBAS="/dev/null"
+CheckTests="0"
+LANG="C"
+
+if [ -z $1 ]
+then
+    Help="1"
+else
+    Help="0"
+fi
+
+# Set local defaults
+case ${Host/.*/} in
+    'dirac' | 'pauli' | 'fermi' | 'bose' | 'bohr') # Set defaults (x86_64)
+        NNODES="1"
+        PPN="4"
+        Sequential="0"
+        Target="mpi"
+        Queue="large"
+        Scratch="/scratch/$USER"
+        GamessPath="/opt/gamess"
+        MemPPN="1800mb"
+        ;;
+    * ) # Set defaults for a typical sequential execution
+        NNODES="1"
+        PPN="16"
+        Sequential="0"
+        Target="mpi"
+        Queue="bem2-cpu"
+        GamessPath="/home/rgora/appl/gamess"
+        MemPPN="32"
+        Walltime=72
+        LocalTMP="0"
+        ;;
+esac
+
+export LANG OS GamessName GamessPath Host Scratch LocalTMP Target
+
+# Read options
+while getopts ":kv:q:m:sb:tn:p:c:hx:d:w:l" Option
+do
+    case $Option in
+        b ) EXTBAS="${PWD}/${OPTARG}" ;;
+        k ) Keep="1" ;;
+        n ) NNODES=$OPTARG ;;
+        p ) PPN=$OPTARG ;;
+        v ) Version=$OPTARG ;;
+        q ) Queue=$OPTARG ;;
+        m ) MemPPN=$OPTARG ;;
+        s ) if [ $Sequential = 0 ]
+            then
+                Sequential="1"
+            else
+                Sequential="0"
+            fi
+            ;;
+        t ) Test="1"; set -x ;;
+        c ) CheckTests=$OPTARG ;;
+        h ) Help="1" ;;
+        x ) Target=$OPTARG ;;
+        d ) Destination=$OPTARG ;;
+        w ) Walltime=$OPTARG ;;
+        l ) LocalTMP="1" ;;
+    esac
+done
+
+shift $(($OPTIND - 1))
+
+case $PPN in
+    1 ) # This is for clusters of single cpu nodes
+        (( NPROC = NNODES ))
+        (( NCPUS = NNODES ))
+        ;;
+    * ) # General case
+        (( NCPUS = NNODES * PPN ))
+        (( NPROC = NNODES * PPN * 2))
+        ;;
+esac
+
+[ $NPROC -eq 1 ] && Target="sockets"
+
+export Keep NNODES NPROC NCPUS PPN Version EXTBAS Test Sequential Target Destination
+
+case "$Version" in
+    '2024-07-15_r2' ) 
+        export GMSPATH="$GamessPath/$Version"
+        export GMS="$GamessPath/$Version"
+        export VERNO="00.$Target"
+        ;;
+esac
+
+case "$Target" in
+    'sockets' )
+        export TARGET="sockets"
+        export Mpiprocs=":mpiprocs=$(( 1 * PPN ))" ;;
+    'mpi' )
+        #export FI_PROVIDER=tcp
+        export TARGET="mpi"
+        export Mpiprocs=":mpiprocs=$(( 2 * PPN ))" ;;
+esac
+
+
+# Set Memory
+Memory=${MemPPN}
+
+case ${Destination} in
+    'chunks' )
+        ((Vemory=Memory/NNODES+100+10*PPN))
+        ;;
+    * )
+        ((Vemory=Memory))
+        ;;
+esac
+
+Memory="${Memory}"
+Vemory="${Vemory}"
+
+rungms () {
+cat <<EOF
+#!/bin/bash
+#SBATCH -p $Queue
+#SBATCH -N $NNODES
+#SBATCH --ntasks-per-node=$PPN
+#SBATCH --mem=${Memory}GB
+#SBATCH -J ${JOB:0:15}
+#SBATCH -t ${Walltime}:00:00
+#SBATCH --export=ALL
+
+[ $Test -ne 0 ] && set -x
+
+# Redirect output
+exec 1>\$INP/\$JOB.log
+exec 2>>\$INP/\$JOB.err
+#exec 2>&1
+
+source /usr/local/sbin/modules.sh
+module load intel/2024a
+export LD_LIBRARY_PATH
+
+# Setup the scratch space
+if [ \$LocalTMP -eq 1 ]
+then
+    export TMPDIR="\$TMPDIR"
+else
+    export TMPDIR=/dev/shm/\$SLURM_JOBID
+fi
+
+export SCR=\$TMPDIR/\${JOB}-\$SLURM_JOBID
+/bin/rm -rf \$SCR
+mkdir -p \$SCR
+
+# Save important variables
+JLOG="Gamess job particulars:\n
+Scratch dir: \${SCR}\n
+PBS_JOBID: \${SLURM_JOBID}\n"
+echo -e \$JLOG >> \${INP}/\$JOB.err
+
+# Run Gamess
+\${GMS}/rungms \$JOB.inp \$VERNO \$NCPUS \$PPN
+
+EOF
+}
+
+# Gamess submit script
+submit() {
+    case ${Host/.*/} in
+
+        * ) rungms | sbatch
+            ;;
+
+    esac
+}
+
+# Print help
+help() {
+
+# Header
+cat <<EOF
+usage: `basename $1` [options] inputfile1.inp [inputfile2.inp ...]
+
+Where options are: 
+  -s toggle sequential/batch execution
+  -m memory per cpu [$MemPPN, total: $Memory, in chunks of: $Vemory ]
+  -n # nodes [$NNODES]
+  -p # ppn [$PPN]
+  -b extra basis file [$EXTBAS]
+  -k keep scratch files
+  -v program version [$Version]
+  -t test execution scripts
+  -q queue [$Queue]
+  -c gms check gamess test results
+  -c eds check eds test results
+  -x target: mpi, sockets [$Target]
+  -d destination: chunks [$Destination]
+  -w walltime [${Walltime} h]
+  -l local TMP [$LocalTMP]
+EOF
+
+exit 0
+}
+
+[ $Help -eq 1 ] && help $0
+
+# Check test results
+checktests() {
+    case $1 in
+       'gms' ) #Check original gamess tests
+            cd $GMS/tools/checktst
+            ./checktst $OLDPWD $Test
+            cd -
+            ;;
+       'eds' ) #Check eds tests - modified by KML
+            cd $GMS/tools/eds/checktst
+            ./checktst $OLDPWD $Test
+            cd -
+            ;;
+       * ) 
+            echo "Invalid test type: $1"
+            exit 1
+            ;;
+    esac
+
+    exit 0
+}
+
+[[ $CheckTests != 0 ]] && checktests $CheckTests
+
+Files=$*
+
+for File in $Files
+do
+    export INP=`pwd`
+    export JOB=${File//.inp/}
+    export USERSCR=$INP
+
+    export PATH=$PATH:$GMS
+
+    [ -f $INP/$JOB.log ] && /bin/mv -f $INP/$JOB.log $INP/$JOB.log.old
+    [ -f $INP/$JOB.rst ] && /bin/mv -f $INP/$JOB.rst $INP/$JOB.rst.old
+    /bin/rm -f $INP/$JOB.dat
+    /bin/rm -f $INP/$JOB.irc
+    /bin/rm -f $INP/$JOB.trj
+    /bin/rm -f $INP/$JOB.err
+
+   if [ $Sequential -eq 0 ]
+   then
+      submit
+   else
+      $GMS/rungms
+   fi    
+
+done
+

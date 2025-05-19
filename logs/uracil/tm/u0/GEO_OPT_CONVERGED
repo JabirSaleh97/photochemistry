@@ -1,0 +1,24 @@
+CONVERGENCY CRITERIA FULFILLED IN CYCLE 10
+
+ energy change  : actual value =   0.9000E-07 threshold =   0.1000E-05
+ geom. gradient : actual value =   0.5738E-04 threshold =   0.1000E-02
+
+Job ended at   Mon Apr 7 22:21:52 CEST 2025
+  on machine     r21c03b02.bem2.kdm.wcss.pl
+  by user        rgora
+  in directory   /home/rgora/photochemistry/ref/uracil/tm/u0
+  
+job.start file had been created with details about the job type: 
+
+Mon Apr  7 22:21:18 CEST 2025
+jobex WAS CALLED AS: jobex -c 200 -level cc2
+AN OPTIMIZATION WITH MAX. 200 CYCLES WILL BE PERFORMED
+CONVERGENCY CRITERION FOR TOTAL CC2-ENERGY IS 10**(-6)
+CONVERGENCY CRITERION FOR MAXIMUM NORM OF CC2-ENERGY GRADIENT IS 10**(-3)
+CONVERGENCY CRITERION FOR MAXIMUM NORM OF BASIS SET GRADIENT IS 10**(-3)
+PROCEDURE WILL START WITH A dscf like STEP
+LOAD MODULES WILL BE TAKEN FROM DIRECTORY /opt/turbomole/7.6/bin/em64t-unknown-linux-gnu_smp
+DSCF  = /opt/turbomole/7.6/bin/em64t-unknown-linux-gnu_smp/dscf
+GRAD  = /opt/turbomole/7.6/bin/em64t-unknown-linux-gnu_smp/ricc2
+STATPT = /opt/turbomole/7.6/bin/em64t-unknown-linux-gnu_smp/statpt
+
