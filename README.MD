@@ -359,6 +359,10 @@ Next, we locate the relevant MECPs using Turbomole and CIOpt packages
 To obtain reference geometries of MECPs we will use BAGEL package.
 
 ### 📘 [XMS-CAPT2 calculations using BAGEL](./BAGEL.MD)
+
+Finaly, we will attempt to locate the MECPs using MRSF-TDDFT using GAMESS(US) package.
+
+### 📘 [MRSF-TDDFT calculations using GAMESS(US)](./GAMESS.MD)
 </details>
 
 <details>
