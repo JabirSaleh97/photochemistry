@@ -15,6 +15,7 @@ Before you begin, make sure you have:
 - GAMESS(US) package installed. It may be downloaded and compiled
   after registration - check out the official [download page ](https://www.msg.chem.iastate.edu/gamess/License_Agreement.html).
 - At WCSS you may copy a precompiled package from my directory. Using the same directory structure you won't have to edit the scripts.
+- [Understanding of MRSF-TDDFT Theory](https://mqcp.readthedocs.io/en/latest/mrsf.html)
 ```bash
 mkdir -p ~/appl/gamess
 cp -r ~rgora/appl/gamess/2024-07-15_r2 ~/appl/gamess
@@ -84,7 +85,9 @@ We need to edit the `mrsf.tmpl` file:
 
 ### 📄 3. Ground state geometry optimization.
 
-The one above is a bit paranoid. We should obtain reliable results using the one below, but in difficult cases it may help with SCF convergence issues. Also it is for MECI optimization. For the ground state we need `runtype=optimize`. In the `$tddft` block we should pick `iroot=1` (this is spin-flip calculation based on triplet ROKS reference so the ground state is computed as an `excitation`).  
+The one above is a bit paranoid. We should obtain reliable results using the one below, but in difficult cases it may help with SCF convergence issues. Also it is for MECI optimization. For the ground state we need `runtype=optimize`. In the `$tddft` block we should pick `iroot=1` (this is spin-flip calculation based on triplet ROKS reference so the ground state is computed as an `excitation`). The essential advantage of MRSF-TDDFT is that it considers both $M_S=+1$ and $M_S=-1$ components of the triplet reference. This is shown schematically in the chart below from [Cheol Ho Choi tutorial](https://mqcp.readthedocs.io/en/latest/mrsf.html).
+
+
 ```
  $contrl scftyp=rohf runtyp=optimize dfttyp=bhhlyp icharg=0
          tddft=mrsf maxit=400 mult=3 nprint=7 units=angs
@@ -104,7 +107,7 @@ The one above is a bit paranoid. We should obtain reliable results using the one
 @data
  ```
 
-Again the 6-31G* basis set that we use is rather small and mainly for demonstration purposes. The `BH&HLYP` functional is sort of a standard for SF calculations though any functional with large HF exchange would do.
+Again the 6-31G* basis set that we use is rather small and mainly for demonstration purposes. The `BH&HLYP` functional is sort of a standard for SF calculations though any functional with large HF exchange contribution would do.
 
 ```bash
 xyz2gms.py -m ethylene.xyz
