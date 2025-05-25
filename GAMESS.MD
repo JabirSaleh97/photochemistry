@@ -86,6 +86,7 @@ We need to edit the `mrsf.tmpl` file:
 ### 📄 3. Ground state geometry optimization.
 
 The one above is a bit paranoid. We should obtain reliable results using the one below, but in difficult cases it may help with SCF convergence issues. Also it is for MECI optimization. For the ground state we need `runtype=optimize`. In the `$tddft` block we should pick `iroot=1` (this is spin-flip calculation based on triplet ROKS reference so the ground state is computed as an `excitation`). The essential advantage of MRSF-TDDFT is that it considers both $M_S=+1$ and $M_S=-1$ components of the triplet reference. This is shown schematically in the chart below from [Cheol Ho Choi tutorial](https://mqcp.readthedocs.io/en/latest/mrsf.html).
+
 ![SF-MRSF](assets/ethylene/SF_MRSF.png)
 
 
