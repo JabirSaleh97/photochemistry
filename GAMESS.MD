@@ -143,7 +143,7 @@ H       1.0        -1.19500        -0.93530        -0.00150
 H       1.0        -1.19500         0.93530         0.00080
  $end
 ```
-To submit GAMESS job at WCSS you may use the [Gamess](assets/scripts/Gamess) script. It is set up for `slurm` quening system. If you compiled the GAMESS package yourselves you probably would have to modify the `rungms` script (there are no predefined settings for `slurm`) or use the following: [rungms](assets/scrpts/rungms). If you issue the `Gamess` cript without any options it will return the syntax:
+To submit GAMESS job at WCSS you may use the [Gamess](assets/scripts/Gamess) script. It is set up for `slurm` quening system. If you compiled the GAMESS package yourselves you probably would have to modify the `rungms` script (there are no predefined settings for `slurm`) or use the following: [rungms](assets/scripts/rungms). If you issue the `Gamess` cript without any options it will return the syntax:
 ```bash
 Gamess
 usage: Gamess [options] inputfile1.inp [inputfile2.inp ...]
