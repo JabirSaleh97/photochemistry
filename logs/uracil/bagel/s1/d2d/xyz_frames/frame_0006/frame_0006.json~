@@ -1,0 +1,72 @@
+
+{
+  "bagel": [
+    {
+      "title" : "molecule",
+      "basis" : "svp",
+      "df_basis" : "svp-jkfit",
+      "angstrom" : true,
+      "geometry" : [
+        { "atom": "C", "xyz": [0.7195, 0.0, -0.001] },
+        { "atom": "C", "xyz": [-0.6379, -0.0001, -0.0019] },
+        { "atom": "H", "xyz": [1.2783, 0.8538, 0.4004] },
+        { "atom": "H", "xyz": [1.2791, -0.8537, -0.4017] },
+        { "atom": "H", "xyz": [-1.2639, -0.8395, 0.3841] },
+        { "atom": "H", "xyz": [-1.2627, 0.8396, -0.3891] }
+      ]
+    },
+    {
+      "title" : "hf"
+    },
+    {
+      "title" : "print",
+      "file" : "hf.molden",
+      "orbitals" : true
+    },
+    {
+      "title" : "casscf",
+      "nstate" : 2,
+      "nact" : 2,
+      "nclosed" : 7,
+      "natocc" : true,
+      "maxiter": 200,
+      "maxiter_micro": 200,
+      "active" : [ 8, 9 ]
+    },
+    {
+      "title" : "print",
+      "file" : "casscf.molden",
+      "orbitals" : true
+    },
+    {
+      "title" : "optimize",
+      "target" : 1,
+      "method" : [
+        {
+          "title" : "caspt2",
+          "smith" : {
+            "method" : "caspt2",
+            "ms" : "true",
+            "xms" : "true",
+            "sssr" : "true",
+            "shift" : 0.2,
+            "frozen" : true,
+            "maxiter" : 200
+          },
+          "nstate" : 2,
+          "nact" : 2,
+          "nclosed" : 7,
+          "natocc" : true,
+          "maxiter" : 400,
+          "maxiter_micro" : 200,
+          "active" : [ 8, 9 ]
+        }
+      ]
+    },
+    {
+      "title" : "print",
+      "file" : "final.molden",
+      "orbitals" : true
+    }
+  ]
+}

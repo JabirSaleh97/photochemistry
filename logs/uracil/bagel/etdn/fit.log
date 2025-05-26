@@ -1,0 +1,54 @@
+
+
+*******************************************************************************
+Sun May 18 21:11:32 2025
+
+
+FIT:    data read from 'a.dat' using 1:2
+        format = x:z
+BREAK: No data to fit
+
+*******************************************************************************
+Sun May 18 21:11:42 2025
+
+
+FIT:    data read from 'a.dat' using 1:2
+        format = x:z
+BREAK: No data to fit
+
+*******************************************************************************
+Sun May 18 21:12:21 2025
+
+
+FIT:    data read from 'a.dat' using 2:3
+        format = x:z
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = E + a * exp(-b * x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   E             a             b            
+   0 1.4652213794e-03   0.00e+00  4.39e+01   -7.607000e+01   5.000000e-02   1.000000e+00
+  25 3.6581770538e-08  -2.34e-04  4.39e-09   -7.606764e+01   6.171626e-01   1.357713e+00
+
+After 25 iterations the fit converged.
+final sum of squares of residuals : 3.65818e-08
+rel. change during last iteration : -2.34439e-09
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.000135244
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.82909e-08
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+E               = -76.0676         +/- 0.000104     (0.0001367%)
+a               = 0.617163         +/- 0.01959      (3.175%)
+b               = 1.35771          +/- 0.01632      (1.202%)
+
+correlation matrix of the fit parameters:
+                E      a      b      
+E               1.000 
+a               0.643  1.000 
+b               0.700  0.992  1.000 

@@ -1,0 +1,42 @@
+
+{
+  "bagel": [
+    {
+      "title" : "molecule",
+      "basis" : "svp",
+      "df_basis" : "svp-jkfit",
+      "angstrom" : true,
+      "geometry" : [
+        { "atom": "C", "xyz": [0.6795, 0.0, -0.001] },
+        { "atom": "C", "xyz": [-0.6632, -0.0, -0.0019] },
+        { "atom": "H", "xyz": [1.2408, 0.9362, 0.0886] },
+        { "atom": "H", "xyz": [1.2409, -0.9362, -0.0899] },
+        { "atom": "H", "xyz": [-1.2379, -0.934, 0.0718] },
+        { "atom": "H", "xyz": [-1.2376, 0.9341, -0.0764] }
+      ]
+    },
+    {
+      "title" : "hf"
+    },
+    {
+      "title" : "print",
+      "file" : "hf.molden",
+      "orbitals" : true
+    },
+    {
+      "title" : "casscf",
+      "nstate" : 2,
+      "nact" : 2,
+      "nclosed" : 7,
+      "natocc" : true,
+      "maxiter": 200,
+      "maxiter_micro": 200,
+      "active" : [ 8, 9 ]
+    },
+    {
+      "title" : "print",
+      "file" : "casscf.molden",
+      "orbitals" : true
+    }
+  ]
+}

@@ -1,0 +1,557 @@
+    * Using serial Knowles-Handy algorithm in FCI.
+  ---------------------------
+        FCI calculation      
+  ---------------------------
+
+  Performs exactly the same way as Knowles & Handy 1984 CPL
+
+  o alpha-beta strings
+      length:             4
+  o size of the space 
+      determinant space:  4
+      spin-adapted space: 3
+
+  o single displacement lists (alpha)
+      length:             4
+  o single displacement lists (beta)
+      length:             4
+    * Integral transformation done. Elapsed time: 0.14
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97452146     5.01e-02      0.00
+      0  1       -77.62844396     9.91e-05      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:     7.7716e-16    max eigenvalue:     7.7716e-16
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.99305626     2.23e-16      0.00
+      1  1 *     -77.62844415     6.57e-17      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9833081730
+       .2    -0.1819478694
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071064257
+       ba    -0.7071064257
+ 
+  ========       state-averaged       ======== 
+  ======== natural occupation numbers ======== 
+   Orbital 0 : 1.4669
+   Orbital 1 : 0.5331
+  ============================================ 
+       - FCI and RDMs                              0.00
+    * Integral transformation done. Elapsed time: 0.22
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97248221     4.05e-02      0.00
+      0  1       -77.64471033     1.15e-04      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:     1.6653e-16    max eigenvalue:     1.6653e-16
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.98485968     4.39e-15      0.00
+      1  1 *     -77.64471058     2.93e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9885369163
+       .2    -0.1509744879
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab     0.7071059651
+       ba     0.7071059651
+ 
+  ========       state-averaged       ======== 
+  ======== natural occupation numbers ======== 
+   Orbital 0 : 1.4772
+   Orbital 1 : 0.5228
+  ============================================ 
+       - FCI and RDMs                              0.00
+    * Integral transformation done. Elapsed time: 0.20
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97290896     4.10e-02      0.00
+      0  1       -77.64415428     5.47e-05      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:     3.8858e-16    max eigenvalue:     3.8858e-16
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.98556209     1.14e-16      0.00
+      1  1 *     -77.64415434     1.54e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9882934148
+       .2    -0.1525650848
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab     0.7071066670
+       ba     0.7071066670
+ 
+  ========       state-averaged       ======== 
+  ======== natural occupation numbers ======== 
+   Orbital 0 : 1.4767
+   Orbital 1 : 0.5233
+  ============================================ 
+       - FCI and RDMs                              0.00
+    * Integral transformation done. Elapsed time: 0.19
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97291317     4.11e-02      0.00
+      0  1       -77.64405191     1.81e-05      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:    -2.4286e-16    max eigenvalue:    -2.4286e-16
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.98566550     3.35e-16      0.00
+      1  1 *     -77.64405192     1.37e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9881969862
+       .2    -0.1531859957
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab     0.7071064759
+       ba     0.7071064759
+ 
+  ========       state-averaged       ======== 
+  ======== natural occupation numbers ======== 
+   Orbital 0 : 1.4765
+   Orbital 1 : 0.5235
+  ============================================ 
+       - FCI and RDMs                              0.00
+    * Integral transformation done. Elapsed time: 0.18
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97291446     4.12e-02      0.00
+      0  1       -77.64402028     2.07e-06      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:     2.2204e-16    max eigenvalue:     2.2204e-16
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.98569723     4.45e-16      0.00
+      1  1 *     -77.64402028     1.67e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9881670175
+       .2    -0.1533762673
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071061806
+       ba    -0.7071061806
+ 
+  ========       state-averaged       ======== 
+  ======== natural occupation numbers ======== 
+   Orbital 0 : 1.4765
+   Orbital 1 : 0.5235
+  ============================================ 
+       - FCI and RDMs                              0.00
+    * Integral transformation done. Elapsed time: 0.20
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97291487     4.12e-02      0.00
+      0  1       -77.64401073     1.35e-05      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:     5.5511e-17    max eigenvalue:     5.5511e-17
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.98570680     2.23e-16      0.00
+      1  1 *     -77.64401073     1.24e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9881578016
+       .2    -0.1534334042
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071059464
+       ba    -0.7071059464
+ 
+  ========       state-averaged       ======== 
+  ======== natural occupation numbers ======== 
+   Orbital 0 : 1.4765
+   Orbital 1 : 0.5235
+  ============================================ 
+       - FCI and RDMs                              0.00
+    * Integral transformation done. Elapsed time: 0.18
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97291502     4.12e-02      0.00
+      0  1       -77.64400789     2.03e-05      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:    -5.5511e-17    max eigenvalue:    -5.5511e-17
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.98570964     2.26e-16      0.00
+      1  1 *     -77.64400789     1.60e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9881549617
+       .2    -0.1534501869
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071057856
+       ba    -0.7071057856
+ 
+  ========       state-averaged       ======== 
+  ======== natural occupation numbers ======== 
+   Orbital 0 : 1.4765
+   Orbital 1 : 0.5235
+  ============================================ 
+       - FCI and RDMs                              0.00
+    * Integral transformation done. Elapsed time: 0.19
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97291508     4.12e-02      0.03
+      0  1       -77.64400707     2.43e-05      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:     2.2204e-16    max eigenvalue:     2.2204e-16
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.98571046     2.26e-16      0.00
+      1  1 *     -77.64400708     2.49e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9881540770
+       .2    -0.1534549127
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071056811
+       ba    -0.7071056811
+ 
+  ========       state-averaged       ======== 
+  ======== natural occupation numbers ======== 
+   Orbital 0 : 1.4765
+   Orbital 1 : 0.5235
+  ============================================ 
+       - FCI and RDMs                              0.03
+    * Integral transformation done. Elapsed time: 0.19
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97291510     4.12e-02      0.00
+      0  1       -77.64400685     2.67e-05      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:     2.2204e-16    max eigenvalue:     2.2204e-16
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.98571068     3.34e-16      0.00
+      1  1 *     -77.64400686     1.74e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9881537950
+       .2    -0.1534561170
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071056151
+       ba    -0.7071056151
+ 
+  ========       state-averaged       ======== 
+  ======== natural occupation numbers ======== 
+   Orbital 0 : 1.4765
+   Orbital 1 : 0.5235
+  ============================================ 
+       - FCI and RDMs                              0.00
+    * Integral transformation done. Elapsed time: 0.21
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97291512     4.12e-02      0.00
+      0  1       -77.64400680     2.82e-05      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:    -4.4409e-16    max eigenvalue:    -4.4409e-16
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.98571073     2.31e-16      0.00
+      1  1 *     -77.64400681     2.66e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9881537013
+       .2    -0.1534563409
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071055741
+       ba    -0.7071055741
+ 
+  ========       state-averaged       ======== 
+  ======== natural occupation numbers ======== 
+   Orbital 0 : 1.4765
+   Orbital 1 : 0.5235
+  ============================================ 
+       - FCI and RDMs                              0.00
+    * Integral transformation done. Elapsed time: 0.23
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97291512     4.12e-02      0.00
+      0  1       -77.64400679     2.91e-05      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:     0.0000e+00    max eigenvalue:     0.0000e+00
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.98571073     3.07e-17      0.00
+      1  1 *     -77.64400681     1.64e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9881536676
+       .2    -0.1534563236
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071055487
+       ba    -0.7071055487
+ 
+  ========       state-averaged       ======== 
+  ======== natural occupation numbers ======== 
+   Orbital 0 : 1.4765
+   Orbital 1 : 0.5235
+  ============================================ 
+       - FCI and RDMs                              0.00
+    * Integral transformation done. Elapsed time: 0.18
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97291513     4.12e-02      0.00
+      0  1       -77.64400679     2.97e-05      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:     5.5511e-17    max eigenvalue:     5.5511e-17
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.98571073     4.48e-16      0.00
+      1  1 *     -77.64400681     7.55e-17      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.    -0.9881536544
+       .2     0.1534562652
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab     0.7071055331
+       ba     0.7071055331
+ 
+  ========       state-averaged       ======== 
+  ======== natural occupation numbers ======== 
+   Orbital 0 : 1.4765
+   Orbital 1 : 0.5235
+  ============================================ 
+       - FCI and RDMs                              0.00
+    * Integral transformation done. Elapsed time: 0.19
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97291513     4.12e-02      0.00
+      0  1       -77.64400680     3.00e-05      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:    -1.1102e-16    max eigenvalue:    -1.1102e-16
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.98571072     3.34e-16      0.00
+      1  1 *     -77.64400682     2.27e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9881536484
+       .2    -0.1534562163
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071055236
+       ba    -0.7071055236
+ 
+  ========       state-averaged       ======== 
+  ======== natural occupation numbers ======== 
+   Orbital 0 : 1.4765
+   Orbital 1 : 0.5235
+  ============================================ 
+       - FCI and RDMs                              0.00
+    * Integral transformation done. Elapsed time: 0.16
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97291513     4.12e-02      0.00
+      0  1       -77.64400680     3.02e-05      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:     1.1102e-16    max eigenvalue:     1.1102e-16
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.98571072     2.23e-16      0.00
+      1  1 *     -77.64400682     2.37e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9881536455
+       .2    -0.1534561811
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071055178
+       ba    -0.7071055178
+ 
+  ========       state-averaged       ======== 
+  ======== natural occupation numbers ======== 
+   Orbital 0 : 1.4765
+   Orbital 1 : 0.5235
+  ============================================ 
+       - FCI and RDMs                              0.00
+    * Integral transformation done. Elapsed time: 0.25
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97291513     4.12e-02      0.00
+      0  1       -77.64400681     3.03e-05      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:    -1.1102e-16    max eigenvalue:    -1.1102e-16
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.98571071     1.12e-16      0.00
+      1  1 *     -77.64400682     3.93e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9881536440
+       .2    -0.1534561580
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071055143
+       ba    -0.7071055143
+ 
+  ========       state-averaged       ======== 
+  ======== natural occupation numbers ======== 
+   Orbital 0 : 1.4765
+   Orbital 1 : 0.5235
+  ============================================ 
+       - FCI and RDMs                              0.00
+    * Integral transformation done. Elapsed time: 0.18
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97291513     4.12e-02      0.00
+      0  1       -77.64400681     3.04e-05      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:    -2.2204e-16    max eigenvalue:    -2.2204e-16
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.98571071     3.33e-16      0.00
+      1  1 *     -77.64400683     1.57e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9881536431
+       .2    -0.1534561437
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071055121
+       ba    -0.7071055121
+ 
+  ========       state-averaged       ======== 
+  ======== natural occupation numbers ======== 
+   Orbital 0 : 1.4765
+   Orbital 1 : 0.5235
+  ============================================ 
+       - FCI and RDMs                              0.00
+    * Integral transformation done. Elapsed time: 0.27
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97291513     4.12e-02      0.00
+      0  1       -77.64400681     3.04e-05      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:     0.0000e+00    max eigenvalue:     0.0000e+00
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.98571071     2.24e-16      0.00
+      1  1 *     -77.64400683     3.58e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9881536427
+       .2    -0.1534561346
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071055108
+       ba    -0.7071055108
+ 
+  ========       state-averaged       ======== 
+  ======== natural occupation numbers ======== 
+   Orbital 0 : 1.4765
+   Orbital 1 : 0.5235
+  ============================================ 
+       - FCI and RDMs                              0.00
+    * Integral transformation done. Elapsed time: 0.31
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97291513     4.12e-02      0.00
+      0  1       -77.64400681     3.05e-05      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:    -1.1102e-16    max eigenvalue:    -1.1102e-16
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.98571071     1.36e-16      0.00
+      1  1 *     -77.64400683     3.94e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9881536423
+       .2    -0.1534561294
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071055100
+       ba    -0.7071055100
+ 
+  ========       state-averaged       ======== 
+  ======== natural occupation numbers ======== 
+   Orbital 0 : 1.4765
+   Orbital 1 : 0.5235
+  ============================================ 
+       - FCI and RDMs                              0.00

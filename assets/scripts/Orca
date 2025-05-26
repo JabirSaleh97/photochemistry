@@ -1,0 +1,310 @@
+#!/bin/bash
+
+#set -x
+
+# Set defaults
+Version=6.0.1
+Queue="lem-cpu"
+Queue="bem2-cpu"
+Memory=32
+Nnodes=1
+Ncores=16
+PPN=1
+Sequential="0"
+CurrDir=${PWD}
+Help="0"
+Test="0"
+LANG="C"
+LocalTMP="0"
+Host=`uname -n`
+time_limit=72
+
+if [ -z $1 ]
+then
+    Help="1"
+else
+    Help="0"
+fi
+
+# Read options
+while getopts ":n:c:p:q:m:sht:v:xl" Option
+do
+    case $Option in
+        n ) Nnodes=$OPTARG ;;
+        c ) Ncores=$OPTARG ;;
+        p ) PPN=$OPTARG ;;
+        q ) Queue=$OPTARG ;;
+        m ) Memory=$OPTARG ;;
+        s ) if [ $Sequential = 0 ]
+            then
+                Sequential="1"
+            else
+                Sequential="0"
+            fi
+            ;;
+        h ) Help="1" ;;
+        x ) Test="1"; set -x ;;
+        v ) Version=$OPTARG ;;
+        l ) LocalTMP="1";;
+        t ) time_limit=$OPTARG ;;
+  esac
+done
+
+shift $(($OPTIND - 1))
+
+#[ "$Queue" = "lem-cpu" ] && LocalTMP="1"
+
+if [ "$Ncores" -gt "48" ]; then
+    echo Wezly obliczeniowe maja maksymalnie 48 rdzeni.
+    exit 1
+fi
+
+export Test CurrDir LANG Host Version Ncores LocalTMP Queue
+
+Files=$*
+
+# Print help
+help() {
+
+# Header
+cat <<EOF
+usage: `basename $1` [options] inputfile1.inp [inputfile2.inp ...]
+
+Where options are: 
+  -s toggle sequential/batch execution
+  -m memory in gb [$Memory]
+  -n # nodes [$Nnodes]
+  -c # ncpus [$Ncores]
+  -p # ncpus_group [$PPN]
+  -q queue [$Queue]
+  -t test execution scripts
+  -h print this help
+  -l local TMP [$LocalTMP]
+  -t wall time [$time_limit]
+  -v version: 6.0.1 [$Version]
+EOF
+
+exit 0
+}
+
+[ $Help -eq 1 ] && help $0
+
+prepare_job () {
+# update input file
+
+    if [ -f $JOB.out ];
+    then
+        mv -f $JOB.out $JOB.old
+    fi
+    rm -f $JOB.err
+
+    ((Memory=Memory))
+
+    link0="%pal nprocs ${Ncores}\nnprocs_group ${PPN} end\n"
+
+    ((Vemory=Memory+100+10*Ncores)) 
+
+    echo -e "$link0" > $File.$$.tmp
+    sed -e "/^%pal/D" \
+        -e "/^nprocs_group/D" \
+        $File >> $File.$$.tmp
+    mv -f $File.$$.tmp $File
+}
+
+script_slurm () {
+cat <<EOF
+#!/bin/bash
+#SBATCH -p $Queue
+#SBATCH -N $Nnodes
+#SBATCH --ntasks-per-node=$Ncores
+#SBATCH --mem=${Memory}GB
+#SBATCH -J ${JOB:0:15}
+#SBATCH -t ${time_limit}:00:00
+#SBATCH --export=ALL
+
+[ \$Test -ne 0 ] && set -x
+
+# redirect output
+exec 1>\${CurrDir}/\$JOB.out
+exec 2>>\${CurrDir}/\$JOB.err
+
+source /usr/local/sbin/modules.sh
+
+if [ $Queue = "lem-cpu" ] 
+then
+    module load ORCA/6.0.1-gompi-2023b-avx2
+    export ORCA=\${EBROOTORCA}/bin
+else
+    module load ORCA/6.0.1_avx2
+    export ORCA=\${EBROOTORCA}
+fi
+
+# setup scratch
+if [ $LocalTMP -eq 1 ]
+then
+    export TMPDIR="\$TMPDIR"
+else
+    export TMPDIR=/dev/shm/\$SLURM_JOBID
+fi
+
+export RSH_COMMAND="ssh"
+export SCRDIR=\$TMPDIR/${JOB}-\$SLURM_JOBID
+
+function clean_up {
+	kill \$orca_pid
+	cd \$TMPDIR
+        rm -f *tmp* *.inp.* *.proc* *.rijt 
+        rm -f *.ref.gbw *.iroot.vec *.gbw1 *.lastint *.res.* *.hostnames
+        rm -f *_D0*.cis *_D0*.cpcm *_D0*.cpcm_corr *_D0*.densities *_D0*.densitiesinfo *_D0*.gbw *_D0*.hostnames *_D0*.property.txt *_D0*.res.Dipoles *_D0*.res.Gradients *_D0*.res.TransitionDipoles
+	cp \$SCRDIR/*.gbw $CurrDir	
+	rm -rf \$SCRDIR
+	exit
+}
+
+trap clean_up SIGINT
+
+rm -rf \$SCRDIR
+mkdir -p \$SCRDIR
+
+# save important variables
+echo -e "Orca job particulars:
+SCRDIR=\${SCRDIR}
+SLURM_JOBID=\${SLURM_JOBID}"
+
+for e in inp gbw mp2nat hess pc mp2nat loc
+do
+    [ -f \${CurrDir}/\${JOB}.\$e ] && cp \${CurrDir}/\${JOB}.\$e \${SCRDIR}
+done
+cp -f \${CurrDir}/*.xyz \${SCRDIR}
+cp -f \${CurrDir}/*.hess \${SCRDIR}
+cp -f \${CurrDir}/*.gbw \${SCRDIR}
+
+cd \${SCRDIR}
+touch \$SCRDIR/\$SLURM_JOBID
+
+# run orca
+\${ORCA}/orca \$JOB.inp
+orca_pid=\$!
+wait
+
+# wrap up and exit
+cd \${SCRDIR}
+rm -f *tmp* *.inp.* *.proc* *.rijt 
+rm -f *.ref.gbw *.iroot.vec *.gbw1 *.lastint *.res.* *.hostnames
+rm -f *_D0*.cis *_D0*.cpcm *_D0*.cpcm_corr *_D0*.densities *_D0*.densitiesinfo *_D0*.gbw *_D0*.hostnames *_D0*.property.txt *_D0*.res.Dipoles *_D0*.res.Gradients *_D0*.res.TransitionDipoles
+cp -f ${JOB}* $CurrDir
+rm -rf \${SCRDIR}
+
+EOF
+}
+
+script () {
+cat <<EOF
+#!/bin/bash
+
+[ \$Test -ne 0 ] && set -x
+
+# redirect output
+exec 1>\${CurrDir}/\$JOB.out
+exec 2>>\${CurrDir}/\$JOB.err
+
+#export ORCA=/opt/orca/\$Version/bin
+#export PATH="/opt/orca/\$Version/bin:\$PATH"
+module purge
+module load orca/\$Version
+
+# setup scratch
+export SCRDIR="/scratch/\${USER}/orca-\$\$"
+rm -rf \$SCRDIR
+mkdir -p \$SCRDIR
+
+# save important variables
+echo -e "Orca job particulars:
+SCRDIR=\${SCRDIR}
+PBS_JOBID=\${PBS_JOBID}
+PBS_NODEFILE=\${PBS_NODEFILE}:"
+cat \${PBS_NODEFILE}
+
+for e in inp gbw mp2nat hess pc
+do
+    [ -f \${CurrDir}/\${JOB}.\$e ] && cp \${CurrDir}/\${JOB}.\$e \${SCRDIR}
+done
+cp -f \${CurrDir}/*.xyz \${SCRDIR}
+cp -f \${CurrDir}/*.hess \${SCRDIR}
+cp -f \${CurrDir}/*.gbw \${SCRDIR}
+
+cd \${SCRDIR}
+
+# run orca
+\${ORCA}/orca \$JOB.inp
+
+/bin/rm -f *tmp*
+/bin/cp -f * \${CurrDir}
+
+# save some statistics
+qstat -f \${PBS_JOBID} | grep resources_used
+
+# wrap up and exit
+rm -rf \${SCRDIR}
+
+EOF
+}
+
+script_bash () {
+cat <<EOF
+#!/bin/bash
+
+[ $Test -ne 0 ] && set -x
+
+# redirect output
+exec 1>${CurrDir}/$JOB.out
+exec 2>>${CurrDir}/$JOB.out
+
+#export ORCA=/opt/orca/\$Version/bin
+#export PATH="/opt/orca/\$Version/bin:\$PATH"
+module purge
+module load orca/\$Version
+
+# setup scratch
+export SCRDIR="/scratch/\${USER}/orca-\$\$"
+rm -rf \$SCRDIR
+mkdir -p \$SCRDIR
+
+# save important variables
+echo -e "Orca job particulars:
+SCRDIR=\${SCRDIR}"
+
+cp ${CurrDir}/*.xyz \${SCRDIR}
+for e in inp gbw mp2nat hess pc
+do
+    [ -f ${CurrDir}/${JOB}.\$e ] && cp ${CurrDir}/${JOB}.\$e *.xyz \${SCRDIR}
+done
+
+cd \${SCRDIR}
+
+# run orca
+\${ORCA}/orca $JOB.inp
+
+/bin/rm -f *tmp*
+/bin/cp -f * ${CurrDir}
+
+# wrap up and exit
+rm -rf \${SCRDIR}
+
+EOF
+}
+
+for File in $Files
+do
+    export JOB=${File/.inp/}
+    prepare_job
+
+    if [ $Sequential -eq 0 ]
+    then
+        script_slurm | sbatch
+    else
+        script_bash | /bin/bash -
+    fi    
+
+done
+

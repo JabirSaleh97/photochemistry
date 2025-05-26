@@ -1,0 +1,14 @@
+Loading Boost/1.72.0-iimpi-2020a
+  Loading requirement: GCCcore/9.3.0 zlib/1.2.11-GCCcore-9.3.0
+    binutils/2.34-GCCcore-9.3.0 iccifort/2020.1.217 numactl/2.0.13-GCCcore-9.3.0
+    UCX/1.8.0-GCCcore-9.3.0 impi/2019.7.217-iccifort-2020.1.217 iimpi/2020a
+    bzip2/1.0.8-GCCcore-9.3.0 XZ/5.2.5-GCCcore-9.3.0
+Loading OpenMPI/4.0.3-GCC-9.3.0
+  Loading requirement: GCC/9.3.0 libxml2/2.9.10-GCCcore-9.3.0
+    libpciaccess/0.16-GCCcore-9.3.0 hwloc/2.2.0-GCCcore-9.3.0
+    libevent/2.1.11-GCCcore-9.3.0 libfabric/1.11.0-GCCcore-9.3.0
+    PMIx/3.1.5-GCCcore-9.3.0
+Loading intel/2020a
+  Loading requirement: imkl/2020.1.217-iimpi-2020a
+Loading ScaLAPACK/2.1.0-gompi-2020a
+  Loading requirement: gompi/2020a OpenBLAS/0.3.9-GCC-9.3.0

@@ -1,0 +1,750 @@
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+  * process grid (2, 4) will be used
+    r28c01b05.bem2.kdm.wcss.pl      
+    r28c01b05.bem2.kdm.wcss.pl      
+    r28c01b05.bem2.kdm.wcss.pl      
+    r28c01b05.bem2.kdm.wcss.pl      
+    r28c01b05.bem2.kdm.wcss.pl      
+    r28c01b05.bem2.kdm.wcss.pl      
+    r28c01b05.bem2.kdm.wcss.pl      
+    r28c01b05.bem2.kdm.wcss.pl      
+
+  * using 48 threads per process
+OMP: Warning #232: OMP_NUM_THREADS: Invalid symbols found. Check the value "".
+OMP: Warning #232: OMP_NUM_THREADS: Invalid symbols found. Check the value "".
+OMP: Warning #232: OMP_NUM_THREADS: Invalid symbols found. Check the value "".
+OMP: Warning #232: OMP_NUM_THREADS: Invalid symbols found. Check the value "".
+OMP: Warning #232: OMP_NUM_THREADS: Invalid symbols found. Check the value "".
+OMP: Warning #232: OMP_NUM_THREADS: Invalid symbols found. Check the value "".
+OMP: Warning #232: OMP_NUM_THREADS: Invalid symbols found. Check the value "".
+OMP: Warning #232: OMP_NUM_THREADS: Invalid symbols found. Check the value "".
+
+  ===============================================================
+    BAGEL - Freshly leavened quantum chemistry                   
+  ===============================================================
+
+  *** Geometry ***
+
+  { "atom" : "C", "xyz" : [      0.020394,      0.151701,     -0.815993 ] },
+  { "atom" : "C", "xyz" : [     -0.761693,     -0.155185,      1.798630 ] },
+  { "atom" : "H", "xyz" : [      2.060908,     -0.322264,     -1.000561 ] },
+  { "atom" : "H", "xyz" : [     -0.212025,      2.115060,     -1.516799 ] },
+  { "atom" : "H", "xyz" : [     -1.015387,     -1.108470,     -2.134419 ] },
+  { "atom" : "H", "xyz" : [     -0.092197,     -0.678954,      3.671031 ] },
+
+  Number of auxiliary basis functions:      222
+
+  Since a DF basis is specified, we compute 2- and 3-index integrals:
+    o Being stored without compression. Storage requirement is 0.004 GB
+       - 3-index ints prep                         0.00
+       - 3-index ints                              0.24
+       - 2-index ints                              0.27
+       - computing inverse                         0.25
+        elapsed time:        0.77 sec.
+
+
+  Number of basis functions:       48
+  Number of electrons      :       16
+
+
+    * METHOD: MOLECULE                             0.99
+
+       - Overlap matrix                            0.01
+       - Hcore matrix                              0.03
+       - Overlap orthog                            0.01
+
+  *** RHF ***
+
+  === Nuclear Repulsion ===
+  
+    31.8045853268
+
+      * DIIS with orbital gradients will be used.
+
+       - SCF startup                               1.07
+
+  === RHF iteration (svp) ===
+  
+               o Fock build                                  0.21
+      0        -77.75921188          0.01822957           0.21
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.16
+      1        -77.82171450          0.00717321           0.16
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.17
+      2        -77.82979648          0.00211109           0.17
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.13
+      3        -77.83103186          0.00038661           0.13
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.13
+      4        -77.83108572          0.00012546           0.13
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.13
+      5        -77.83109260          0.00003532           0.14
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.12
+      6        -77.83109333          0.00000940           0.12
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.13
+      7        -77.83109340          0.00000191           0.13
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.13
+      8        -77.83109340          0.00000040           0.13
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.13
+      9        -77.83109340          0.00000015           0.13
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.12
+     10        -77.83109340          0.00000012           0.12
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.13
+     11        -77.83109340          0.00000011           0.13
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.13
+     12        -77.83109340          0.00000008           0.13
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.13
+     13        -77.83109340          0.00000002           0.13
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.13
+     14        -77.83109340          0.00000000           0.13
+  
+    * SCF iteration converged.
+
+    * Permanent dipole moment:
+           (   -0.588087,     0.097832,     0.246040) a.u.
+
+
+    * METHOD: HF                                   3.30
+
+
+    * METHOD: PRINT                                0.02
+
+  ---------------------------
+      CASSCF calculation     
+  ---------------------------
+
+ 
+    ==== Active orbitals : ===== 
+         Orbital 8
+         Orbital 9
+    ============================ 
+
+    * nstate   :      2
+    * nclosed  :      7
+    * nact     :      2
+    * nvirt    :     39
+  === CASSCF iteration (svp) ===
+
+    * Using the second-order algorithm
+
+      0  0       -77.83646336     8.98e-03      0.24
+      0  1       -77.80826049     0.00e+00      0.24
+
+         res : 7.93e-02   lamb: 1.00e+00   eps : -2.77e-02   step: 2.14e-01    0.00
+         res : 1.56e-02   lamb: 1.00e+00   eps : -2.89e-02   step: 2.32e-01    0.00
+         res : 2.83e-03   lamb: 1.00e+00   eps : -2.89e-02   step: 2.32e-01    0.00
+         res : 7.73e-04   lamb: 1.00e+00   eps : -2.90e-02   step: 2.32e-01    0.00
+         res : 1.77e-04   lamb: 1.00e+00   eps : -2.90e-02   step: 2.32e-01    0.00
+         res : 2.13e-05   lamb: 1.00e+00   eps : -2.90e-02   step: 2.32e-01    0.00
+
+      1  0       -77.84229661     1.40e-03      1.19
+      1  1       -77.83401613     0.00e+00      1.19
+
+         res : 5.63e-03   lamb: 1.00e+00   eps : -2.20e-04   step: 1.09e-02    0.00
+         res : 1.14e-03   lamb: 1.00e+00   eps : -2.26e-04   step: 1.15e-02    0.00
+         res : 2.50e-04   lamb: 1.00e+00   eps : -2.26e-04   step: 1.14e-02    0.00
+         res : 5.90e-05   lamb: 1.00e+00   eps : -2.26e-04   step: 1.15e-02    0.00
+         res : 1.05e-05   lamb: 1.00e+00   eps : -2.26e-04   step: 1.15e-02    0.00
+         res : 2.69e-06   lamb: 1.00e+00   eps : -2.26e-04   step: 1.15e-02    0.00
+         res : 3.82e-07   lamb: 1.00e+00   eps : -2.26e-04   step: 1.15e-02    0.00
+
+      2  0       -77.84280987     1.02e-04      1.05
+      2  1       -77.83374263     0.00e+00      1.05
+
+         res : 3.52e-04   lamb: 1.00e+00   eps : -8.88e-07   step: 5.80e-04    0.00
+         res : 6.04e-05   lamb: 1.00e+00   eps : -9.14e-07   step: 6.04e-04    0.00
+         res : 1.68e-05   lamb: 1.00e+00   eps : -9.15e-07   step: 6.07e-04    0.00
+         res : 4.26e-06   lamb: 1.00e+00   eps : -9.15e-07   step: 6.07e-04    0.00
+         res : 5.61e-07   lamb: 1.00e+00   eps : -9.15e-07   step: 6.07e-04    0.00
+         res : 1.42e-07   lamb: 1.00e+00   eps : -9.15e-07   step: 6.07e-04    0.00
+         res : 3.04e-08   lamb: 1.00e+00   eps : -9.15e-07   step: 6.07e-04    0.00
+
+      3  0       -77.84283067     6.89e-06      1.04
+      3  1       -77.83372282     0.00e+00      1.04
+
+         res : 2.37e-05   lamb: 1.00e+00   eps : -4.01e-09   step: 3.87e-05    0.00
+         res : 4.30e-06   lamb: 1.00e+00   eps : -4.12e-09   step: 4.02e-05    0.00
+         res : 1.22e-06   lamb: 1.00e+00   eps : -4.13e-09   step: 4.04e-05    0.00
+         res : 2.96e-07   lamb: 1.00e+00   eps : -4.13e-09   step: 4.04e-05    0.00
+         res : 3.80e-08   lamb: 1.00e+00   eps : -4.13e-09   step: 4.04e-05    0.00
+         res : 9.32e-09   lamb: 1.00e+00   eps : -4.13e-09   step: 4.04e-05    0.00
+         res : 2.09e-09   lamb: 1.00e+00   eps : -4.13e-09   step: 4.04e-05    0.00
+
+      4  0       -77.84283197     4.61e-07      0.94
+      4  1       -77.83372151     0.00e+00      0.94
+
+         res : 1.58e-06   lamb: 1.00e+00   eps : -1.79e-11   step: 2.59e-06    0.00
+         res : 2.88e-07   lamb: 1.00e+00   eps : -1.84e-11   step: 2.69e-06    0.00
+         res : 8.16e-08   lamb: 1.00e+00   eps : -1.85e-11   step: 2.70e-06    0.00
+         res : 1.98e-08   lamb: 1.00e+00   eps : -1.85e-11   step: 2.70e-06    0.00
+         res : 2.54e-09   lamb: 1.00e+00   eps : -1.85e-11   step: 2.70e-06    0.00
+
+      5  0       -77.84283206     3.08e-08      1.05
+      5  1       -77.83372143     0.00e+00      1.05
+
+         res : 1.06e-07   lamb: 1.00e+00   eps : -8.01e-14   step: 1.73e-07    0.00
+         res : 1.93e-08   lamb: 1.00e+00   eps : -8.25e-14   step: 1.80e-07    0.00
+         res : 5.46e-09   lamb: 1.00e+00   eps : -8.25e-14   step: 1.80e-07    0.00
+         res : 1.33e-09   lamb: 1.00e+00   eps : -8.26e-14   step: 1.81e-07    0.00
+
+      6  0       -77.84283207     2.07e-09      0.98
+      6  1       -77.83372142     0.00e+00      0.98
+
+    * Second-order optimization converged. *   
+
+    * Integral transformation done. Elapsed time: 0.15
+
+     guess   0:   closed ..                   open 11                  
+     guess   1:   closed 1.                   open ..                  
+
+  === FCI iteration ===
+
+      0  0       -77.83372143     2.01e-05      0.00
+      0  1       -77.82982563     1.45e-02      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:    -3.1832e-16    max eigenvalue:    -3.1832e-16
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.84283207     2.41e-16      0.00
+      1  1 *     -77.83372142     5.90e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.    -0.9126110347
+       .2     0.4088284784
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071066487
+       ba    -0.7071066487
+
+    * METHOD: CASSCF                               7.17
+
+
+    * METHOD: PRINT                                0.02
+
+    * Use approximate Hessian for optimization
+  ---------------------------
+      CASSCF calculation     
+  ---------------------------
+
+ 
+    ==== Active orbitals : ===== 
+         Orbital 8
+         Orbital 9
+    ============================ 
+
+    * nstate   :      2
+    * nclosed  :      7
+    * nact     :      2
+    * nvirt    :     39
+  === CASSCF iteration (svp) ===
+
+    * Using the second-order algorithm
+
+      0  0       -77.84283207     2.07e-09      0.30
+      0  1       -77.83372142     0.00e+00      0.30
+
+    * Second-order optimization converged. *   
+
+    * Integral transformation done. Elapsed time: 0.27
+
+     guess   0:   closed ..                   open 11                  
+     guess   1:   closed 1.                   open ..                  
+
+  === FCI iteration ===
+
+      0  0       -77.83372143     2.01e-05      0.00
+      0  1       -77.82982563     1.45e-02      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:     7.7716e-16    max eigenvalue:     7.7716e-16
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.84283207     1.34e-16      0.00
+      1  1 *     -77.83372142     1.64e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.    -0.9126110347
+       .2     0.4088284784
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071066487
+       ba    -0.7071066487
+       - Reference calculation                     1.11
+
+  === DF-CASPT2Grad calculation ===
+
+    * freezing 2 orbitals
+    * SS-SR internal contraction is used
+
+    * Approximate memory requirement for SMITH calculation per MPI process:
+      o Storage requirement for T-amplitude, lambda, and residual is 0.00 GB
+      o Storage requirement for MO integrals is 0.00 GB
+      o Storage requirement for SMITH-computed gradient tensors is 0.00 GB
+       - MO integral evaluation                    0.46
+
+  ++ State-averaged Fock matrix over basis states ++
+
+                         0                   1
+     0       -0.3012172388        0.0000605675
+     1        0.0000605675       -0.2000976719
+
+
+  ++ Extended multi-state CASPT2 (XMS-CASPT2) rotation matrix ++
+
+                         0                   1
+     0       -0.9999998206       -0.0005989689
+     1        0.0005989689       -0.9999998206
+
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9126112055
+       .2    -0.4088285550
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab     0.7071067811
+       ba     0.7071067811
+
+  ++ Reference energies in XMS basis ++
+
+                         0                   1
+     0      -77.8428320625       -0.0000054570
+     1       -0.0000054570      -77.8337214238
+
+    * Calculating and saving rdm4
+
+    - linear dependency detected:    3 /    4    min eigenvalue:    -6.1725e-17    max eigenvalue:     9.2052e-17
+    - linear dependency detected:    3 /    4    min eigenvalue:    -1.1915e-16    max eigenvalue:     9.2138e-18
+    - linear dependency detected:    3 /    4    min eigenvalue:     3.9795e-16    max eigenvalue:     2.0841e-15
+    - linear dependency detected:    3 /    4    min eigenvalue:     5.3155e-16    max eigenvalue:     8.8817e-16
+    - linear dependency detected:    4 /    8    min eigenvalue:    -1.5637e-15    max eigenvalue:    -2.4352e-17
+    - linear dependency detected:    4 /    8    min eigenvalue:    -1.4436e-15    max eigenvalue:     3.0408e-18
+    - linear dependency detected:    6 /    8    min eigenvalue:    -2.2511e-16    max eigenvalue:     4.4723e-16
+    - linear dependency detected:    6 /    8    min eigenvalue:    -2.3341e-16    max eigenvalue:     4.4754e-17
+    - linear dependency detected:    6 /    8    min eigenvalue:    -1.0978e-15    max eigenvalue:     2.9074e-15
+    - linear dependency detected:    6 /    8    min eigenvalue:    -1.0647e-15    max eigenvalue:     2.2352e-16
+       - RDM + denominator evaluation              0.17
+
+    * Zeroth order energy : state  0       -0.3012172751
+    * Zeroth order energy : state  1       -0.2000976356
+
+    * CASPT2 iteration is performed using redundant basis
+
+      ---- iteration ----
+
+        0    -0.23776605     0.00155076      0.07
+        1    -0.23783476     0.00007245      0.05
+        2    -0.23783495     0.00000428      0.05
+        3    -0.23783495     0.00000033      0.05
+        4    -0.23783495     0.00000002      0.05
+        5    -0.23783495     0.00000000      0.05
+
+        0    -0.23913409     0.00142561      0.05
+        1    -0.23921227     0.00008623      0.05
+        2    -0.23921257     0.00000573      0.05
+        3    -0.23921257     0.00000054      0.05
+        4    -0.23921257     0.00000003      0.06
+        5    -0.23921257     0.00000000      0.05
+
+      -------------------
+
+       - CASPT2 energy evaluation                  0.65
+
+    * CASPT2 energy : state  0      -78.0960573125
+        w/o shift correction        -78.0806670115
+        reference weight              0.9285469173
+
+    * CASPT2 energy : state  1      -78.0885782596
+        w/o shift correction        -78.0729339961
+        reference weight              0.9274533750
+
+
+    * MS-CASPT2 Heff
+            -78.0960573125       -0.0000046974
+             -0.0000046974      -78.0885782596
+
+
+    * MS-CASPT2 rotation matrix
+             -0.9999998028        0.0006280768
+             -0.0006280768       -0.9999998028
+
+
+    * XMS-CASPT2 rotation matrix
+              0.9999999996       -0.0000291079
+              0.0000291079        0.9999999996
+
+    * MS-CASPT2 energy : state  0      -78.0960573155
+    * MS-CASPT2 energy : state  1      -78.0885782566
+
+
+      ---- iteration ----
+
+        0    -0.00000003     0.00000083      0.05
+    - linear dependency detected:    1 /    2    min eigenvalue:     9.4839e-09    max eigenvalue:     9.4839e-09
+    * Using canonical orthogonalization due to linear dependency
+
+        1    -0.00000000     0.00002999      0.06
+    - linear dependency detected:    1 /    3    min eigenvalue:     7.8886e-31    max eigenvalue:     7.8886e-31
+    * Using canonical orthogonalization due to linear dependency
+
+        2    -0.00000003     0.00000004      0.05
+    - linear dependency detected:    1 /    4    min eigenvalue:    -8.2726e-24    max eigenvalue:    -8.2726e-24
+    * Using canonical orthogonalization due to linear dependency
+
+        3    -0.00000003     0.00000000      0.05
+
+        0    -0.30634564     0.00168932      0.05
+        1    -0.30645877     0.00010644      0.05
+        2    -0.30645923     0.00000716      0.06
+        3    -0.30645923     0.00000068      0.05
+        4    -0.30645923     0.00000004      0.05
+        5    -0.30645923     0.00000000      0.05
+
+      -------------------
+
+       - CASPT2 lambda equation                    0.53
+       - Correlated density matrix evaluation      0.31
+       - CI derivative evaluation   ( 1 / 2)       0.16
+       - CI derivative evaluation   ( 2 / 2)       0.10
+       - CI derivative contraction                 0.15
+       - T1 norm evaluation                        0.03
+       - Postprocessing SMITH                      0.31
+    * CASPT2 energy:  -78.088578256618
+    * Permanent dipole moment: CASPT2 unrelaxed
+           (   -0.342960,     0.058164,     0.141146) a.u.
+
+       - Yrs evaluation                            0.43
+       - Yrs non-Lagrangian terms                  0.00
+    * Integral transformation done. Elapsed time: 0.21
+
+    * Integral transformation done. Elapsed time: 0.32
+
+  === CASSCF Z-vector iteration ===
+
+         0      0.0004490784     0.0002407889      0.25
+         1      0.0001383831     0.0002450454      0.19
+         2      0.0000223821     0.0002323658      0.18
+         3      0.0000063099     0.0001869483      0.20
+         4      0.0000037710     0.0001454371      0.19
+         5      0.0000037941     0.0000620983      0.19
+         6      0.0000014047     0.0000058683      0.20
+         7      0.0000003478     0.0000004508      0.19
+         8      0.0000000811     0.0000001080      0.19
+         9      0.0000000173     0.0000000832      0.23
+        10      0.0000000043     0.0000000672      0.17
+        11      0.0000000014     0.0000000525      0.22
+        12      0.0000000012     0.0000000342      0.18
+        13      0.0000000010     0.0000000097      0.22
+        14      0.0000000002     0.0000000006      0.18
+       - Z-CASSCF solution                         4.28
+    * Permanent dipole moment: CASPT2 relaxed
+           (   -0.346395,     0.052272,     0.176334) a.u.
+
+       - Effective densities                       0.28
+
+  * Nuclear energy gradient
+
+    o Atom   0
+        x         -0.0045820651
+        y          0.0013050449
+        z         -0.0007390700
+    o Atom   1
+        x          0.0039802693
+        y         -0.0010082303
+        z         -0.0000729175
+    o Atom   2
+        x          0.0024424504
+        y         -0.0007539375
+        z          0.0005873560
+    o Atom   3
+        x          0.0006369616
+        y          0.0032369225
+        z         -0.0007551563
+    o Atom   4
+        x         -0.0007976122
+        y         -0.0026661117
+        z         -0.0018439975
+    o Atom   5
+        x         -0.0016800041
+        y         -0.0001136879
+        z          0.0028237853
+       - Gradient integral contraction             0.24
+      ---- iteration ----
+
+        0    -0.30380389     0.00182849      0.05
+        1    -0.30390191     0.00008910      0.05
+        2    -0.30390220     0.00000540      0.05
+        3    -0.30390220     0.00000041      0.05
+        4    -0.30390220     0.00000002      0.05
+        5    -0.30390220     0.00000000      0.06
+
+        0    -0.00000003     0.00000072      0.05
+    - linear dependency detected:    1 /    2    min eigenvalue:     6.7485e-09    max eigenvalue:     6.7485e-09
+    * Using canonical orthogonalization due to linear dependency
+
+        1     0.00000000     0.00002999      0.05
+    - linear dependency detected:    1 /    3    min eigenvalue:    -1.2622e-29    max eigenvalue:    -1.2622e-29
+    * Using canonical orthogonalization due to linear dependency
+
+        2    -0.00000003     0.00000005      0.07
+    - linear dependency detected:    1 /    4    min eigenvalue:    -3.3087e-24    max eigenvalue:    -3.3087e-24
+    * Using canonical orthogonalization due to linear dependency
+
+        3    -0.00000003     0.00000000      0.05
+
+      -------------------
+
+       - CASPT2 lambda equation                    0.53
+       - Correlated density matrix evaluation      0.15
+       - CI derivative evaluation   ( 1 / 2)       0.09
+       - CI derivative evaluation   ( 2 / 2)       0.11
+       - CI derivative contraction                 0.22
+       - T1 norm evaluation                        0.01
+       - Postprocessing SMITH                      0.27
+    * CASPT2 energy:  -78.096057315461
+    * Permanent dipole moment: CASPT2 unrelaxed
+           (   -0.495213,     0.080273,     0.218316) a.u.
+
+       - Yrs evaluation                            0.55
+       - Yrs non-Lagrangian terms                  0.00
+    * Integral transformation done. Elapsed time: 0.19
+
+    * Integral transformation done. Elapsed time: 0.31
+
+  === CASSCF Z-vector iteration ===
+
+         0      0.0004566216     0.0034900913      0.23
+         1      0.0001417823     0.0029412531      0.23
+         2      0.0000452339     0.0021113591      0.21
+         3      0.0000590405     0.0009170926      0.28
+         4      0.0000313196     0.0001820494      0.19
+         5      0.0000074679     0.0000122509      0.29
+         6      0.0000017841     0.0000009560      0.19
+         7      0.0000004052     0.0000000822      0.29
+         8      0.0000000827     0.0000000578      0.20
+         9      0.0000000183     0.0000000487      0.30
+        10      0.0000000045     0.0000000403      0.21
+        11      0.0000000013     0.0000000328      0.27
+        12      0.0000000006     0.0000000238      0.21
+        13      0.0000000006     0.0000000101      0.29
+        14      0.0000000002     0.0000000009      0.22
+       - Z-CASSCF solution                         5.02
+    * Permanent dipole moment: CASPT2 relaxed
+           (   -0.471501,     0.067830,     0.252896) a.u.
+
+       - Effective densities                       0.29
+
+  * Nuclear energy gradient
+
+    o Atom   0
+        x         -0.0424691220
+        y          0.0116900803
+        z         -0.0056824619
+    o Atom   1
+        x          0.0555049872
+        y         -0.0132080449
+        z         -0.0029160826
+    o Atom   2
+        x          0.0012173006
+        y         -0.0027145720
+        z          0.0122903216
+    o Atom   3
+        x          0.0053286539
+        y          0.0046211728
+        z         -0.0053838111
+    o Atom   4
+        x          0.0031681466
+        y         -0.0043283908
+        z         -0.0070288493
+    o Atom   5
+        x         -0.0227499663
+        y          0.0039397546
+        z          0.0087208833
+       - Gradient integral contraction             0.12
+      ---- iteration ----
+
+        0    -0.01926856     0.00065697      0.05
+        1    -0.01928335     0.00003526      0.05
+        2    -0.01928340     0.00000223      0.05
+        3    -0.01928340     0.00000018      0.05
+        4    -0.01928340     0.00000001      0.06
+        5    -0.01928340     0.00000000      0.05
+
+        0    -0.02047264     0.00056983      0.05
+        1    -0.02048681     0.00003393      0.05
+        2    -0.02048686     0.00000246      0.05
+        3    -0.02048686     0.00000020      0.05
+        4    -0.02048686     0.00000001      0.05
+        5    -0.02048686     0.00000000      0.05
+
+      -------------------
+
+       - CASPT2 lambda equation                    0.64
+       - Correlated density matrix evaluation      0.18
+       - CI derivative evaluation   ( 1 / 2)       0.10
+       - CI derivative evaluation   ( 2 / 2)       0.13
+       - CI derivative contraction                 0.19
+       - T1 norm evaluation                        0.02
+       - Postprocessing SMITH                      0.27
+    * NACME Target states: 1 - 0
+    * Energy gap is:       0.2035155573 eV
+
+    * Permanent dipole moment: Transition dipole moment between 1 - 0
+           (   -0.037092,    -0.149848,    -0.028789) a.u.
+
+    * Oscillator strength for transition between 1 - 0 -0.000123 a.u.
+
+       - Yrs evaluation                            0.70
+       - Yrs non-Lagrangian terms                  0.00
+    * Integral transformation done. Elapsed time: 0.35
+
+    * Integral transformation done. Elapsed time: 0.15
+
+  === CASSCF Z-vector iteration ===
+
+         0      0.0002491444     0.0120824399      0.25
+         1      0.0002936390     0.0036041179      0.40
+         2      0.0001101129     0.0001831273      0.34
+         3      0.0000199993     0.0000075256      0.22
+         4      0.0000052781     0.0000037573      0.20
+         5      0.0000012616     0.0000008034      0.19
+         6      0.0000002597     0.0000002883      0.19
+         7      0.0000000601     0.0000002216      0.20
+         8      0.0000000180     0.0000001923      0.20
+         9      0.0000000038     0.0000001522      0.24
+        10      0.0000000033     0.0000000985      0.17
+        11      0.0000000030     0.0000000351      0.35
+        12      0.0000000007     0.0000000019      0.27
+       - Z-CASSCF solution                         4.46
+    * Permanent dipole moment: CASPT2 relaxed
+           (   -0.000347,    -0.001681,    -0.000409) a.u.
+
+       - Effective densities                       0.32
+
+  * Nuclear energy gradient
+
+    o Atom   0
+        x         -0.0002451585
+        y         -0.0011377371
+        z         -0.0002185554
+    o Atom   1
+        x          0.0007520654
+        y          0.0031869300
+        z          0.0006180820
+    o Atom   2
+        x         -0.0000034449
+        y          0.0000045068
+        z         -0.0000110204
+    o Atom   3
+        x         -0.0007016818
+        y          0.0002225464
+        z         -0.0002663298
+    o Atom   4
+        x          0.0006942318
+        y         -0.0002264526
+        z          0.0002728998
+    o Atom   5
+        x         -0.0004960119
+        y         -0.0020497936
+        z         -0.0003950762
+       - Gradient integral contraction             0.09
+
+  === Convergence status ===
+
+                         Maximum     Tolerance   Converged?
+  * Gradient            0.151822      0.000300           No
+  * Displacement        0.072510      0.001200           No
+  * Energy change     -78.088578      0.000001           No
+
+
+  *** Conical intersection optimization started ***
+     iter         energy             gap energy            grad rms       time
+
+      1        -78.08857826          0.00747906          0.04935145       24.25
+      2        -78.08638531          0.00155698          0.01721430       30.32
+      3        -78.08445656          0.00041630          0.00830784       33.06
+      4        -78.08549532          0.00007421          0.00234868       30.94
+      5        -78.08567073          0.00003252          0.00108889       30.46
+      6        -78.08577060          0.00001587          0.00078470       32.32
+      7        -78.08493330          0.00020645          0.00590696       31.38
+      8        -78.08577344          0.00001347          0.00064723       30.14
+      9        -78.08579555          0.00000579          0.00048066       28.86
+     10        -78.08583957          0.00001160          0.00048972       31.83
+     11        -78.08579656          0.00002119          0.00064058       27.38
+     12        -78.08583005          0.00000770          0.00046818       30.27
+     13        -78.08585407          0.00000254          0.00010622       30.10
+     14        -78.08585995          0.00000052          0.00002392       29.98
+
+
+  *** Geometry ***
+
+  { "atom" : "C", "xyz" : [      0.019845,      0.151369,     -0.813544 ] },
+  { "atom" : "C", "xyz" : [     -0.729326,     -0.159588,      1.779666 ] },
+  { "atom" : "H", "xyz" : [      2.062832,     -0.337115,     -0.912025 ] },
+  { "atom" : "H", "xyz" : [     -0.154331,      2.101740,     -1.546719 ] },
+  { "atom" : "H", "xyz" : [     -0.953532,     -1.114788,     -2.163062 ] },
+  { "atom" : "H", "xyz" : [     -0.404576,     -0.616045,      3.740150 ] },
+
+
+    * METHOD: OPTIMIZE                           421.36
+
+
+    * METHOD: PRINT                                0.01
+
+
+  
+  ===============================================================
+

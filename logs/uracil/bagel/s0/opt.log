@@ -1,0 +1,1607 @@
+  Since a DF basis is specified, we compute 2- and 3-index integrals:
+    o Being stored without compression. Storage requirement is 0.004 GB
+       - 3-index ints prep                         0.00
+       - 3-index ints                              0.17
+       - 2-index ints                              0.08
+       - computing inverse                         0.01
+        elapsed time:        0.25 sec.
+
+  *** Geometry ***
+
+  { "atom" : "C", "xyz" : [      1.262259,      0.000000,     -0.001910 ] },
+  { "atom" : "C", "xyz" : [     -1.262260,     -0.000000,     -0.000860 ] },
+  { "atom" : "H", "xyz" : [      2.267246,      1.772241,      0.003082 ] },
+  { "atom" : "H", "xyz" : [      2.267245,     -1.772249,      0.002909 ] },
+  { "atom" : "H", "xyz" : [     -2.267244,     -1.772234,     -0.006148 ] },
+  { "atom" : "H", "xyz" : [     -2.267239,      1.772242,      0.002599 ] },
+
+  ---------------------------
+      CASSCF calculation     
+  ---------------------------
+
+ 
+    ==== Active orbitals : ===== 
+         Orbital 8
+         Orbital 9
+    ============================ 
+
+    * nstate   :      2
+    * nclosed  :      7
+    * nact     :      2
+    * nvirt    :     39
+  === CASSCF iteration (svp) ===
+
+    * Using the second-order algorithm
+
+      0  0       -77.99042008     1.92e-02      0.33
+      0  1       -77.62344427     0.00e+00      0.33
+
+         res : 2.60e-02   lamb: 1.00e+00   eps : -4.95e-03   step: 2.41e-02    0.00
+         res : 7.93e-03   lamb: 1.00e+00   eps : -5.05e-03   step: 2.51e-02    0.00
+         res : 5.44e-04   lamb: 1.00e+00   eps : -5.06e-03   step: 2.58e-02    0.00
+         res : 1.22e-04   lamb: 1.00e+00   eps : -5.06e-03   step: 2.58e-02    0.00
+         res : 8.51e-05   lamb: 1.00e+00   eps : -5.06e-03   step: 2.58e-02    0.00
+         res : 6.39e-05   lamb: 1.00e+00   eps : -5.06e-03   step: 2.59e-02    0.00
+         res : 1.59e-05   lamb: 1.00e+00   eps : -5.06e-03   step: 2.59e-02    0.00
+         res : 9.59e-06   lamb: 1.00e+00   eps : -5.06e-03   step: 2.59e-02    0.00
+         res : 2.56e-06   lamb: 1.00e+00   eps : -5.06e-03   step: 2.59e-02    0.01
+
+      1  0       -77.99392221     3.09e-05      1.87
+      1  1       -77.62500536     0.00e+00      1.87
+
+         res : 3.46e-04   lamb: 1.00e+00   eps : -2.25e-07   step: 6.99e-04    0.00
+         res : 7.11e-05   lamb: 1.00e+00   eps : -2.55e-07   step: 9.08e-04    0.00
+         res : 8.40e-05   lamb: 1.00e+00   eps : -2.63e-07   step: 1.36e-03    0.00
+         res : 2.23e-05   lamb: 1.00e+00   eps : -2.65e-07   step: 1.60e-03    0.00
+         res : 1.19e-05   lamb: 1.00e+00   eps : -2.66e-07   step: 1.62e-03    0.00
+         res : 9.82e-06   lamb: 1.00e+00   eps : -2.66e-07   step: 1.64e-03    0.00
+         res : 2.06e-06   lamb: 1.00e+00   eps : -2.66e-07   step: 1.65e-03    0.00
+         res : 5.15e-07   lamb: 1.00e+00   eps : -2.66e-07   step: 1.65e-03    0.00
+         res : 2.14e-07   lamb: 1.00e+00   eps : -2.66e-07   step: 1.65e-03    0.00
+         res : 5.47e-08   lamb: 1.00e+00   eps : -2.66e-07   step: 1.65e-03    0.00
+
+      2  0       -77.99395570     1.67e-06      1.28
+      2  1       -77.62497215     0.00e+00      1.28
+
+         res : 2.02e-05   lamb: 1.00e+00   eps : -7.97e-10   step: 3.29e-05    0.00
+         res : 2.15e-06   lamb: 1.00e+00   eps : -8.79e-10   step: 3.86e-05    0.00
+         res : 1.81e-06   lamb: 1.00e+00   eps : -8.83e-10   step: 4.23e-05    0.00
+         res : 1.17e-06   lamb: 1.00e+00   eps : -8.85e-10   step: 4.85e-05    0.00
+         res : 2.66e-07   lamb: 1.00e+00   eps : -8.86e-10   step: 4.96e-05    0.00
+         res : 1.48e-07   lamb: 1.00e+00   eps : -8.86e-10   step: 4.98e-05    0.00
+         res : 9.26e-08   lamb: 1.00e+00   eps : -8.86e-10   step: 4.98e-05    0.00
+         res : 1.46e-08   lamb: 1.00e+00   eps : -8.86e-10   step: 4.99e-05    0.00
+         res : 7.28e-09   lamb: 1.00e+00   eps : -8.86e-10   step: 4.99e-05    0.00
+         res : 3.35e-09   lamb: 1.00e+00   eps : -8.86e-10   step: 4.99e-05    0.00
+
+      3  0       -77.99395775     1.11e-07      1.21
+      3  1       -77.62497011     0.00e+00      1.21
+
+         res : 1.24e-06   lamb: 1.00e+00   eps : -3.05e-12   step: 1.97e-06    0.00
+         res : 1.38e-07   lamb: 1.00e+00   eps : -3.36e-12   step: 2.32e-06    0.00
+         res : 9.90e-08   lamb: 1.00e+00   eps : -3.37e-12   step: 2.48e-06    0.00
+         res : 8.91e-08   lamb: 1.00e+00   eps : -3.38e-12   step: 2.76e-06    0.00
+         res : 2.74e-08   lamb: 1.00e+00   eps : -3.38e-12   step: 2.90e-06    0.00
+         res : 8.69e-09   lamb: 1.00e+00   eps : -3.38e-12   step: 2.91e-06    0.00
+         res : 5.28e-09   lamb: 1.00e+00   eps : -3.38e-12   step: 2.91e-06    0.00
+         res : 9.40e-10   lamb: 1.00e+00   eps : -3.38e-12   step: 2.91e-06    0.00
+
+      4  0       -77.99395787     2.50e-08      1.18
+      4  1       -77.62496998     0.00e+00      1.18
+
+         res : 1.19e-07   lamb: 1.00e+00   eps : -4.66e-14   step: 1.45e-07    0.00
+         res : 2.01e-08   lamb: 1.00e+00   eps : -5.07e-14   step: 1.78e-07    0.01
+         res : 5.99e-09   lamb: 1.00e+00   eps : -5.08e-14   step: 1.86e-07    0.00
+         res : 5.59e-09   lamb: 1.00e+00   eps : -5.09e-14   step: 1.94e-07    0.00
+         res : 4.10e-09   lamb: 1.00e+00   eps : -5.09e-14   step: 2.11e-07    0.00
+
+      5  0       -77.99395788     1.24e-08      1.50
+      5  1       -77.62496997     0.00e+00      1.50
+
+         res : 4.91e-08   lamb: 1.00e+00   eps : -9.55e-15   step: 5.04e-08    0.00
+         res : 8.52e-09   lamb: 1.00e+00   eps : -1.03e-14   step: 5.72e-08    0.00
+         res : 1.46e-09   lamb: 1.00e+00   eps : -1.03e-14   step: 5.86e-08    0.00
+
+      6  0       -77.99395788     6.36e-09      1.18
+      6  1       -77.62496997     0.00e+00      1.18
+
+    * Second-order optimization converged. *   
+
+    * Integral transformation done. Elapsed time: 0.17
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97490570     5.11e-02      0.00
+      0  1       -77.62496997     4.70e-07      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:     3.3307e-16    max eigenvalue:     3.3307e-16
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.99395788     1.12e-16      0.00
+      1  1 *     -77.62496997     9.53e-17      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9830343741
+       .2    -0.1834214241
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071067810
+       ba    -0.7071067810
+       - Reference calculation                     9.49
+
+  === DF-CASPT2Grad calculation ===
+
+    * freezing 2 orbitals
+    * SS-SR internal contraction is used
+
+    * Approximate memory requirement for SMITH calculation per MPI process:
+      o Storage requirement for T-amplitude, lambda, and residual is 0.00 GB
+      o Storage requirement for MO integrals is 0.00 GB
+      o Storage requirement for SMITH-computed gradient tensors is 0.00 GB
+       - MO integral evaluation                    0.88
+
+  ++ State-averaged Fock matrix over basis states ++
+
+                         0                   1
+     0       -0.5769768673       -0.0000041018
+     1       -0.0000041018       -0.2120881869
+
+
+  ++ Extended multi-state CASPT2 (XMS-CASPT2) rotation matrix ++
+
+                         0                   1
+     0       -0.9999999999        0.0000112412
+     1       -0.0000112412       -0.9999999999
+
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.    -0.9830343743
+       .2     0.1834214242
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab     0.7071067811
+       ba     0.7071067811
+
+  ++ Reference energies in XMS basis ++
+
+                         0                   1
+     0      -77.9939578775        0.0000041479
+     1        0.0000041479      -77.6249699734
+
+    * Calculating and saving rdm4
+
+    - linear dependency detected:    3 /    4    min eigenvalue:    -2.5415e-17    max eigenvalue:     8.2635e-18
+    - linear dependency detected:    3 /    4    min eigenvalue:    -2.0460e-16    max eigenvalue:     2.2204e-16
+    - linear dependency detected:    3 /    4    min eigenvalue:     1.1073e-15    max eigenvalue:     3.6186e-15
+    - linear dependency detected:    3 /    4    min eigenvalue:     3.3707e-16    max eigenvalue:     2.7658e-15
+    - linear dependency detected:    4 /    8    min eigenvalue:    -4.2555e-16    max eigenvalue:     1.3251e-15
+    - linear dependency detected:    4 /    8    min eigenvalue:    -6.5221e-16    max eigenvalue:     1.7840e-17
+    - linear dependency detected:    6 /    8    min eigenvalue:    -4.5691e-16    max eigenvalue:     7.6494e-17
+    - linear dependency detected:    6 /    8    min eigenvalue:    -5.9456e-16    max eigenvalue:     1.1011e-16
+    - linear dependency detected:    6 /    8    min eigenvalue:    -7.7520e-16    max eigenvalue:     1.5539e-15
+    - linear dependency detected:    6 /    8    min eigenvalue:    -2.2605e-17    max eigenvalue:     9.1873e-16
+       - RDM + denominator evaluation              0.08
+
+    * Zeroth order energy : state  0       -0.5769768673
+    * Zeroth order energy : state  1       -0.2120881869
+
+    * CASPT2 iteration is performed using redundant basis
+
+      ---- iteration ----
+
+        0    -0.26377815     0.00048115      0.05
+        1    -0.26378608     0.00000853      0.05
+        2    -0.26378609     0.00000009      0.06
+        3    -0.26378609     0.00000000      0.04
+
+        0    -0.32413932     0.00101943      0.05
+        1    -0.32417874     0.00002088      0.04
+        2    -0.32417877     0.00000047      0.03
+        3    -0.32417877     0.00000001      0.03
+        4    -0.32417877     0.00000000      0.04
+
+      -------------------
+
+       - CASPT2 energy evaluation                  0.41
+
+    * CASPT2 energy : state  0      -78.2577439637
+        reference weight              0.9158555476
+
+    * CASPT2 energy : state  1      -77.9491487453
+        reference weight              0.8671733617
+
+
+    * MS-CASPT2 Heff
+            -78.2577439637        0.0000036953
+              0.0000036953      -77.9491487453
+
+
+    * MS-CASPT2 rotation matrix
+             -0.9999999999       -0.0000119745
+              0.0000119745       -0.9999999999
+
+
+    * XMS-CASPT2 rotation matrix
+              1.0000000000        0.0000007333
+             -0.0000007333        1.0000000000
+
+    * MS-CASPT2 energy : state  0      -78.2577439638
+    * MS-CASPT2 energy : state  1      -77.9491487453
+
+
+      ---- iteration ----
+
+        0    -0.26377815     0.00048115      0.03
+        1    -0.26378608     0.00000853      0.03
+        2    -0.26378609     0.00000009      0.03
+        3    -0.26378609     0.00000000      0.06
+
+        0    -0.00000000     0.00000001      0.04
+
+      -------------------
+
+       - CASPT2 lambda equation                    0.23
+       - Correlated density matrix evaluation      0.12
+       - CI derivative evaluation   ( 1 / 2)       0.07
+       - CI derivative evaluation   ( 2 / 2)       0.07
+       - CI derivative contraction                 0.25
+       - T1 norm evaluation                        0.02
+       - Postprocessing SMITH                      0.34
+    * CASPT2 energy:  -78.257743963767
+    * Permanent dipole moment: CASPT2 unrelaxed
+           (    0.000009,     0.000001,    -0.001263) a.u.
+
+       - Yrs evaluation                            0.74
+       - Yrs non-Lagrangian terms                  0.00
+    * Integral transformation done. Elapsed time: 0.43
+
+    * Integral transformation done. Elapsed time: 0.37
+
+  === CASSCF Z-vector iteration ===
+
+         0      0.0007696149     0.0038557458      0.24
+         1      0.0001721137     0.0004552839      0.47
+         2      0.0000401766     0.0004600580      0.34
+         3      0.0000079932     0.0000106867      0.39
+         4      0.0000022612     0.0000074051      0.52
+         5      0.0000017075     0.0000012699      0.52
+         6      0.0000014900     0.0000008847      0.52
+         7      0.0000008320     0.0000002234      0.47
+         8      0.0000006564     0.0000001036      0.44
+         9      0.0000003678     0.0000003598      0.60
+        10      0.0000002357     0.0000001944      0.38
+        11      0.0000001940     0.0000002220      0.37
+        12      0.0000001374     0.0000002244      0.30
+        13      0.0000000866     0.0000000447      0.50
+        14      0.0000000652     0.0000000671      0.50
+        15      0.0000000250     0.0000000032      0.23
+        16      0.0000000123     0.0000000055      0.38
+        17      0.0000000083     0.0000000053      0.38
+        18      0.0000000064     0.0000000019      0.44
+       - Z-CASSCF solution                        10.02
+    * Permanent dipole moment: CASPT2 relaxed
+           (   -0.000025,    -0.000017,    -0.001235) a.u.
+
+       - Effective densities                       0.57
+
+  * Nuclear energy gradient
+
+    o Atom   0
+        x          0.0106631188
+        y          0.0000004836
+        z         -0.0001051065
+    o Atom   1
+        x         -0.0106653405
+        y          0.0000007127
+        z         -0.0000341156
+    o Atom   2
+        x         -0.0099730816
+        y         -0.0055876248
+        z          0.0000133823
+    o Atom   3
+        x         -0.0099730238
+        y          0.0055865501
+        z          0.0000525480
+    o Atom   4
+        x          0.0099748814
+        y          0.0055891791
+        z          0.0000311312
+    o Atom   5
+        x          0.0099734457
+        y         -0.0055893008
+        z          0.0000421605
+       - Gradient integral contraction             0.13
+  * Updating Hessian using BFGS 
+
+  === Convergence status ===
+
+                         Maximum     Tolerance   Converged?
+  * Gradient            0.010665      0.000300           No
+  * Displacement        0.013526      0.001200           No
+  * Energy change      -0.000763      0.000001           No
+
+  Since a DF basis is specified, we compute 2- and 3-index integrals:
+    o Being stored without compression. Storage requirement is 0.004 GB
+       - 3-index ints prep                         0.00
+       - 3-index ints                              0.02
+       - 2-index ints                              0.08
+       - computing inverse                         0.01
+        elapsed time:        0.12 sec.
+
+  *** Geometry ***
+
+  { "atom" : "C", "xyz" : [      1.262519,      0.000000,     -0.001910 ] },
+  { "atom" : "C", "xyz" : [     -1.262520,     -0.000000,     -0.000781 ] },
+  { "atom" : "H", "xyz" : [      2.280770,      1.779696,      0.005190 ] },
+  { "atom" : "H", "xyz" : [      2.280768,     -1.779712,      0.001263 ] },
+  { "atom" : "H", "xyz" : [     -2.280771,     -1.779685,     -0.008483 ] },
+  { "atom" : "H", "xyz" : [     -2.280761,      1.779701,      0.004000 ] },
+
+  ---------------------------
+      CASSCF calculation     
+  ---------------------------
+
+ 
+    ==== Active orbitals : ===== 
+         Orbital 8
+         Orbital 9
+    ============================ 
+
+    * nstate   :      2
+    * nclosed  :      7
+    * nact     :      2
+    * nvirt    :     39
+  === CASSCF iteration (svp) ===
+
+    * Using the second-order algorithm
+
+      0  0       -77.99362369     8.77e-03      0.49
+      0  1       -77.62482187     0.00e+00      0.49
+
+         res : 7.01e-03   lamb: 1.00e+00   eps : -9.35e-04   step: 9.20e-03    0.00
+         res : 1.94e-03   lamb: 1.00e+00   eps : -9.43e-04   step: 9.07e-03    0.00
+         res : 3.28e-04   lamb: 1.00e+00   eps : -9.44e-04   step: 9.18e-03    0.00
+         res : 6.24e-05   lamb: 1.00e+00   eps : -9.44e-04   step: 9.22e-03    0.00
+         res : 7.22e-05   lamb: 1.00e+00   eps : -9.44e-04   step: 9.27e-03    0.00
+         res : 2.19e-05   lamb: 1.00e+00   eps : -9.44e-04   step: 9.30e-03    0.00
+         res : 8.18e-06   lamb: 1.00e+00   eps : -9.44e-04   step: 9.31e-03    0.00
+         res : 3.32e-06   lamb: 1.00e+00   eps : -9.44e-04   step: 9.32e-03    0.00
+         res : 1.47e-06   lamb: 1.00e+00   eps : -9.44e-04   step: 9.32e-03    0.00
+         res : 4.89e-07   lamb: 1.00e+00   eps : -9.44e-04   step: 9.32e-03    0.00
+
+      1  0       -77.99418941     4.81e-06      1.34
+      1  1       -77.62519999     0.00e+00      1.34
+
+         res : 1.57e-05   lamb: 1.00e+00   eps : -1.51e-09   step: 2.47e-05    0.00
+         res : 3.23e-06   lamb: 1.00e+00   eps : -1.57e-09   step: 3.39e-05    0.00
+         res : 2.45e-06   lamb: 1.00e+00   eps : -1.58e-09   step: 4.58e-05    0.00
+         res : 1.34e-06   lamb: 1.00e+00   eps : -1.59e-09   step: 5.71e-05    0.00
+         res : 6.19e-07   lamb: 1.00e+00   eps : -1.59e-09   step: 5.89e-05    0.00
+         res : 2.00e-07   lamb: 1.00e+00   eps : -1.59e-09   step: 6.01e-05    0.00
+         res : 5.49e-08   lamb: 1.00e+00   eps : -1.59e-09   step: 6.01e-05    0.00
+         res : 4.10e-08   lamb: 1.00e+00   eps : -1.59e-09   step: 6.01e-05    0.00
+         res : 1.76e-08   lamb: 1.00e+00   eps : -1.59e-09   step: 6.01e-05    0.00
+         res : 3.98e-09   lamb: 1.00e+00   eps : -1.59e-09   step: 6.01e-05    0.00
+
+      2  0       -77.99418955     9.22e-08      1.15
+      2  1       -77.62519986     0.00e+00      1.15
+
+         res : 9.20e-07   lamb: 1.00e+00   eps : -1.75e-12   step: 1.46e-06    0.00
+         res : 1.11e-07   lamb: 1.00e+00   eps : -1.93e-12   step: 1.75e-06    0.00
+         res : 9.29e-08   lamb: 1.00e+00   eps : -1.94e-12   step: 1.92e-06    0.00
+         res : 8.06e-08   lamb: 1.00e+00   eps : -1.94e-12   step: 2.22e-06    0.00
+         res : 2.42e-08   lamb: 1.00e+00   eps : -1.95e-12   step: 2.37e-06    0.00
+         res : 7.35e-09   lamb: 1.00e+00   eps : -1.95e-12   step: 2.39e-06    0.01
+         res : 4.40e-09   lamb: 1.00e+00   eps : -1.95e-12   step: 2.39e-06    0.00
+
+      3  0       -77.99418964     2.89e-08      1.30
+      3  1       -77.62519977     0.00e+00      1.30
+
+         res : 1.23e-07   lamb: 1.00e+00   eps : -5.63e-14   step: 1.39e-07    0.00
+         res : 2.00e-08   lamb: 1.00e+00   eps : -6.09e-14   step: 1.65e-07    0.00
+         res : 4.61e-09   lamb: 1.00e+00   eps : -6.10e-14   step: 1.71e-07    0.00
+
+      4  0       -77.99418965     1.47e-08      1.17
+      4  1       -77.62519976     0.00e+00      1.17
+
+         res : 5.73e-08   lamb: 1.00e+00   eps : -1.34e-14   step: 5.98e-08    0.00
+         res : 9.77e-09   lamb: 1.00e+00   eps : -1.44e-14   step: 6.84e-08    0.00
+         res : 2.01e-09   lamb: 1.00e+00   eps : -1.45e-14   step: 7.13e-08    0.00
+
+      5  0       -77.99418965     7.54e-09      1.73
+      5  1       -77.62519976     0.00e+00      1.73
+
+    * Second-order optimization converged. *   
+
+    * Integral transformation done. Elapsed time: 0.48
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97513375     5.11e-02      0.00
+      0  1       -77.62519976     5.50e-07      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:     5.5511e-17    max eigenvalue:     5.5511e-17
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.99418965     2.84e-17      0.00
+      1  1 *     -77.62519976     1.64e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9830314952
+       .2    -0.1834368519
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071067809
+       ba    -0.7071067809
+       - Reference calculation                     8.52
+
+  === DF-CASPT2Grad calculation ===
+
+    * freezing 2 orbitals
+    * SS-SR internal contraction is used
+
+    * Approximate memory requirement for SMITH calculation per MPI process:
+      o Storage requirement for T-amplitude, lambda, and residual is 0.00 GB
+      o Storage requirement for MO integrals is 0.00 GB
+      o Storage requirement for SMITH-computed gradient tensors is 0.00 GB
+       - MO integral evaluation                    0.91
+
+  ++ State-averaged Fock matrix over basis states ++
+
+                         0                   1
+     0       -0.5772383292       -0.0000048063
+     1       -0.0000048063       -0.2123558590
+
+
+  ++ Extended multi-state CASPT2 (XMS-CASPT2) rotation matrix ++
+
+                         0                   1
+     0       -0.9999999999        0.0000131721
+     1       -0.0000131721       -0.9999999999
+
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.    -0.9830314955
+       .2     0.1834368519
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab     0.7071067811
+       ba     0.7071067811
+
+  ++ Reference energies in XMS basis ++
+
+                         0                   1
+     0      -77.9941896462        0.0000048604
+     1        0.0000048604      -77.6251997613
+
+    * Calculating and saving rdm4
+
+    - linear dependency detected:    3 /    4    min eigenvalue:    -9.0719e-17    max eigenvalue:     3.6711e-17
+    - linear dependency detected:    3 /    4    min eigenvalue:    -9.3832e-18    max eigenvalue:     2.2204e-16
+    - linear dependency detected:    3 /    4    min eigenvalue:    -2.6883e-15    max eigenvalue:    -8.8026e-16
+    - linear dependency detected:    3 /    4    min eigenvalue:    -2.1601e-16    max eigenvalue:     4.4409e-16
+    - linear dependency detected:    4 /    8    min eigenvalue:    -1.1093e-15    max eigenvalue:     3.7461e-16
+    - linear dependency detected:    4 /    8    min eigenvalue:    -5.7108e-16    max eigenvalue:     3.9959e-16
+    - linear dependency detected:    6 /    8    min eigenvalue:    -1.2480e-25    max eigenvalue:     2.9910e-16
+    - linear dependency detected:    6 /    8    min eigenvalue:    -3.1864e-16    max eigenvalue:     5.7831e-17
+    - linear dependency detected:    6 /    8    min eigenvalue:    -6.4803e-16    max eigenvalue:     5.8205e-16
+    - linear dependency detected:    6 /    8    min eigenvalue:    -1.8673e-15    max eigenvalue:     6.0094e-16
+       - RDM + denominator evaluation              0.10
+
+    * Zeroth order energy : state  0       -0.5772383292
+    * Zeroth order energy : state  1       -0.2123558589
+
+    * CASPT2 iteration is performed using redundant basis
+
+      ---- iteration ----
+
+        0    -0.26410330     0.00048222      0.03
+        1    -0.26411128     0.00000857      0.03
+        2    -0.26411129     0.00000009      0.04
+        3    -0.26411129     0.00000000      0.04
+
+        0    -0.32463314     0.00102291      0.04
+        1    -0.32467291     0.00002105      0.03
+        2    -0.32467294     0.00000047      0.03
+        3    -0.32467294     0.00000001      0.04
+        4    -0.32467294     0.00000000      0.04
+
+      -------------------
+
+       - CASPT2 energy evaluation                  0.33
+
+    * CASPT2 energy : state  0      -78.2583009319
+        reference weight              0.9154630259
+
+    * CASPT2 energy : state  1      -77.9498727032
+        reference weight              0.8665226532
+
+
+    * MS-CASPT2 Heff
+            -78.2583009319        0.0000043028
+              0.0000043028      -77.9498727032
+
+
+    * MS-CASPT2 rotation matrix
+             -0.9999999999       -0.0000139506
+              0.0000139506       -0.9999999999
+
+
+    * XMS-CASPT2 rotation matrix
+              1.0000000000        0.0000007785
+             -0.0000007785        1.0000000000
+
+    * MS-CASPT2 energy : state  0      -78.2583009320
+    * MS-CASPT2 energy : state  1      -77.9498727032
+
+
+      ---- iteration ----
+
+        0    -0.26410330     0.00048222      0.03
+        1    -0.26411128     0.00000857      0.07
+        2    -0.26411129     0.00000009      0.04
+        3    -0.26411129     0.00000000      0.04
+
+        0    -0.00000000     0.00000001      0.04
+
+      -------------------
+
+       - CASPT2 lambda equation                    0.22
+       - Correlated density matrix evaluation      0.12
+       - CI derivative evaluation   ( 1 / 2)       0.09
+       - CI derivative evaluation   ( 2 / 2)       0.07
+       - CI derivative contraction                 0.20
+       - T1 norm evaluation                        0.01
+       - Postprocessing SMITH                      0.33
+    * CASPT2 energy:  -78.258300931982
+    * Permanent dipole moment: CASPT2 unrelaxed
+           (    0.000010,     0.000002,    -0.001160) a.u.
+
+       - Yrs evaluation                            0.61
+       - Yrs non-Lagrangian terms                  0.00
+    * Integral transformation done. Elapsed time: 0.33
+
+    * Integral transformation done. Elapsed time: 0.34
+
+  === CASSCF Z-vector iteration ===
+
+         0      0.0007726027     0.0038329268      0.28
+         1      0.0001729210     0.0004590128      0.45
+         2      0.0000404268     0.0004652171      0.53
+         3      0.0000081368     0.0000107573      0.44
+         4      0.0000025927     0.0000076111      0.35
+         5      0.0000020858     0.0000014450      0.36
+         6      0.0000018256     0.0000011130      0.51
+         7      0.0000010045     0.0000002429      0.30
+         8      0.0000007914     0.0000001015      0.35
+         9      0.0000004176     0.0000004586      0.52
+        10      0.0000002601     0.0000002115      0.46
+        11      0.0000002123     0.0000002672      0.33
+        12      0.0000001520     0.0000002261      0.36
+        13      0.0000001001     0.0000000670      0.50
+        14      0.0000000777     0.0000000841      0.54
+        15      0.0000000327     0.0000000036      0.40
+        16      0.0000000168     0.0000000124      0.49
+        17      0.0000000116     0.0000000110      0.26
+        18      0.0000000087     0.0000000033      0.25
+        19      0.0000000021     0.0000000081      0.38
+        20      0.0000000005     0.0000000068      0.49
+       - Z-CASSCF solution                        10.49
+    * Permanent dipole moment: CASPT2 relaxed
+           (   -0.000031,    -0.000026,    -0.001127) a.u.
+
+       - Effective densities                       0.58
+
+  * Nuclear energy gradient
+
+    o Atom   0
+        x          0.0056419156
+        y         -0.0000007364
+        z         -0.0000677197
+    o Atom   1
+        x         -0.0056430428
+        y          0.0000006974
+        z         -0.0000774389
+    o Atom   2
+        x         -0.0069420709
+        y         -0.0014082004
+        z          0.0000114502
+    o Atom   3
+        x         -0.0069431576
+        y          0.0014084422
+        z          0.0000403976
+    o Atom   4
+        x          0.0069440108
+        y          0.0014095565
+        z          0.0000386789
+    o Atom   5
+        x          0.0069423448
+        y         -0.0014097592
+        z          0.0000546320
+       - Gradient integral contraction             0.20
+  * Updating Hessian using SR1 
+
+  === Convergence status ===
+
+                         Maximum     Tolerance   Converged?
+  * Gradient            0.006944      0.000300           No
+  * Displacement        0.025523      0.001200           No
+  * Energy change      -0.000557      0.000001           No
+
+  Since a DF basis is specified, we compute 2- and 3-index integrals:
+    o Being stored without compression. Storage requirement is 0.004 GB
+       - 3-index ints prep                         0.00
+       - 3-index ints                              0.02
+       - 2-index ints                              0.10
+       - computing inverse                         0.01
+        elapsed time:        0.15 sec.
+
+  *** Geometry ***
+
+  { "atom" : "C", "xyz" : [      1.264223,      0.000000,     -0.001911 ] },
+  { "atom" : "C", "xyz" : [     -1.264224,     -0.000000,     -0.000583 ] },
+  { "atom" : "H", "xyz" : [      2.306288,      1.786942,      0.007631 ] },
+  { "atom" : "H", "xyz" : [      2.306284,     -1.786976,     -0.000438 ] },
+  { "atom" : "H", "xyz" : [     -2.306296,     -1.786929,     -0.011476 ] },
+  { "atom" : "H", "xyz" : [     -2.306272,      1.786963,      0.005074 ] },
+
+  ---------------------------
+      CASSCF calculation     
+  ---------------------------
+
+ 
+    ==== Active orbitals : ===== 
+         Orbital 8
+         Orbital 9
+    ============================ 
+
+    * nstate   :      2
+    * nclosed  :      7
+    * nact     :      2
+    * nvirt    :     39
+  === CASSCF iteration (svp) ===
+
+    * Using the second-order algorithm
+
+      0  0       -77.99294103     1.23e-02      0.27
+      0  1       -77.62474646     0.00e+00      0.27
+
+         res : 1.16e-02   lamb: 1.00e+00   eps : -2.03e-03   step: 1.37e-02    0.00
+         res : 2.82e-03   lamb: 1.00e+00   eps : -2.06e-03   step: 1.35e-02    0.00
+         res : 4.33e-04   lamb: 1.00e+00   eps : -2.06e-03   step: 1.37e-02    0.00
+         res : 9.02e-05   lamb: 1.00e+00   eps : -2.06e-03   step: 1.37e-02    0.00
+         res : 9.27e-05   lamb: 1.00e+00   eps : -2.06e-03   step: 1.38e-02    0.00
+         res : 3.46e-05   lamb: 1.00e+00   eps : -2.06e-03   step: 1.38e-02    0.00
+         res : 1.18e-05   lamb: 1.00e+00   eps : -2.06e-03   step: 1.38e-02    0.00
+         res : 6.28e-06   lamb: 1.00e+00   eps : -2.06e-03   step: 1.38e-02    0.00
+         res : 2.14e-06   lamb: 1.00e+00   eps : -2.06e-03   step: 1.38e-02    0.00
+         res : 8.61e-07   lamb: 1.00e+00   eps : -2.06e-03   step: 1.38e-02    0.00
+
+      1  0       -77.99418253     1.05e-05      1.41
+      1  1       -77.62556274     0.00e+00      1.41
+
+         res : 3.61e-05   lamb: 1.00e+00   eps : -7.45e-09   step: 6.45e-05    0.00
+         res : 1.20e-05   lamb: 1.00e+00   eps : -7.87e-09   step: 1.08e-04    0.00
+         res : 9.47e-06   lamb: 1.00e+00   eps : -8.04e-09   step: 1.82e-04    0.00
+         res : 4.44e-06   lamb: 1.00e+00   eps : -8.08e-09   step: 2.23e-04    0.00
+         res : 1.45e-06   lamb: 1.00e+00   eps : -8.09e-09   step: 2.25e-04    0.00
+         res : 4.88e-07   lamb: 1.00e+00   eps : -8.09e-09   step: 2.27e-04    0.00
+         res : 1.48e-07   lamb: 1.00e+00   eps : -8.09e-09   step: 2.27e-04    0.00
+         res : 9.96e-08   lamb: 1.00e+00   eps : -8.09e-09   step: 2.27e-04    0.00
+         res : 3.90e-08   lamb: 1.00e+00   eps : -8.09e-09   step: 2.27e-04    0.00
+         res : 1.02e-08   lamb: 1.00e+00   eps : -8.09e-09   step: 2.27e-04    0.01
+
+      2  0       -77.99418289     1.74e-07      1.16
+      2  1       -77.62556239     0.00e+00      1.16
+
+         res : 2.01e-06   lamb: 1.00e+00   eps : -8.00e-12   step: 3.37e-06    0.00
+         res : 2.41e-07   lamb: 1.00e+00   eps : -8.85e-12   step: 4.02e-06    0.00
+         res : 2.89e-07   lamb: 1.00e+00   eps : -8.92e-12   step: 4.83e-06    0.00
+         res : 1.79e-07   lamb: 1.00e+00   eps : -8.96e-12   step: 5.85e-06    0.00
+         res : 4.79e-08   lamb: 1.00e+00   eps : -8.97e-12   step: 6.08e-06    0.00
+         res : 1.84e-08   lamb: 1.00e+00   eps : -8.97e-12   step: 6.10e-06    0.00
+         res : 9.56e-09   lamb: 1.00e+00   eps : -8.97e-12   step: 6.11e-06    0.00
+         res : 2.53e-09   lamb: 1.00e+00   eps : -8.97e-12   step: 6.11e-06    0.00
+
+      3  0       -77.99418309     3.15e-08      1.32
+      3  1       -77.62556218     0.00e+00      1.32
+
+         res : 1.67e-07   lamb: 1.00e+00   eps : -8.44e-14   step: 2.24e-07    0.00
+         res : 2.63e-08   lamb: 1.00e+00   eps : -9.24e-14   step: 2.81e-07    0.00
+         res : 1.30e-08   lamb: 1.00e+00   eps : -9.27e-14   step: 3.08e-07    0.00
+         res : 1.50e-08   lamb: 1.00e+00   eps : -9.29e-14   step: 3.49e-07    0.00
+         res : 6.34e-09   lamb: 1.00e+00   eps : -9.30e-14   step: 3.99e-07    0.00
+         res : 1.04e-09   lamb: 1.00e+00   eps : -9.30e-14   step: 4.03e-07    0.00
+
+      4  0       -77.99418311     1.54e-08      1.05
+      4  1       -77.62556217     0.00e+00      1.05
+
+         res : 6.06e-08   lamb: 1.00e+00   eps : -1.49e-14   step: 6.34e-08    0.00
+         res : 1.01e-08   lamb: 1.00e+00   eps : -1.60e-14   step: 7.18e-08    0.00
+         res : 1.57e-09   lamb: 1.00e+00   eps : -1.60e-14   step: 7.32e-08    0.00
+
+      5  0       -77.99418311     7.97e-09      1.04
+      5  1       -77.62556217     0.00e+00      1.04
+
+    * Second-order optimization converged. *   
+
+    * Integral transformation done. Elapsed time: 0.41
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97504012     5.11e-02      0.00
+      0  1       -77.62556217     5.91e-07      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:     6.8385e-17    max eigenvalue:     6.8385e-17
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.99418311     2.23e-16      0.00
+      1  1 *     -77.62556217     1.12e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.    -0.9829207487
+       .2     0.1840293478
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071067808
+       ba    -0.7071067808
+       - Reference calculation                     7.56
+
+  === DF-CASPT2Grad calculation ===
+
+    * freezing 2 orbitals
+    * SS-SR internal contraction is used
+
+    * Approximate memory requirement for SMITH calculation per MPI process:
+      o Storage requirement for T-amplitude, lambda, and residual is 0.00 GB
+      o Storage requirement for MO integrals is 0.00 GB
+      o Storage requirement for SMITH-computed gradient tensors is 0.00 GB
+       - MO integral evaluation                    0.76
+
+  ++ State-averaged Fock matrix over basis states ++
+
+                         0                   1
+     0       -0.5768735101        0.0000051547
+     1        0.0000051547       -0.2128300525
+
+
+  ++ Extended multi-state CASPT2 (XMS-CASPT2) rotation matrix ++
+
+                         0                   1
+     0       -0.9999999999       -0.0000141595
+     1        0.0000141595       -0.9999999999
+
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9829207490
+       .2    -0.1840293479
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab     0.7071067811
+       ba     0.7071067811
+
+  ++ Reference energies in XMS basis ++
+
+                         0                   1
+     0      -77.9941831080       -0.0000052195
+     1       -0.0000052195      -77.6255621671
+
+    * Calculating and saving rdm4
+
+    - linear dependency detected:    3 /    4    min eigenvalue:    -3.6269e-17    max eigenvalue:     2.7766e-17
+    - linear dependency detected:    3 /    4    min eigenvalue:    -2.3987e-16    max eigenvalue:     5.5595e-18
+    - linear dependency detected:    3 /    4    min eigenvalue:     3.6823e-16    max eigenvalue:     2.7866e-15
+    - linear dependency detected:    3 /    4    min eigenvalue:    -4.8782e-15    max eigenvalue:    -1.2780e-15
+    - linear dependency detected:    4 /    8    min eigenvalue:    -2.2325e-15    max eigenvalue:     1.9204e-16
+    - linear dependency detected:    4 /    8    min eigenvalue:    -4.4427e-16    max eigenvalue:     5.4359e-16
+    - linear dependency detected:    6 /    8    min eigenvalue:    -2.2206e-16    max eigenvalue:     2.2204e-16
+    - linear dependency detected:    6 /    8    min eigenvalue:    -1.2839e-16    max eigenvalue:     2.9602e-16
+    - linear dependency detected:    6 /    8    min eigenvalue:    -8.4470e-16    max eigenvalue:     2.4181e-15
+    - linear dependency detected:    6 /    8    min eigenvalue:    -2.4288e-16    max eigenvalue:     9.8684e-16
+       - RDM + denominator evaluation              0.07
+
+    * Zeroth order energy : state  0       -0.5768735102
+    * Zeroth order energy : state  1       -0.2128300524
+
+    * CASPT2 iteration is performed using redundant basis
+
+      ---- iteration ----
+
+        0    -0.26453971     0.00048269      0.07
+        1    -0.26454775     0.00000860      0.04
+        2    -0.26454775     0.00000010      0.04
+        3    -0.26454775     0.00000000      0.03
+
+        0    -0.32544003     0.00102720      0.06
+        1    -0.32548026     0.00002128      0.03
+        2    -0.32548029     0.00000048      0.03
+        3    -0.32548029     0.00000002      0.03
+        4    -0.32548029     0.00000000      0.04
+
+      -------------------
+
+       - CASPT2 energy evaluation                  0.38
+
+    * CASPT2 energy : state  0      -78.2587308614
+        reference weight              0.9148815295
+
+    * CASPT2 energy : state  1      -77.9510424548
+        reference weight              0.8655283926
+
+
+    * MS-CASPT2 Heff
+            -78.2587308614       -0.0000046191
+             -0.0000046191      -77.9510424548
+
+
+    * MS-CASPT2 rotation matrix
+             -0.9999999999        0.0000150124
+             -0.0000150124       -0.9999999999
+
+
+    * XMS-CASPT2 rotation matrix
+              1.0000000000       -0.0000008529
+              0.0000008529        1.0000000000
+
+    * MS-CASPT2 energy : state  0      -78.2587308615
+    * MS-CASPT2 energy : state  1      -77.9510424547
+
+
+      ---- iteration ----
+
+        0    -0.26453971     0.00048269      0.03
+        1    -0.26454775     0.00000860      0.04
+        2    -0.26454775     0.00000010      0.04
+        3    -0.26454775     0.00000000      0.04
+
+        0    -0.00000000     0.00000001      0.04
+
+      -------------------
+
+       - CASPT2 lambda equation                    0.20
+       - Correlated density matrix evaluation      0.12
+       - CI derivative evaluation   ( 1 / 2)       0.07
+       - CI derivative evaluation   ( 2 / 2)       0.07
+       - CI derivative contraction                 0.29
+       - T1 norm evaluation                        0.05
+       - Postprocessing SMITH                      0.43
+    * CASPT2 energy:  -78.258730861466
+    * Permanent dipole moment: CASPT2 unrelaxed
+           (    0.000009,     0.000002,    -0.000909) a.u.
+
+       - Yrs evaluation                            0.64
+       - Yrs non-Lagrangian terms                  0.00
+    * Integral transformation done. Elapsed time: 0.39
+
+    * Integral transformation done. Elapsed time: 0.42
+
+  === CASSCF Z-vector iteration ===
+
+         0      0.0007775298     0.0037765328      0.52
+         1      0.0001742167     0.0004721566      0.28
+         2      0.0000407622     0.0004728489      0.39
+         3      0.0000083642     0.0000103498      0.47
+         4      0.0000031129     0.0000078230      0.46
+         5      0.0000026491     0.0000018001      0.23
+         6      0.0000022771     0.0000015485      0.39
+         7      0.0000011389     0.0000002623      0.46
+         8      0.0000008830     0.0000000725      0.55
+         9      0.0000004270     0.0000005307      0.38
+        10      0.0000002415     0.0000002050      0.57
+        11      0.0000001939     0.0000002794      0.33
+        12      0.0000001430     0.0000001674      0.49
+        13      0.0000000997     0.0000000789      0.47
+        14      0.0000000810     0.0000000929      0.42
+        15      0.0000000403     0.0000000072      0.38
+        16      0.0000000193     0.0000000209      0.56
+        17      0.0000000120     0.0000000202      0.68
+        18      0.0000000094     0.0000000093      0.53
+        19      0.0000000029     0.0000000114      0.36
+        20      0.0000000007     0.0000000107      0.56
+        21      0.0000000003     0.0000000084      0.44
+       - Z-CASSCF solution                        12.32
+    * Permanent dipole moment: CASPT2 relaxed
+           (   -0.000033,    -0.000043,    -0.000872) a.u.
+
+       - Effective densities                       0.49
+
+  * Nuclear energy gradient
+
+    o Atom   0
+        x          0.0001058608
+        y          0.0000003700
+        z         -0.0000324279
+    o Atom   1
+        x         -0.0001058189
+        y          0.0000008007
+        z         -0.0000997426
+    o Atom   2
+        x         -0.0023922883
+        y          0.0038246307
+        z          0.0000267321
+    o Atom   3
+        x         -0.0023936574
+        y         -0.0038250457
+        z          0.0000138185
+    o Atom   4
+        x          0.0023935842
+        y         -0.0038250351
+        z          0.0000259196
+    o Atom   5
+        x          0.0023923197
+        y          0.0038242794
+        z          0.0000657002
+       - Gradient integral contraction             0.11
+  * Updating Hessian using SR1 
+
+  === Convergence status ===
+
+                         Maximum     Tolerance   Converged?
+  * Gradient            0.003825      0.000300           No
+  * Displacement        0.020668      0.001200           No
+  * Energy change      -0.000430      0.000001           No
+
+  Since a DF basis is specified, we compute 2- and 3-index integrals:
+    o Being stored without compression. Storage requirement is 0.004 GB
+       - 3-index ints prep                         0.00
+       - 3-index ints                              0.06
+       - 2-index ints                              0.07
+       - computing inverse                         0.01
+        elapsed time:        0.13 sec.
+
+  *** Geometry ***
+
+  { "atom" : "C", "xyz" : [      1.265225,      0.000000,     -0.001912 ] },
+  { "atom" : "C", "xyz" : [     -1.265226,      0.000000,     -0.000305 ] },
+  { "atom" : "H", "xyz" : [      2.326955,      1.775759,      0.015913 ] },
+  { "atom" : "H", "xyz" : [      2.326944,     -1.775849,     -0.008679 ] },
+  { "atom" : "H", "xyz" : [     -2.326970,     -1.775728,     -0.020521 ] },
+  { "atom" : "H", "xyz" : [     -2.326924,      1.775819,      0.012418 ] },
+
+  ---------------------------
+      CASSCF calculation     
+  ---------------------------
+
+ 
+    ==== Active orbitals : ===== 
+         Orbital 8
+         Orbital 9
+    ============================ 
+
+    * nstate   :      2
+    * nclosed  :      7
+    * nact     :      2
+    * nvirt    :     39
+  === CASSCF iteration (svp) ===
+
+    * Using the second-order algorithm
+
+      0  0       -77.99390336     5.59e-03      0.42
+      0  1       -77.62593289     0.00e+00      0.42
+
+         res : 5.70e-03   lamb: 1.00e+00   eps : -9.12e-04   step: 1.13e-02    0.00
+         res : 1.48e-03   lamb: 1.00e+00   eps : -9.16e-04   step: 1.10e-02    0.00
+         res : 1.58e-04   lamb: 1.00e+00   eps : -9.17e-04   step: 1.09e-02    0.00
+         res : 5.33e-05   lamb: 1.00e+00   eps : -9.17e-04   step: 1.10e-02    0.00
+         res : 4.09e-05   lamb: 1.00e+00   eps : -9.17e-04   step: 1.10e-02    0.00
+         res : 1.31e-05   lamb: 1.00e+00   eps : -9.17e-04   step: 1.10e-02    0.00
+         res : 4.20e-06   lamb: 1.00e+00   eps : -9.17e-04   step: 1.10e-02    0.00
+         res : 3.57e-06   lamb: 1.00e+00   eps : -9.17e-04   step: 1.10e-02    0.00
+         res : 1.40e-06   lamb: 1.00e+00   eps : -9.17e-04   step: 1.10e-02    0.00
+         res : 8.89e-07   lamb: 1.00e+00   eps : -9.17e-04   step: 1.10e-02    0.00
+
+      1  0       -77.99449616     4.23e-06      1.11
+      1  1       -77.62625697     0.00e+00      1.11
+
+         res : 2.18e-05   lamb: 1.00e+00   eps : -2.23e-09   step: 5.69e-05    0.01
+         res : 6.45e-06   lamb: 1.00e+00   eps : -2.37e-09   step: 6.14e-05    0.00
+         res : 1.92e-06   lamb: 1.00e+00   eps : -2.38e-09   step: 6.35e-05    0.00
+         res : 9.35e-07   lamb: 1.00e+00   eps : -2.39e-09   step: 6.73e-05    0.00
+         res : 3.75e-07   lamb: 1.00e+00   eps : -2.39e-09   step: 6.86e-05    0.00
+         res : 1.79e-07   lamb: 1.00e+00   eps : -2.39e-09   step: 6.89e-05    0.00
+         res : 6.84e-08   lamb: 1.00e+00   eps : -2.39e-09   step: 6.90e-05    0.00
+         res : 3.49e-08   lamb: 1.00e+00   eps : -2.39e-09   step: 6.90e-05    0.00
+         res : 2.45e-08   lamb: 1.00e+00   eps : -2.39e-09   step: 6.91e-05    0.00
+         res : 4.40e-09   lamb: 1.00e+00   eps : -2.39e-09   step: 6.91e-05    0.00
+
+      2  0       -77.99449500     6.15e-08      1.20
+      2  1       -77.62625813     0.00e+00      1.20
+
+         res : 3.44e-07   lamb: 1.00e+00   eps : -3.41e-13   step: 4.66e-07    0.00
+         res : 5.35e-08   lamb: 1.00e+00   eps : -3.73e-13   step: 5.84e-07    0.00
+         res : 2.43e-08   lamb: 1.00e+00   eps : -3.75e-13   step: 6.30e-07    0.00
+         res : 2.50e-08   lamb: 1.00e+00   eps : -3.75e-13   step: 6.91e-07    0.00
+         res : 1.01e-08   lamb: 1.00e+00   eps : -3.75e-13   step: 7.56e-07    0.00
+         res : 1.53e-09   lamb: 1.00e+00   eps : -3.75e-13   step: 7.62e-07    0.00
+
+      3  0       -77.99449497     2.99e-08      1.26
+      3  1       -77.62625816     0.00e+00      1.26
+
+         res : 1.18e-07   lamb: 1.00e+00   eps : -5.60e-14   step: 1.24e-07    0.00
+         res : 1.99e-08   lamb: 1.00e+00   eps : -6.03e-14   step: 1.41e-07    0.00
+         res : 3.20e-09   lamb: 1.00e+00   eps : -6.04e-14   step: 1.44e-07    0.00
+
+      4  0       -77.99449497     1.55e-08      1.24
+      4  1       -77.62625816     0.00e+00      1.24
+
+         res : 6.09e-08   lamb: 1.00e+00   eps : -1.50e-14   step: 6.33e-08    0.00
+         res : 1.04e-08   lamb: 1.00e+00   eps : -1.61e-14   step: 7.17e-08    0.00
+         res : 1.65e-09   lamb: 1.00e+00   eps : -1.62e-14   step: 7.35e-08    0.00
+
+      5  0       -77.99449497     8.06e-09      1.24
+      5  1       -77.62625816     0.00e+00      1.24
+
+    * Second-order optimization converged. *   
+
+    * Integral transformation done. Elapsed time: 0.19
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97527795     5.12e-02      0.00
+      0  1       -77.62625816     3.43e-07      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:     1.6653e-16    max eigenvalue:     1.6653e-16
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.99449497     1.12e-16      0.00
+      1  1 *     -77.62625816     3.16e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9828231357
+       .2    -0.1845499490
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071067811
+       ba    -0.7071067811
+       - Reference calculation                     7.61
+
+  === DF-CASPT2Grad calculation ===
+
+    * freezing 2 orbitals
+    * SS-SR internal contraction is used
+
+    * Approximate memory requirement for SMITH calculation per MPI process:
+      o Storage requirement for T-amplitude, lambda, and residual is 0.00 GB
+      o Storage requirement for MO integrals is 0.00 GB
+      o Storage requirement for SMITH-computed gradient tensors is 0.00 GB
+       - MO integral evaluation                    0.89
+
+  ++ State-averaged Fock matrix over basis states ++
+
+                         0                   1
+     0       -0.5764359725       -0.0000029818
+     1       -0.0000029818       -0.2131666990
+
+
+  ++ Extended multi-state CASPT2 (XMS-CASPT2) rotation matrix ++
+
+                         0                   1
+     0       -1.0000000000        0.0000082082
+     1       -0.0000082082       -1.0000000000
+
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.    -0.9828231358
+       .2     0.1845499490
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab     0.7071067812
+       ba     0.7071067812
+
+  ++ Reference energies in XMS basis ++
+
+                         0                   1
+     0      -77.9944949698        0.0000030226
+     1        0.0000030226      -77.6262581570
+
+    * Calculating and saving rdm4
+
+    - linear dependency detected:    3 /    4    min eigenvalue:    -2.5098e-16    max eigenvalue:     2.7593e-16
+    - linear dependency detected:    3 /    4    min eigenvalue:    -2.2838e-16    max eigenvalue:    -7.1179e-23
+    - linear dependency detected:    3 /    4    min eigenvalue:    -4.0843e-15    max eigenvalue:    -1.9397e-16
+    - linear dependency detected:    3 /    4    min eigenvalue:    -4.7973e-15    max eigenvalue:    -1.3323e-15
+    - linear dependency detected:    4 /    8    min eigenvalue:    -5.3131e-16    max eigenvalue:     1.0340e-15
+    - linear dependency detected:    4 /    8    min eigenvalue:    -1.3199e-15    max eigenvalue:     6.7309e-16
+    - linear dependency detected:    6 /    8    min eigenvalue:    -2.6316e-16    max eigenvalue:     4.4410e-16
+    - linear dependency detected:    6 /    8    min eigenvalue:    -6.4970e-16    max eigenvalue:     1.9216e-16
+    - linear dependency detected:    6 /    8    min eigenvalue:    -1.4529e-15    max eigenvalue:     2.4876e-15
+    - linear dependency detected:    6 /    8    min eigenvalue:    -1.3679e-16    max eigenvalue:     5.7858e-16
+       - RDM + denominator evaluation              0.11
+
+    * Zeroth order energy : state  0       -0.5764359725
+    * Zeroth order energy : state  1       -0.2131666990
+
+    * CASPT2 iteration is performed using redundant basis
+
+      ---- iteration ----
+
+        0    -0.26450908     0.00048293      0.03
+        1    -0.26451714     0.00000861      0.04
+        2    -0.26451714     0.00000010      0.04
+        3    -0.26451714     0.00000000      0.03
+
+        0    -0.32542103     0.00102588      0.03
+        1    -0.32546119     0.00002122      0.03
+        2    -0.32546122     0.00000047      0.03
+        3    -0.32546122     0.00000002      0.04
+        4    -0.32546122     0.00000000      0.04
+
+      -------------------
+
+       - CASPT2 energy evaluation                  0.33
+
+    * CASPT2 energy : state  0      -78.2590121121
+        reference weight              0.9148467308
+
+    * CASPT2 energy : state  1      -77.9517193734
+        reference weight              0.8655727465
+
+
+    * MS-CASPT2 Heff
+            -78.2590121121        0.0000026617
+              0.0000026617      -77.9517193734
+
+
+    * MS-CASPT2 rotation matrix
+             -1.0000000000       -0.0000086619
+              0.0000086619       -1.0000000000
+
+
+    * XMS-CASPT2 rotation matrix
+              1.0000000000        0.0000004537
+             -0.0000004537        1.0000000000
+
+    * MS-CASPT2 energy : state  0      -78.2590121121
+    * MS-CASPT2 energy : state  1      -77.9517193734
+
+
+      ---- iteration ----
+
+        0    -0.26450908     0.00048293      0.03
+        1    -0.26451714     0.00000861      0.04
+        2    -0.26451714     0.00000010      0.03
+        3    -0.26451714     0.00000000      0.04
+
+        0    -0.00000000     0.00000001      0.03
+
+      -------------------
+
+       - CASPT2 lambda equation                    0.21
+       - Correlated density matrix evaluation      0.12
+       - CI derivative evaluation   ( 1 / 2)       0.07
+       - CI derivative evaluation   ( 2 / 2)       0.07
+       - CI derivative contraction                 0.24
+       - T1 norm evaluation                        0.01
+       - Postprocessing SMITH                      0.34
+    * CASPT2 energy:  -78.259012112099
+    * Permanent dipole moment: CASPT2 unrelaxed
+           (    0.000006,     0.000003,    -0.000558) a.u.
+
+       - Yrs evaluation                            0.67
+       - Yrs non-Lagrangian terms                  0.00
+    * Integral transformation done. Elapsed time: 0.39
+
+    * Integral transformation done. Elapsed time: 0.29
+
+  === CASSCF Z-vector iteration ===
+
+         0      0.0007791554     0.0037440887      0.41
+         1      0.0001742526     0.0004760006      0.50
+         2      0.0000406191     0.0004743642      0.56
+         3      0.0000082732     0.0000098907      0.53
+         4      0.0000028902     0.0000076839      0.35
+         5      0.0000023949     0.0000017744      0.71
+         6      0.0000020008     0.0000014899      0.59
+         7      0.0000008700     0.0000002357      0.38
+         8      0.0000006537     0.0000000341      0.44
+         9      0.0000003096     0.0000003041      0.33
+        10      0.0000001333     0.0000000954      0.40
+        11      0.0000001041     0.0000001605      0.51
+        12      0.0000000828     0.0000000810      0.50
+        13      0.0000000595     0.0000000213      0.43
+        14      0.0000000477     0.0000000533      0.46
+        15      0.0000000276     0.0000000167      0.31
+        16      0.0000000134     0.0000000052      0.42
+        17      0.0000000055     0.0000000100      0.39
+        18      0.0000000044     0.0000000073      0.40
+        19      0.0000000020     0.0000000026      0.47
+       - Z-CASSCF solution                        10.75
+    * Permanent dipole moment: CASPT2 relaxed
+           (   -0.000017,    -0.000035,    -0.000531) a.u.
+
+       - Effective densities                       0.28
+
+  * Nuclear energy gradient
+
+    o Atom   0
+        x         -0.0004448626
+        y          0.0000022989
+        z         -0.0001586486
+    o Atom   1
+        x          0.0004445462
+        y         -0.0000002094
+        z          0.0000742373
+    o Atom   2
+        x         -0.0007817980
+        y          0.0029042956
+        z          0.0000755362
+    o Atom   3
+        x         -0.0007825246
+        y         -0.0029057655
+        z          0.0000275708
+    o Atom   4
+        x          0.0007823396
+        y         -0.0029054751
+        z         -0.0000324249
+    o Atom   5
+        x          0.0007822994
+        y          0.0029048555
+        z          0.0000137293
+       - Gradient integral contraction             0.11
+  * Updating Hessian using SR1 
+
+  === Convergence status ===
+
+                         Maximum     Tolerance   Converged?
+  * Gradient            0.002906      0.000300           No
+  * Displacement        0.020110      0.001200           No
+  * Energy change      -0.000281      0.000001           No
+
+  Since a DF basis is specified, we compute 2- and 3-index integrals:
+    o Being stored without compression. Storage requirement is 0.004 GB
+       - 3-index ints prep                         0.00
+       - 3-index ints                              0.06
+       - 2-index ints                              0.05
+       - computing inverse                         0.01
+        elapsed time:        0.12 sec.
+
+  *** Geometry ***
+
+  { "atom" : "C", "xyz" : [      1.265671,      0.000000,     -0.001912 ] },
+  { "atom" : "C", "xyz" : [     -1.265671,     -0.000000,      0.000020 ] },
+  { "atom" : "H", "xyz" : [      2.347098,      1.756736,      0.069065 ] },
+  { "atom" : "H", "xyz" : [      2.347013,     -1.757146,     -0.063466 ] },
+  { "atom" : "H", "xyz" : [     -2.347122,     -1.756580,     -0.074586 ] },
+  { "atom" : "H", "xyz" : [     -2.346986,      1.756990,      0.066165 ] },
+
+  ---------------------------
+      CASSCF calculation     
+  ---------------------------
+
+ 
+    ==== Active orbitals : ===== 
+         Orbital 8
+         Orbital 9
+    ============================ 
+
+    * nstate   :      2
+    * nclosed  :      7
+    * nact     :      2
+    * nvirt    :     39
+  === CASSCF iteration (svp) ===
+
+    * Using the second-order algorithm
+
+      0  0       -77.99153007     1.28e-02      0.34
+      0  1       -77.62334239     0.00e+00      0.34
+
+         res : 1.53e-02   lamb: 1.00e+00   eps : -6.69e-03   step: 5.03e-02    0.00
+         res : 2.90e-03   lamb: 1.00e+00   eps : -6.75e-03   step: 4.53e-02    0.00
+         res : 7.19e-04   lamb: 1.00e+00   eps : -6.75e-03   step: 4.62e-02    0.00
+         res : 2.03e-04   lamb: 1.00e+00   eps : -6.75e-03   step: 4.63e-02    0.00
+         res : 4.41e-05   lamb: 1.00e+00   eps : -6.75e-03   step: 4.63e-02    0.02
+         res : 2.23e-05   lamb: 1.00e+00   eps : -6.75e-03   step: 4.63e-02    0.00
+         res : 6.27e-06   lamb: 1.00e+00   eps : -6.75e-03   step: 4.63e-02    0.00
+         res : 3.68e-06   lamb: 1.00e+00   eps : -6.75e-03   step: 4.63e-02    0.00
+
+      1  0       -77.99478812     8.84e-05      1.09
+      1  1       -77.62685626     0.00e+00      1.09
+
+         res : 3.02e-04   lamb: 1.00e+00   eps : -6.40e-07   step: 1.14e-03    0.00
+         res : 7.67e-05   lamb: 1.00e+00   eps : -6.67e-07   step: 1.12e-03    0.00
+         res : 4.95e-05   lamb: 1.00e+00   eps : -6.70e-07   step: 1.21e-03    0.00
+         res : 1.96e-05   lamb: 1.00e+00   eps : -6.71e-07   step: 1.28e-03    0.00
+         res : 9.40e-06   lamb: 1.00e+00   eps : -6.71e-07   step: 1.31e-03    0.00
+         res : 3.53e-06   lamb: 1.00e+00   eps : -6.71e-07   step: 1.32e-03    0.00
+         res : 1.00e-06   lamb: 1.00e+00   eps : -6.71e-07   step: 1.32e-03    0.00
+         res : 1.90e-07   lamb: 1.00e+00   eps : -6.71e-07   step: 1.32e-03    0.00
+         res : 1.39e-07   lamb: 1.00e+00   eps : -6.71e-07   step: 1.32e-03    0.00
+         res : 3.98e-08   lamb: 1.00e+00   eps : -6.71e-07   step: 1.32e-03    0.00
+
+      2  0       -77.99478608     1.00e-06      1.40
+      2  1       -77.62685897     0.00e+00      1.40
+
+         res : 3.94e-06   lamb: 1.00e+00   eps : -6.26e-11   step: 4.10e-06    0.00
+         res : 6.68e-07   lamb: 1.00e+00   eps : -6.74e-11   step: 4.64e-06    0.00
+         res : 1.02e-07   lamb: 1.00e+00   eps : -6.75e-11   step: 4.74e-06    0.00
+         res : 2.51e-08   lamb: 1.00e+00   eps : -6.75e-11   step: 4.76e-06    0.00
+         res : 3.59e-08   lamb: 1.00e+00   eps : -6.75e-11   step: 4.78e-06    0.00
+         res : 8.21e-09   lamb: 1.00e+00   eps : -6.75e-11   step: 4.80e-06    0.00
+         res : 2.59e-09   lamb: 1.00e+00   eps : -6.75e-11   step: 4.80e-06    0.00
+
+      3  0       -77.99478612     5.21e-07      0.97
+      3  1       -77.62685893     0.00e+00      0.97
+
+         res : 2.04e-06   lamb: 1.00e+00   eps : -1.69e-11   step: 2.11e-06    0.00
+         res : 3.46e-07   lamb: 1.00e+00   eps : -1.81e-11   step: 2.38e-06    0.00
+         res : 5.01e-08   lamb: 1.00e+00   eps : -1.82e-11   step: 2.42e-06    0.00
+         res : 7.29e-09   lamb: 1.00e+00   eps : -1.82e-11   step: 2.42e-06    0.00
+         res : 2.81e-09   lamb: 1.00e+00   eps : -1.82e-11   step: 2.42e-06    0.00
+
+      4  0       -77.99478613     2.71e-07      1.11
+      4  1       -77.62685892     0.00e+00      1.11
+
+         res : 1.06e-06   lamb: 1.00e+00   eps : -4.57e-12   step: 1.10e-06    0.00
+         res : 1.80e-07   lamb: 1.00e+00   eps : -4.91e-12   step: 1.24e-06    0.00
+         res : 2.62e-08   lamb: 1.00e+00   eps : -4.92e-12   step: 1.26e-06    0.00
+         res : 3.65e-09   lamb: 1.00e+00   eps : -4.92e-12   step: 1.26e-06    0.00
+
+      5  0       -77.99478613     1.41e-07      1.31
+      5  1       -77.62685892     0.00e+00      1.31
+
+         res : 5.53e-07   lamb: 1.00e+00   eps : -1.24e-12   step: 5.72e-07    0.00
+         res : 9.39e-08   lamb: 1.00e+00   eps : -1.33e-12   step: 6.44e-07    0.00
+         res : 1.36e-08   lamb: 1.00e+00   eps : -1.33e-12   step: 6.55e-07    0.00
+         res : 1.92e-09   lamb: 1.00e+00   eps : -1.33e-12   step: 6.56e-07    0.00
+
+      6  0       -77.99478613     7.34e-08      1.19
+      6  1       -77.62685892     0.00e+00      1.19
+
+         res : 2.88e-07   lamb: 1.00e+00   eps : -3.35e-13   step: 2.98e-07    0.00
+         res : 4.89e-08   lamb: 1.00e+00   eps : -3.60e-13   step: 3.35e-07    0.00
+         res : 7.11e-09   lamb: 1.00e+00   eps : -3.61e-13   step: 3.41e-07    0.00
+         res : 9.93e-10   lamb: 1.00e+00   eps : -3.61e-13   step: 3.42e-07    0.00
+
+      7  0       -77.99478613     3.82e-08      1.13
+      7  1       -77.62685892     0.00e+00      1.13
+
+         res : 1.50e-07   lamb: 1.00e+00   eps : -9.07e-14   step: 1.55e-07    0.00
+         res : 2.54e-08   lamb: 1.00e+00   eps : -9.76e-14   step: 1.74e-07    0.00
+         res : 3.70e-09   lamb: 1.00e+00   eps : -9.78e-14   step: 1.78e-07    0.00
+
+      8  0       -77.99478613     1.99e-08      1.00
+      8  1       -77.62685892     0.00e+00      1.00
+
+         res : 7.80e-08   lamb: 1.00e+00   eps : -2.46e-14   step: 8.09e-08    0.00
+         res : 1.34e-08   lamb: 1.00e+00   eps : -2.64e-14   step: 9.11e-08    0.00
+         res : 1.92e-09   lamb: 1.00e+00   eps : -2.65e-14   step: 9.27e-08    0.00
+
+      9  0       -77.99478613     1.03e-08      1.31
+      9  1       -77.62685892     0.00e+00      1.31
+
+         res : 4.06e-08   lamb: 1.00e+00   eps : -6.65e-15   step: 4.21e-08    0.00
+         res : 6.95e-09   lamb: 1.00e+00   eps : -7.16e-15   step: 4.74e-08    0.00
+         res : 1.00e-09   lamb: 1.00e+00   eps : -7.17e-15   step: 4.82e-08    0.00
+
+     10  0       -77.99478613     5.38e-09      1.23
+     10  1       -77.62685892     0.00e+00      1.23
+
+    * Second-order optimization converged. *   
+
+    * Integral transformation done. Elapsed time: 0.28
+
+     guess   0:   closed 1.                   open ..                  
+     guess   1:   closed ..                   open 11                  
+
+  === FCI iteration ===
+
+      0  0       -77.97551762     5.12e-02      0.00
+      0  1       -77.62685892     7.25e-08      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:     5.5511e-16    max eigenvalue:     5.5511e-16
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.99478613     4.29e-17      0.00
+      1  1 *     -77.62685892     3.56e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.     0.9827537315
+       .2    -0.1849191805
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab    -0.7071067812
+       ba    -0.7071067812
+       - Reference calculation                    13.22
+
+  === DF-CASPT2Grad calculation ===
+
+    * freezing 2 orbitals
+    * SS-SR internal contraction is used
+
+    * Approximate memory requirement for SMITH calculation per MPI process:
+      o Storage requirement for T-amplitude, lambda, and residual is 0.00 GB
+      o Storage requirement for MO integrals is 0.00 GB
+      o Storage requirement for SMITH-computed gradient tensors is 0.00 GB
+       - MO integral evaluation                    0.69
+
+  ++ State-averaged Fock matrix over basis states ++
+
+                         0                   1
+     0       -0.5761981441        0.0000006300
+     1        0.0000006300       -0.2134958513
+
+
+  ++ Extended multi-state CASPT2 (XMS-CASPT2) rotation matrix ++
+
+                         0                   1
+     0       -1.0000000000       -0.0000017368
+     1        0.0000017368       -1.0000000000
+
+
+     * ci vector, state   0, <S^2> = 0.0000
+       2.    -0.9827537315
+       .2     0.1849191805
+
+     * ci vector, state   1, <S^2> = 0.0000
+       ab     0.7071067812
+       ba     0.7071067812
+
+  ++ Reference energies in XMS basis ++
+
+                         0                   1
+     0      -77.9947861270       -0.0000006390
+     1       -0.0000006390      -77.6268589246
+
+    * Calculating and saving rdm4
+
+    - linear dependency detected:    3 /    4    min eigenvalue:    -2.5925e-16    max eigenvalue:     2.6381e-16
+    - linear dependency detected:    3 /    4    min eigenvalue:    -5.1719e-17    max eigenvalue:     2.3151e-16
+    - linear dependency detected:    3 /    4    min eigenvalue:     3.8405e-16    max eigenvalue:     1.3184e-15
+    - linear dependency detected:    3 /    4    min eigenvalue:    -3.7544e-15    max eigenvalue:    -1.2044e-15
+    - linear dependency detected:    4 /    8    min eigenvalue:    -2.9071e-16    max eigenvalue:     1.7842e-16
+    - linear dependency detected:    4 /    8    min eigenvalue:    -9.3569e-16    max eigenvalue:     1.0835e-15
+    - linear dependency detected:    6 /    8    min eigenvalue:    -2.6014e-16    max eigenvalue:     4.4391e-16
+    - linear dependency detected:    6 /    8    min eigenvalue:    -2.2716e-16    max eigenvalue:     4.9619e-16
+    - linear dependency detected:    6 /    8    min eigenvalue:    -4.1364e-16    max eigenvalue:     1.9191e-15
+    - linear dependency detected:    6 /    8    min eigenvalue:    -1.0764e-15    max eigenvalue:     1.1650e-15
+       - RDM + denominator evaluation              0.14
+
+    * Zeroth order energy : state  0       -0.5761981441
+    * Zeroth order energy : state  1       -0.2134958513
+
+    * CASPT2 iteration is performed using redundant basis
+
+      ---- iteration ----
+
+        0    -0.26435366     0.00048360      0.03
+        1    -0.26436173     0.00000862      0.03
+        2    -0.26436173     0.00000010      0.03
+        3    -0.26436173     0.00000000      0.04
+
+        0    -0.32512903     0.00102314      0.06
+        1    -0.32516898     0.00002109      0.05
+        2    -0.32516901     0.00000046      0.05
+        3    -0.32516901     0.00000001      0.04
+        4    -0.32516901     0.00000000      0.05
+
+      -------------------
+
+       - CASPT2 energy evaluation                  0.41
+
+    * CASPT2 energy : state  0      -78.2591478580
+        reference weight              0.9149754072
+
+    * CASPT2 energy : state  1      -77.9520279324
+        reference weight              0.8659423211
+
+
+    * MS-CASPT2 Heff
+            -78.2591478580       -0.0000005518
+             -0.0000005518      -77.9520279324
+
+
+    * MS-CASPT2 rotation matrix
+             -1.0000000000        0.0000017967
+             -0.0000017967       -1.0000000000
+
+
+    * XMS-CASPT2 rotation matrix
+              1.0000000000       -0.0000000599
+              0.0000000599        1.0000000000
+
+    * MS-CASPT2 energy : state  0      -78.2591478580
+    * MS-CASPT2 energy : state  1      -77.9520279324
+
+
+      ---- iteration ----
+
+        0    -0.26435366     0.00048360      0.07
+        1    -0.26436173     0.00000862      0.08
+        2    -0.26436173     0.00000010      0.03
+        3    -0.26436173     0.00000000      0.04
+
+        0    -0.00000000     0.00000000      0.04
+
+      -------------------
+
+       - CASPT2 lambda equation                    0.28
+       - Correlated density matrix evaluation      0.12
+       - CI derivative evaluation   ( 1 / 2)       0.07
+       - CI derivative evaluation   ( 2 / 2)       0.07
+       - CI derivative contraction                 0.25
+       - T1 norm evaluation                        0.01
+       - Postprocessing SMITH                      0.56
+    * CASPT2 energy:  -78.259147857962
+    * Permanent dipole moment: CASPT2 unrelaxed
+           (    0.000001,     0.000004,    -0.000150) a.u.
+
+       - Yrs evaluation                            0.79
+       - Yrs non-Lagrangian terms                  0.00
+    * Integral transformation done. Elapsed time: 0.35
+
+    * Integral transformation done. Elapsed time: 0.27
+
+  === CASSCF Z-vector iteration ===
+
+         0      0.0007798344     0.0037232479      0.44
+         1      0.0001738687     0.0004748057      0.62
+         2      0.0000403256     0.0004742251      0.50
+         3      0.0000080935     0.0000095264      0.49
+         4      0.0000024273     0.0000074577      0.27
+         5      0.0000018758     0.0000015193      0.46
+         6      0.0000015461     0.0000011774      0.36
+         7      0.0000006105     0.0000001929      0.55
+         8      0.0000004400     0.0000000117      0.54
+         9      0.0000002180     0.0000001681      0.50
+        10      0.0000000518     0.0000000195      0.27
+        11      0.0000000336     0.0000000088      0.22
+        12      0.0000000275     0.0000000016      0.32
+        13      0.0000000220     0.0000000065      0.50
+        14      0.0000000116     0.0000000044      0.30
+        15      0.0000000071     0.0000000086      0.52
+        16      0.0000000038     0.0000000095      0.47
+        17      0.0000000016     0.0000000019      0.38
+       - Z-CASSCF solution                         9.59
+    * Permanent dipole moment: CASPT2 relaxed
+           (   -0.000003,    -0.000023,    -0.000142) a.u.
+
+       - Effective densities                       0.68
+
+  * Nuclear energy gradient
+
+    o Atom   0
+        x          0.0000028072
+        y          0.0000091469
+        z         -0.0002337169
+    o Atom   1
+        x         -0.0000025413
+        y         -0.0000061029
+        z          0.0002109034
+    o Atom   2
+        x          0.0000166749
+        y          0.0000608780
+        z          0.0000781877
+    o Atom   3
+        x          0.0000162938
+        y         -0.0000657639
+        z          0.0000531751
+    o Atom   4
+        x         -0.0000174335
+        y         -0.0000639388
+        z         -0.0000467568
+    o Atom   5
+        x         -0.0000158011
+        y          0.0000657808
+        z         -0.0000617925
+       - Gradient integral contraction             0.18
+  * Updating Hessian using SR1 
+
+  === Convergence status ===
+
+                         Maximum     Tolerance   Converged?
+  * Gradient            0.000234      0.000300          Yes
+  * Displacement        0.000275      0.001200          Yes
+  * Energy change      -0.000136      0.000001           No
+

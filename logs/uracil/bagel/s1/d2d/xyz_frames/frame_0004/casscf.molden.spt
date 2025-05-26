@@ -1,0 +1,37 @@
+load casscf.molden FILTER "nosort"
+set showhydrogens True;
+
+reset;center {0,0,0} ; rotate z 0; rotate y 0; rotate x -45;
+
+function _setModelState() {
+
+  select;
+  Spacefill 0.0;
+
+  frank off;
+  font frank 16.0 SansSerif Plain;
+  select *;
+  set fontScaling false;
+
+}
+
+_setModelState;
+
+background white
+mo fill
+mo translucent
+mo cutoff 0.06
+
+mo nomesh
+mo COLOR [38,108,238] [238,38,38]
+mo resolution 12
+mo titleformat " "
+
+
+mo 8
+write image pngt "mo_8.png"
+print "Wrote mo_8.png"
+
+mo 9
+write image pngt "mo_9.png"
+print "Wrote mo_9.png"

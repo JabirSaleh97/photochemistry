@@ -1,0 +1,324 @@
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+  * process grid (2, 4) will be used
+    r23c03b06.bem2.kdm.wcss.pl      
+    r23c03b06.bem2.kdm.wcss.pl      
+    r23c03b06.bem2.kdm.wcss.pl      
+    r23c03b06.bem2.kdm.wcss.pl      
+    r23c03b06.bem2.kdm.wcss.pl      
+    r23c03b06.bem2.kdm.wcss.pl      
+    r23c03b06.bem2.kdm.wcss.pl      
+    r23c03b06.bem2.kdm.wcss.pl      
+
+  * using 48 threads per process
+OMP: Warning #232: OMP_NUM_THREADS: Invalid symbols found. Check the value "".
+OMP: Warning #232: OMP_NUM_THREADS: Invalid symbols found. Check the value "".
+OMP: Warning #232: OMP_NUM_THREADS: Invalid symbols found. Check the value "".
+OMP: Warning #232: OMP_NUM_THREADS: Invalid symbols found. Check the value "".
+OMP: Warning #232: OMP_NUM_THREADS: Invalid symbols found. Check the value "".
+OMP: Warning #232: OMP_NUM_THREADS: Invalid symbols found. Check the value "".
+OMP: Warning #232: OMP_NUM_THREADS: Invalid symbols found. Check the value "".
+OMP: Warning #232: OMP_NUM_THREADS: Invalid symbols found. Check the value "".
+
+  ===============================================================
+    BAGEL - Freshly leavened quantum chemistry                   
+  ===============================================================
+
+  *** Geometry ***
+
+  { "atom" : "C", "xyz" : [      1.416350,      0.000000,     -0.001890 ] },
+  { "atom" : "C", "xyz" : [     -1.169551,     -0.000378,     -0.003590 ] },
+  { "atom" : "H", "xyz" : [      2.468927,      1.374398,      1.140261 ] },
+  { "atom" : "H", "xyz" : [      2.471006,     -1.374020,     -1.142717 ] },
+  { "atom" : "H", "xyz" : [     -2.425086,     -1.319407,      1.106435 ] },
+  { "atom" : "H", "xyz" : [     -2.421684,      1.319596,     -1.116450 ] },
+
+  Number of auxiliary basis functions:      222
+
+  Since a DF basis is specified, we compute 2- and 3-index integrals:
+    o Being stored without compression. Storage requirement is 0.004 GB
+       - 3-index ints prep                         0.00
+       - 3-index ints                              0.17
+       - 2-index ints                              0.29
+       - computing inverse                         0.11
+        elapsed time:        0.56 sec.
+
+
+  Number of basis functions:       48
+  Number of electrons      :       16
+
+
+    * METHOD: MOLECULE                             0.62
+
+       - Overlap matrix                            0.18
+       - Hcore matrix                              0.19
+       - Overlap orthog                            0.01
+
+  *** RHF ***
+
+  === Nuclear Repulsion ===
+  
+    32.4436073180
+
+      * DIIS with orbital gradients will be used.
+
+       - SCF startup                               3.11
+
+  === RHF iteration (svp) ===
+  
+               o Fock build                                  0.50
+      0        -77.76699615          0.01872341           0.50
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.31
+      1        -77.82789964          0.00774950           0.31
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.45
+      2        -77.83636738          0.00184728           0.45
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.30
+      3        -77.83723115          0.00054444           0.31
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.49
+      4        -77.83729080          0.00022387           0.49
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.30
+      5        -77.83731822          0.00008631           0.30
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.47
+      6        -77.83732209          0.00004975           0.47
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.31
+      7        -77.83732437          0.00002568           0.31
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.48
+      8        -77.83732511          0.00000426           0.48
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.31
+      9        -77.83732513          0.00000132           0.31
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.46
+     10        -77.83732513          0.00000065           0.46
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.31
+     11        -77.83732513          0.00000026           0.31
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.49
+     12        -77.83732513          0.00000007           0.49
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.31
+     13        -77.83732513          0.00000002           0.31
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.48
+     14        -77.83732513          0.00000000           0.48
+  
+    * SCF iteration converged.
+
+    * Permanent dipole moment:
+           (    0.050719,    -0.000052,     0.000172) a.u.
+
+
+    * METHOD: HF                                   9.58
+
+
+    * METHOD: PRINT                                0.09
+
+  ---------------------------
+      CASSCF calculation     
+  ---------------------------
+
+ 
+    ==== Active orbitals : ===== 
+         Orbital 8
+         Orbital 9
+    ============================ 
+
+    * nstate   :      2
+    * nclosed  :      7
+    * nact     :      2
+    * nvirt    :     39
+  === CASSCF iteration (svp) ===
+
+    * Using the second-order algorithm
+
+      0  0       -77.87734439     1.25e-02      0.70
+      0  1       -77.73013567     0.00e+00      0.70
+
+         res : 7.36e-02   lamb: 1.00e+00   eps : -1.36e-02   step: 8.29e-02    0.00
+         res : 1.11e-02   lamb: 1.00e+00   eps : -1.54e-02   step: 1.04e-01    0.00
+         res : 3.09e-03   lamb: 1.00e+00   eps : -1.54e-02   step: 1.04e-01    0.00
+         res : 7.16e-04   lamb: 1.00e+00   eps : -1.54e-02   step: 1.04e-01    0.00
+         res : 1.17e-04   lamb: 1.00e+00   eps : -1.54e-02   step: 1.04e-01    0.00
+         res : 2.23e-05   lamb: 1.00e+00   eps : -1.54e-02   step: 1.04e-01    0.00
+         res : 4.20e-06   lamb: 1.00e+00   eps : -1.54e-02   step: 1.04e-01    0.00
+
+      1  0       -77.87690396     6.33e-03      2.02
+      1  1       -77.75247457     0.00e+00      2.02
+
+         res : 2.85e-02   lamb: 1.00e+00   eps : -2.90e-03   step: 4.18e-02    0.00
+         res : 7.41e-03   lamb: 1.00e+00   eps : -3.29e-03   step: 5.42e-02    0.00
+         res : 1.67e-03   lamb: 1.00e+00   eps : -3.30e-03   step: 5.36e-02    0.00
+         res : 4.65e-04   lamb: 1.00e+00   eps : -3.30e-03   step: 5.34e-02    0.00
+         res : 7.17e-05   lamb: 1.00e+00   eps : -3.30e-03   step: 5.34e-02    0.00
+         res : 8.49e-06   lamb: 1.00e+00   eps : -3.30e-03   step: 5.34e-02    0.00
+         res : 1.17e-06   lamb: 1.00e+00   eps : -3.30e-03   step: 5.34e-02    0.00
+
+      2  0       -77.87592411     5.35e-04      2.32
+      2  1       -77.75705368     0.00e+00      2.32
+
+         res : 3.48e-03   lamb: 1.00e+00   eps : -3.97e-05   step: 6.34e-03    0.00
+         res : 8.44e-04   lamb: 1.00e+00   eps : -4.33e-05   step: 7.34e-03    0.00
+         res : 1.63e-04   lamb: 1.00e+00   eps : -4.35e-05   step: 7.27e-03    0.00
+         res : 4.03e-05   lamb: 1.00e+00   eps : -4.36e-05   step: 7.26e-03    0.00
+         res : 8.34e-06   lamb: 1.00e+00   eps : -4.36e-05   step: 7.26e-03    0.00
+         res : 1.14e-06   lamb: 1.00e+00   eps : -4.36e-05   step: 7.26e-03    0.00
+         res : 1.59e-07   lamb: 1.00e+00   eps : -4.36e-05   step: 7.26e-03    0.00
+
+      3  0       -77.87591684     8.42e-05      2.23
+      3  1       -77.75711191     0.00e+00      2.23
+
+         res : 4.32e-04   lamb: 1.00e+00   eps : -1.57e-06   step: 1.42e-03    0.00
+         res : 1.60e-04   lamb: 1.00e+00   eps : -1.62e-06   step: 1.47e-03    0.00
+         res : 2.72e-05   lamb: 1.00e+00   eps : -1.63e-06   step: 1.46e-03    0.00
+         res : 6.12e-06   lamb: 1.00e+00   eps : -1.63e-06   step: 1.46e-03    0.00
+         res : 1.51e-06   lamb: 1.00e+00   eps : -1.63e-06   step: 1.46e-03    0.00
+         res : 2.23e-07   lamb: 1.00e+00   eps : -1.63e-06   step: 1.46e-03    0.00
+         res : 3.10e-08   lamb: 1.00e+00   eps : -1.63e-06   step: 1.46e-03    0.00
+
+      4  0       -77.87594759     1.84e-05      2.28
+      4  1       -77.75708315     0.00e+00      2.28
+
+         res : 8.72e-05   lamb: 1.00e+00   eps : -7.93e-08   step: 3.23e-04    0.00
+         res : 3.50e-05   lamb: 1.00e+00   eps : -8.16e-08   step: 3.32e-04    0.00
+         res : 5.85e-06   lamb: 1.00e+00   eps : -8.19e-08   step: 3.30e-04    0.00
+         res : 1.32e-06   lamb: 1.00e+00   eps : -8.19e-08   step: 3.31e-04    0.00
+         res : 3.26e-07   lamb: 1.00e+00   eps : -8.19e-08   step: 3.31e-04    0.00
+         res : 4.93e-08   lamb: 1.00e+00   eps : -8.19e-08   step: 3.31e-04    0.00
+         res : 6.76e-09   lamb: 1.00e+00   eps : -8.19e-08   step: 3.31e-04    0.00
+
+      5  0       -77.87595518     4.11e-06      1.84
+      5  1       -77.75707566     0.00e+00      1.84
+
+         res : 1.94e-05   lamb: 1.00e+00   eps : -4.00e-09   step: 7.26e-05    0.00
+         res : 7.82e-06   lamb: 1.00e+00   eps : -4.11e-09   step: 7.46e-05    0.00
+         res : 1.30e-06   lamb: 1.00e+00   eps : -4.13e-09   step: 7.41e-05    0.00
+         res : 2.95e-07   lamb: 1.00e+00   eps : -4.13e-09   step: 7.42e-05    0.00
+         res : 7.29e-08   lamb: 1.00e+00   eps : -4.13e-09   step: 7.43e-05    0.00
+         res : 1.10e-08   lamb: 1.00e+00   eps : -4.13e-09   step: 7.43e-05    0.00
+         res : 1.51e-09   lamb: 1.00e+00   eps : -4.13e-09   step: 7.43e-05    0.00
+
+      6  0       -77.87595689     9.22e-07      2.28
+      6  1       -77.75707395     0.00e+00      2.28
+
+         res : 4.34e-06   lamb: 1.00e+00   eps : -2.01e-10   step: 1.63e-05    0.00
+         res : 1.75e-06   lamb: 1.00e+00   eps : -2.07e-10   step: 1.67e-05    0.00
+         res : 2.92e-07   lamb: 1.00e+00   eps : -2.08e-10   step: 1.66e-05    0.00
+         res : 6.61e-08   lamb: 1.00e+00   eps : -2.08e-10   step: 1.67e-05    0.00
+         res : 1.63e-08   lamb: 1.00e+00   eps : -2.08e-10   step: 1.67e-05    0.00
+         res : 2.47e-09   lamb: 1.00e+00   eps : -2.08e-10   step: 1.67e-05    0.00
+
+      7  0       -77.87595727     2.07e-07      2.61
+      7  1       -77.75707357     0.00e+00      2.61
+
+         res : 9.73e-07   lamb: 1.00e+00   eps : -1.01e-11   step: 3.66e-06    0.00
+         res : 3.93e-07   lamb: 1.00e+00   eps : -1.04e-11   step: 3.76e-06    0.00
+         res : 6.56e-08   lamb: 1.00e+00   eps : -1.05e-11   step: 3.73e-06    0.00
+         res : 1.48e-08   lamb: 1.00e+00   eps : -1.05e-11   step: 3.74e-06    0.00
+         res : 3.67e-09   lamb: 1.00e+00   eps : -1.05e-11   step: 3.74e-06    0.00
+
+      8  0       -77.87595736     4.64e-08      2.37
+      8  1       -77.75707349     0.00e+00      2.37
+
+         res : 2.18e-07   lamb: 1.00e+00   eps : -5.09e-13   step: 8.20e-07    0.00
+         res : 8.82e-08   lamb: 1.00e+00   eps : -5.24e-13   step: 8.43e-07    0.00
+         res : 1.47e-08   lamb: 1.00e+00   eps : -5.26e-13   step: 8.37e-07    0.00
+         res : 3.36e-09   lamb: 1.00e+00   eps : -5.26e-13   step: 8.38e-07    0.00
+
+      9  0       -77.87595737     1.04e-08      1.88
+      9  1       -77.75707347     0.00e+00      1.88
+
+         res : 4.89e-08   lamb: 1.00e+00   eps : -2.56e-14   step: 1.84e-07    0.00
+         res : 1.99e-08   lamb: 1.00e+00   eps : -2.64e-14   step: 1.89e-07    0.00
+         res : 3.30e-09   lamb: 1.00e+00   eps : -2.65e-14   step: 1.88e-07    0.00
+
+     10  0       -77.87595738     2.31e-09      2.23
+     10  1       -77.75707346     0.00e+00      2.23
+
+    * Second-order optimization converged. *   
+
+    * Integral transformation done. Elapsed time: 0.60
+
+     guess   0:   closed ..                   open 11                  
+     guess   1:   closed 1.                   open ..                  
+
+  === FCI iteration ===
+
+      0  0       -77.87590861     1.66e-03      0.00
+      0  1       -77.75691312     2.07e-03      0.00
+    - linear dependency detected:    1 /    4    min eigenvalue:    -2.2204e-16    max eigenvalue:    -2.2204e-16
+    * Using canonical orthogonalization due to linear dependency
+
+
+      1  0 *     -77.87595738     2.50e-16      0.00
+      1  1 *     -77.75707346     3.77e-16      0.00
+
+     * ci vector, state   0, <S^2> = 0.0000
+       ab     0.6610518327
+       ba     0.6610518327
+       2.     0.3546893475
+
+     * ci vector, state   1, <S^2> = 0.0000
+       2.     0.9340653971
+       ab    -0.2510188729
+       ba    -0.2510188729
+
+    * METHOD: CASSCF                              24.75
+
+
+    * METHOD: PRINT                                0.00
+
+
+  
+  ===============================================================
+
