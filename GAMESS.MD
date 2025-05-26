@@ -12,17 +12,17 @@ Before you begin, make sure you have:
 
 - Access to a Unix/Linux shell
 - Basic knowledge of terminal commands
+- [MOLDEN](https://www.theochem.ru.nl/molden) package installed
 - GAMESS(US) package installed. It may be downloaded and compiled
   after registration - check out the official [download page ](https://www.msg.chem.iastate.edu/gamess/License_Agreement.html).
 - At WCSS you may copy a precompiled package from my directory. Using the same directory structure you won't have to edit the scripts.
-- [Understanding of MRSF-TDDFT Theory](https://mqcp.readthedocs.io/en/latest/mrsf.html)
 ```bash
 mkdir -p ~/appl/gamess
 cp -r ~rgora/appl/gamess/2024-07-15_r2 ~/appl/gamess
 cp ~rgora/bin/Gamess ~/bin
 cp ~rgora/bin/xyz2gms.py ~/bin
 ```
-- MOLDEN package installed
+- [Understanding of MRSF-TDDFT Theory](https://mqcp.readthedocs.io/en/latest/mrsf.html)
 
 ### 🧪 1. Create a Working Directory
 
@@ -143,7 +143,28 @@ H       1.0        -1.19500        -0.93530        -0.00150
 H       1.0        -1.19500         0.93530         0.00080
  $end
 ```
+To submit GAMESS job at WCSS you may use the [Gamess](assets/scripts/Gamess) script. It is set up for `slurm` quening system. If you compiled the GAMESS package yourselves you probably would have to modify the `rungms` script (there are no predefined settings for `slurm`) or use the following: [rungms](assets/scrpts/rungms). If you issue the `Gamess` cript without any options it will return the syntax:
+```bash
+Gamess
+usage: Gamess [options] inputfile1.inp [inputfile2.inp ...]
 
+Where options are:
+  -s toggle sequential/batch execution
+  -m memory per cpu [32, total: 32, in chunks of: 32 ]
+  -n # nodes [1]
+  -p # ppn [16]
+  -b extra basis file [/dev/null]
+  -k keep scratch files
+  -v program version [2024-07-15_r2]
+  -t test execution scripts
+  -q queue [bem2-cpu]
+  -c gms check gamess test results
+  -c eds check eds test results
+  -x target: mpi, sockets [mpi]
+  -d destination: chunks []
+  -w walltime [72 h]
+  -l local TMP [0]
+```
 `Molden` and `Avogadro` read the GAMESS outputs. In this case the geometry was located after 20 steps. The details of SF calculations are specified as follows:
 
 ```
