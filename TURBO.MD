@@ -679,6 +679,13 @@ Now we are ready to submit the job (in principle `dscf` and then `ricc2` but `Tu
 Turbomole ricc2
 ```
 
+The two-photon absorption cross section is given by:
+\[
+\sigma_{2PA}(\omega) = \frac{4\pi^3 \alpha a_0^5 \omega^2}{c} g(2\omega) \delta_{2PA}
+\]
+
+where $\omega$ is the angular frequency of the photon, so that $2\hbar\omega$ corresponds to the transition energy to the excited state (denoted hereafter as $\hbar\omega_f$). One may use either a Lorentzian or Gaussian profile for $g(2\omega)$:
+
 ---
 
 ### 📚 Resources
