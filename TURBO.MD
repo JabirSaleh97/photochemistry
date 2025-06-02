@@ -679,9 +679,26 @@ Now we are ready to submit the job (in principle `dscf` and then `ricc2` but `Tu
 Turbomole ricc2
 ```
 
-The two-photon absorption cross section is given by $$\sigma_{2PA}(\omega) = \frac{4\pi^3 \alpha a_0^5 \omega^2}{c} g(2\omega) \delta_{2PA}$$
+The two-photon absorption cross section is given by
 
-where $\omega$ is the angular frequency of the photon, so that $2\hbar\omega$ corresponds to the transition energy to the excited state (denoted hereafter as $\hbar\omega_f$). One may use either a Lorentzian or Gaussian profile for $g(2\omega)$:
+$$\sigma_{2PA}(\omega) = \frac{4\pi^3 \alpha a_0^5 \omega^2}{c} g(2\omega) \delta_{2PA}$$
+
+where $\omega$ is the angular frequency of the photon ($2\hbar\omega$ corresponds to the transition energy to the excited state (denoted hereafter as $\hbar\omega_f$). One may use either a Lorentzian or Gaussian profile for $g(2\omega)$:
+- Lorentzian profile:
+    $$g(2\omega) = \frac{1}{\pi} \frac{1}{2\Gamma_f} \frac{1}{(\omega_f - 2\omega)^2 + \left(\frac{1}{2} \Gamma_f\right)^2}$$
+    For $\omega_f = 2\omega$:
+
+    $$\sigma_{2PA}\left(\omega = \frac{1}{2} \omega_f \right) = \frac{4\pi^3 \alpha a_0^5 \omega^2}{c\pi(\Gamma_f/2)} \delta_{2PA}$$
+    $$\sigma_{2PA}\left(\omega = \frac{1}{2} \omega_f \right) = \frac{8\pi^2 \alpha a_0^5 \omega^2}{c \Gamma_f} \delta_{2PA}$$
+- Gaussian profile:
+    $$g(2\omega) = \frac{1}{\sigma \sqrt{2\pi}} \exp \left[ -\frac{1}{2} \left( \frac{2\omega - \omega_f}{\sigma} \right)^2 \right]$$
+    For $\omega_f = 2\omega$:
+    $$g(2\omega) = \frac{1}{\sigma \sqrt{2\pi}} = \frac{2}{\Gamma_f \sqrt{2\ln 2} \sqrt{2\pi}}$$
+    $$\sigma_{2PA}\left(\omega = \frac{1}{2} \omega_f \right) = \frac{8\pi^3 \sqrt{2\ln 2} \alpha a_0^5 \omega^2}{c \Gamma_f \sqrt{2\pi}} \delta_{2PA}$$
+
+Comparison of the two line profiles at $\omega_f = 2\omega$ leads to:
+$$\frac{2}{\pi \Gamma_f} : \frac{2}{\Gamma_f \sqrt{2\ln 2} \sqrt{2\pi}} \rightarrow 0.637 \cdot \frac{1}{\Gamma_f} : 0.939 \cdot \frac{1}{\Gamma_f}$$
+
 
 ---
 
