@@ -669,6 +669,8 @@ Again, we need to modify the control file and add these lines:
 $excitations
  irrep=a nexc=1
  twophoton states=all operators=(diplen,diplen)
+$laplace
+ conv = 8
 ```
 
 Now we are ready to submit the job (in principle `dscf` and then `ricc2` but `Turbomole` script does this by default.
